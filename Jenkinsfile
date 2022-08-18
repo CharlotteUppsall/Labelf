@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/LiibanAbdulkadir/Kimchi-Project.git'
+                git branch: 'main', url: 'https://github.com/CharlotteUppsall/Labelf.git'
             }
         }
              stage('Robot Framework System tests with Selenium') {
