@@ -1,13 +1,25 @@
 *** Settings ***
 Resource  variables.robot
+Resource  locators.robot
+
 *** Keywords ***
 Start WebTest
-    Open Browser  about:blank  headlesschrome
+    ${chrome_options}=  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
+    Call Method    ${chrome_options}    add_argument  --disable-dev-shm-usage
+    Call Method    ${chrome_options}    add_argument    test-type
+    Call Method    ${chrome_options}    add_argument    --disable-extensions
+    Call Method    ${chrome_options}    add_argument    --headless  # Comment away to capture video
+    Call Method    ${chrome_options}    add_argument    --disable-gpu
+    Call Method    ${chrome_options}    add_argument    --no-sandbox
+
+    Create Webdriver    Chrome    chrome_options=${chrome_options}
+
+    Open Browser  about:blank  chrome
     Set Selenium Speed  0.2s
     Set Window Size  1920  1080
-    Go To  https://stag.labelf.ai/login
-    Wait Until Element Is Visible  //*[@id="diffuse-cookie-notice"]/div/div/div/div[2]/div
-    Click Button  //*[@id="diffuse-cookie-notice"]/div/div/div/div[2]/button[3]
+    Go To  ${stag_login_site}
+    Wait Until Element Is Visible  ${diffuse_cookie_button}
+    Click Button  ${diffuse_cookie_button}
 
 End WebTest
     #Verify Workspace Is Empty
@@ -22,6 +34,7 @@ End WebTest
 #    Exit For Loop If  '${status}'=='True'
 #    END
 
+#Team Agile Peacock Login Keywords
 Login
     Enter Account Information
     Press Login Button
@@ -32,9 +45,20 @@ Enter Account Information
     Input Text  //*[@id="password"]  ${password_agile_peacock}
     Wait Until Page Contains  Labelf
 Press Login Button
-    Click Element  //*[@id="app"]/div/main/div/div/div/div/div/div[2]/button[2]
+    Click Element  ${LoginButton}
 Verify Login
     Wait Until Page Contains  Models | Agile Peacock
+
+#Team Kimchi Login Keywords
+Input User Credential
+    Wait Until Page Contains  Don't have an account? Sign up
+    Input Text    ${login_email_field}  ${email_kimchi}
+    Input Text    ${login_password_field}  ${password_kimchi}
+Confirm Cookie
+    Sleep  0.2
+    Click Button  ${diffuse_cookie_button}
+Confirm User Logged In
+    Wait Until Page Contains  My Models
 
 
 
