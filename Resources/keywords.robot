@@ -1,24 +1,4 @@
 *** Keywords ***
-
-
-Begin Web Test
-    ${chrome_options}=  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
-    call Method    ${chrome_options}    add_argument  --disable-dev-shm-usage
-    Call Method    ${chrome_options}    add_argument    test-type
-    Call Method    ${chrome_options}    add_argument    --disable-extensions
-    #Call Method    ${chrome_options}    add_argument    --headless  # Comment away to capture video
-    Call Method    ${chrome_options}    add_argument    --disable-gpu
-    Call Method    ${chrome_options}    add_argument    --no-sandbox
-
-    Create Webdriver    Chrome    chrome_options=${chrome_options}
-
-    Set Window Size  ${1600}  ${1050}
-    Set Selenium speed  0.3  # Set to 0.5 for video capture of test suite
-
-
-End Web Test
-    Close Browser
-
 End Model Creation Test
     Delete Single Automated Test Model
     Close Browser
