@@ -24,16 +24,6 @@ User Navigate To Workspace
     When Open Top Burger Drop Down Menu
     Then Navigate To Workspace 60
 
-Create a Model
-    [Documentation]  Testcase for user creat a model on labelf
-    [Tags]  Testcase 3  stagWorkspace
-    Given User Is Logged In And On An Empty Workspace
-    When User Clicks Button "New Model" And To Create A New Model From Scratch
-    And Select An Existing Dataset
-    And Set A Name And Description For Model
-    Then Model Is Created On Workspace
-    And Model Description Is Presented In Model Overview
-
 Delete Single Model
     [Documentation]  Deletes single model, only to be used on workspace with only 1 model.
     [Tags]  Testcase 4  stagWorkspace
