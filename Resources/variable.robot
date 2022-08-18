@@ -1,10 +1,4 @@
 *** Variables ***
-${BROWSER}  chrome
-${URL}  https://stag.labelf.ai/login
-${MAIL}  //*[@id="app"]/div/main/div/div/div/div/div/div[1]/form/div[1]/div[2]/div[1]/div/input
-${PASSWORD}  //*[@id="password"]
-${COOKIEDOWN}  //*[@id="diffuse-cookie-notice"]/div/div/div/div[2]/button[2]
-${LOGINBUTTON}  //*[@id="app"]/div/main/div/div/div/div/div/div[2]/button[2]/div
 ${MAINMENU}  //*[@id="app"]/div[6]/div[1]/nav/div/div[3]/div/button
 ${MAINMENULIST}  //*[@id="app"]/div[1]/div
 ${MAINMENUTEAMKATTUGGLA}  //*[@id="app"]/div[1]/div/div[2]/div[4]/a/div[1]/div
