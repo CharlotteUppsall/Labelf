@@ -13,11 +13,6 @@ User Can Access Website And See Front Page
     [Tags]  TestJenkins
     Go To Web Page
 
-User Can Log In
-    [Documentation]  Once accessing the website; user can log in
-    [Tags]  Account
-    Log in User
-
 User Can Change Workspace
     [Documentation]  Once user is logged in; being able to change workspace
     [Tags]  Workspace
