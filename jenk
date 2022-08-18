@@ -1,0 +1,72 @@
+pipeline {
+        agent any
+            stages{
+               
+   
+                    stage('Delete Old Screenshots'){
+                            steps{
+                                     catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                          sh 'sudo rm Results/selenium-screenshot-*.png'  
+                                  }
+                          }
+                    }
+                    stage('AG-18') {
+        steps {   
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE')  { 
+                
+
+                sh 'robot -d Results -o AG-18-output -l AG-18-log -r AG-18-report Tests/AG-18.robot' }
+              
+                
+                    }
+                    post {
+                        always {
+                            script {
+                                  step(
+                                        [
+                                          $class              : 'RobotPublisher',
+                                          outputPath          : 'Results',
+                                          outputFileName      : '**/AG-18-output.xml',
+                                          reportFileName      : '**/AG-18-report.html',
+                                          logFileName         : '**/AG-18-log.html',
+                                          disableArchiveOutput: false,
+                                          passThreshold       : 50,
+                                          unstableThreshold   : 40,
+                                          otherFiles          : "**/*.png,**/*.jpg",
+                                        ]
+                                  )
+                            }
+                        }
+                    }
+                }
+
+              stage('AG-111-117') {
+            steps {      
+                    catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
+
+                sh 'robot -d Results -o AG-111-output -l AG-111-log -r AG-111-report Tests/AG-111-117.robot'
+                   }
+                
+                    }
+                    post {
+                        always {
+                            script {
+                                  step(
+                                        [
+                                          $class              : 'RobotPublisher',
+                                          outputPath          : 'Results',
+                                          outputFileName      : '**/AG-111-output.xml',
+                                          reportFileName      : '**/AG-111-report.html',
+                                          logFileName         : '**/AG-111-log.html',
+                                          disableArchiveOutput: false,
+                                          passThreshold       : 50,
+                                          unstableThreshold   : 40,
+                                          otherFiles          : "**/*.png,**/*.jpg",
+                                        ]
+                                  )
+                            }
+                        }
+                    }
+                }  
+       }
+    }
