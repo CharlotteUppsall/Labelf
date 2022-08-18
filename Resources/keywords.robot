@@ -70,14 +70,14 @@ Log in User
 
 #Kimchi Create Model
 User Clicks Button "New Model" And To Create A New Model From Scratch
-     Wait Until Page Contains Element  ${NewModelButton}
+     Wait Until Page Contains Element  ${new_model_button}
      Sleep  0.2
-     Click Element   ${NewModelButton}
+     Click Element   ${new_model_button}
      Wait Until Page Contains  Add a model
-     Click Button  ${ContinueCreateModelButton}
+     Click Button  ${continue_create_model_button}
      Wait Until Page Contains  Setup
 User Is Logged In And On An Empty Workspace
-    Go To  ${StagWorkspaceModelView}
+    Go To  ${stag_workspace_model_view}
     Wait Until Page Contains  My Models (0)
 
 Delete Single Automated Test Model
@@ -87,19 +87,19 @@ Delete Single Automated Test Model
     Workspace Is Empty
 
 User Is Logged In And On An Workspace Containing One Model
-    Go To  ${StagWorkspaceModelView}
+    Go To  ${stag_workspace_model_view}
     Wait Until Page Contains  My Models (1)
 
 User Opens Single Model Options Dropdown List
-    Wait Until Page Contains Element  ${SingleModelOptionsButton}
-    Click Element  ${SingleModelOptionsButton}
+    Wait Until Page Contains Element  ${single_model_options_button}
+    Click Element  ${single_model_options_button}
 
 Workspace Is Empty
     Wait Until Page Contains  My Models (0)
 
 User Clicks Delete Model Option
-    Wait Until Page Contains Element  ${DeleteOption}
-    Click Element  ${DeleteOption}
+    Wait Until Page Contains Element  ${delete_option}
+    Click Element  ${delete_option}
     Wait Until Page Contains Element  ${DeleteButton}
     Click Button  ${DeleteButton}
 
@@ -130,11 +130,11 @@ Model Description Is Presented In Model Overview
 #Kattuggla Create a Model
 Create A Model
     Sleep  1s
-    Wait Until Page Contains Element  ${NEWMODELBUTTON}
-    Click Element  ${NEWMODELBUTTON}
+    Wait Until Page Contains Element  ${new_model_button}
+    Click Element  ${new_model_button}
     Wait Until Page Contains  Create your own model from scratch.
-    Wait Until Page Contains Element  ${SETUPCONTINUE}
-    Click Element  ${SETUPCONTINUE}
+    Wait Until Page Contains Element  ${continue_create_model_button}
+    Click Element  ${continue_create_model_button}
     Wait Until Page Contains  Select an existing dataset or upload a new one
     Wait Until Page Contains  Synthetic generic support ticket example data that has half the dataset labeled
     Click Element  ${DATASETCONTINUE}
@@ -143,6 +143,7 @@ Create A Model
     Sleep  1s
     Click Element  ${COLUMNCONTINUE}
     Wait Until Page Contains  Name your model
+    Input Text  ${input_name_text_field}  ${model_name}
     Sleep  1s
     Input Text  ${DESCRIPTION}  This is a Discription of created model
     Click Element  ${CONTINUESCRATCH}
