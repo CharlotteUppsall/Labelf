@@ -30,22 +30,7 @@ User Navigate/Login To App and Navigates To Workspace 387
     Press Login Button
     Confirm User Logged In
     Wait Until Page Contains  Models | Team Kimchi
-
-Input User Credential
-    Wait Until Page Contains  Don't have an account? Sign up
-    Input Text    ${LoginEmailField}  ${Email}
-    Input Text    ${LoginPasswordField}  ${Password}
-
-Confirm Cookie
-    Sleep  0.2
-    Click Button  ${ConfirmCookieButton}
-
-Press Login Button
-    Click Button  ${LoginButton}
-
-Confirm User Logged In
-    Wait Until Page Contains  My Models
-
+    
 User Is Logged In And On An Empty Workspace
     Go To  ${StagWorkspaceModelView}
     Wait Until Page Contains  My Models (0)
