@@ -5,10 +5,6 @@ Suite Setup  Start WebTest
 Suite Teardown  End WebTest
 
 *** Test Cases ***
-User Log In
-    [Documentation]  Test that will insert credentials, log in and go to the start page.
-    [Tags]  AG_16
-    Login
 User Can Create A Model
     [Documentation]   Test that verifies that a model is created.
     [Tags]  AG_16
