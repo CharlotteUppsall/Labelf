@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/xxxxxxx/mavenfooproject.git'
+                git 'https://github.com/CharlotteUppsall/Labelf.git'
             }
         }
     }
