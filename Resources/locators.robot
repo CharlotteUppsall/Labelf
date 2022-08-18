@@ -7,16 +7,16 @@ ${diffuse_cookie_button}  //*[@id="diffuse-cookie-notice"]/div/div/div/div[2]/bu
 
 #Models Overview Page (From Kimchi)
 ${workspace_dropdown_menu}  //*[@class="v-btn v-btn--flat v-btn--large theme--light"]
-${StagWorkspaceModelView}  https://stag.labelf.ai/main/60/models/view
-${AppWorkspaceModelView}  https://app.labelf.ai/main/387/models/view
-${SingleModelOptionsButton}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/nav/div/div[3]/div/button/div/i
-${OverviewButton}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/div[2]/a/div
-${OverviewPrelabledButton}  //*[contains(@href,'/main/387/models/3082/dashboard/dashboard')]
-${OverviewPrelabledTestButton}  //*[contains(@href,'/main/387/models/3049/dashboard/dashboard')]
-${NewModelButton}   //*[@id="app"]/div[6]/div[1]/main/div/div/div[1]/nav/div[1]/a
-${DeleteOption}  //*[@class="v-icon icon-menu-danger material-icons theme--light"]
-${ModelID3084NameButtonInWorkspace}  //*[contains(@href,'/main/387/models/3084/dashboard/dashboard')]
-${ModelsButtonInMainBar}  //*[@id="models-button-navbar"]/div
+${stag_workspace_model_view}  https://stag.labelf.ai/main/60/models/view
+${app_workspace_model_view}  https://app.labelf.ai/main/387/models/view
+${single_model_options_button}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/nav/div/div[3]/div/button/div/i
+${overview_button}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/div[2]/a/div
+${overview_prelabled_button}  //*[contains(@href,'/main/387/models/3082/dashboard/dashboard')]
+${Overview_prelabled_test_button}  //*[contains(@href,'/main/387/models/3049/dashboard/dashboard')]
+${new_model_button}   //*[@id="app"]/div[6]/div[1]/main/div/div/div[1]/nav/div[1]/a
+${delete_option}  //*[@class="v-icon icon-menu-danger material-icons theme--light"]
+${model_ID3084_name_button_in_workspace}  //*[contains(@href,'/main/387/models/3084/dashboard/dashboard')]
+${models_button_in_main_bar}  //*[@id="models-button-navbar"]/div
 
 #Model Creation Pages (From Kimchi)
 ${ContinueCreateModelButton}  //button[contains(.,'Continue')]
