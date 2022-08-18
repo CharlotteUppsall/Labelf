@@ -1,14 +1,6 @@
 *** Keywords ***
 
 
-User Clicks Button "New Model" And To Create A New Model From Scratch
-     Wait Until Page Contains Element  ${NewModelButton}
-     Sleep  0.2
-     Click Element   ${NewModelButton}
-     Wait Until Page Contains  Add a model
-     Click Button  ${ContinueCreateModelButton}
-     Wait Until Page Contains  Setup
-
 Select An Existing Dataset
      Scroll Element Into View   ${DataSelectCustomerSupportButton}
      Sleep  0.2
