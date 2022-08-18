@@ -1,15 +1,5 @@
 *** Keywords ***
 
-
-Select An Existing Dataset
-     Scroll Element Into View   ${DataSelectCustomerSupportButton}
-     Sleep  0.2
-     Click Element   ${DataSelectCustomerSupportButton}
-     Wait Until Page Contains  Please click on the column
-     Wait Until Page Contains Element  ${ContinueWithSelectedDatasetColumnButton}
-     Sleep  0.2  # To allow time for page animation
-     Click Element  ${ContinueWithSelectedDatasetColumnButton}
-
 Select Costumer Service Response as Dataset
      Scroll Element Into View   ${DataSelectCustomerResponseButton}
      Sleep  0.2
