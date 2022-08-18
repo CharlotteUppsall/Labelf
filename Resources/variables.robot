@@ -1,19 +1,5 @@
 *** Variables ***
 
-# URL:s Menu
-${StagLoginSite}  https://stag.labelf.ai/login
-${AppLoginSite}  https://app.labelf.ai/login
-${WorkspaceDropdownMenu}  //*[@class="v-btn v-btn--flat v-btn--large theme--light"]
-
-
-# Login
-${LoginEmailField}  xpath:/html/body/div[1]/div/div/main/div/div/div/div/div/div[1]/form/div[1]/div[2]/div[1]/div/input
-${Email}  kimchitest@hotmail.com
-${LoginPasswordField}  xpath:/html/body/div[1]/div/div/main/div/div/div/div/div/div[1]/form/div[2]/div[2]/div[1]/div/input
-${Password}  Kimchi123
-${LoginButton}  //*[@id="app"]/div/main/div/div/div/div/div/div[2]/button[2]
-${ConfirmCookieButton}  //*[@id="diffuse-cookie-notice"]/div/div/div/div[2]/button[3]
-
 
 # Workspace
 ${StagWorkspaceModelView}  https://stag.labelf.ai/main/60/models/view
