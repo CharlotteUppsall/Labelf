@@ -10,9 +10,6 @@ Select Costumer Service Response as Dataset
      Sleep  0.2  # To allow time for page animation
      Click Element  ${ContinueWithSelectedDatasetColumnButton}
 
-Model Description Is Presented In Model Overview
-    Page Should Contain  ${ModelDescription}
-
 Open Top Burger Drop Down Menu
     Wait Until Page Contains Element  ${WorkspaceDropdownMenu}
     Click Element  ${WorkspaceDropdownMenu}
