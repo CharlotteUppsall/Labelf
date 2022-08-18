@@ -9,8 +9,6 @@ Select Costumer Service Response as Dataset
      Wait Until Page Contains Element  ${ContinueWithSelectedDatasetColumnButton}
      Sleep  0.2  # To allow time for page animation
      Click Element  ${ContinueWithSelectedDatasetColumnButton}
-Model Is Created On Workspace
-     Page Should Contain   ${ModelName}
 
 Model Description Is Presented In Model Overview
     Page Should Contain  ${ModelDescription}
