@@ -10,6 +10,8 @@ ${password_agile_peacock}  123456789
 
 #Team Kimchi Login Information
 ${email_kimchi}  kimchitest@hotmail.com
-${password_kimchi}  Kimchi123
+${email_kimchi}   Kimchi123
 
 #Team Kattuggla Login Information
+${email_kattuggla}  jakob.nilsson@iths.se
+${password_kattuggla}  44321jJa

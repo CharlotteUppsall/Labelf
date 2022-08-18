@@ -34,7 +34,7 @@ End WebTest
 #    Exit For Loop If  '${status}'=='True'
 #    END
 
-#Team Agile Peacock Login Keywords
+#Agile Peacock Login
 Login
     Enter Account Information
     Press Login Button
@@ -49,7 +49,7 @@ Press Login Button
 Verify Login
     Wait Until Page Contains  Models | Agile Peacock
 
-#Team Kimchi Login Keywords
+#Kimchi Login
 Input User Credential
     Wait Until Page Contains  Don't have an account? Sign up
     Input Text    ${login_email_field}  ${email_kimchi}
@@ -59,6 +59,15 @@ Confirm Cookie
     Click Button  ${diffuse_cookie_button}
 Confirm User Logged In
     Wait Until Page Contains  My Models
+
+#Kattuggla Login
+Log in User
+    Input Text  ${login_email_field}  ${email_kattuggla}
+    Input Text  ${login_password_field}  ${password_kattuggla}
+    Wait Until Element Is Visible  ${diffuse_cookie_button}
+    Click Element  ${diffuse_cookie_button}
+    Click Element   ${login_button}
+    Wait Until Page Contains  Welcome to Labelf!
 
 
 
