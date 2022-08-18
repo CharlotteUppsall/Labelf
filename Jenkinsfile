@@ -1,9 +1,17 @@
 pipeline {
     agent any
+    
+    
     stages {
-        stage('Robot Framework') {
+        stage('Checkout') {
             steps {
-                sh 'robot --variable BROWSER:chrome -d Results Tests'
+                git 'https://github.com/CharlotteUppsall/Labelf.git'
+            }
+        }
+        
+       stage('Robot Framework System tests with Selenium') {
+            steps {
+                sh 'robot --variable BROWSER:headlesschrome -d Results  Tests'
             }
             post {
                 always {
@@ -11,7 +19,7 @@ pipeline {
                           step(
                                 [
                                   $class              : 'RobotPublisher',
-                                  outputPath          : 'Results',
+                                  outputPath          : 'results',
                                   outputFileName      : '**/output.xml',
                                   reportFileName      : '**/report.html',
                                   logFileName         : '**/log.html',
@@ -24,8 +32,6 @@ pipeline {
                     }
                 }
             }
-
-        }
-    }
-    
+        }    
+    }   
 }
