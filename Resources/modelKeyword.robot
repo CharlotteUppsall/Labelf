@@ -9,17 +9,6 @@ Select Costumer Service Response as Dataset
      Wait Until Page Contains Element  ${ContinueWithSelectedDatasetColumnButton}
      Sleep  0.2  # To allow time for page animation
      Click Element  ${ContinueWithSelectedDatasetColumnButton}
-
-Set A Name And Description For Model
-     FOR  ${INT}  IN RANGE  36
-        Press Key  ${InputNameTextField}  \\8
-     END
-     Press Keys  ${InputNameTextField}  CTRL+A+DELETE
-     Input Text  ${InputNameTextField}   ${ModelName}
-     Input Text   ${InputDescriptiontextField}  ${ModelDescription}
-     Click Button  ${CreateModelButton}
-     Wait Until Page Contains  My Models
-
 Model Is Created On Workspace
      Page Should Contain   ${ModelName}
 
