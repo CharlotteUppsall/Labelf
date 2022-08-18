@@ -42,8 +42,8 @@ Login
     Verify Login
     #Verify Workspace Is Empty
 Enter Account Information
-    Input Text  //*[@id="app"]/div/main/div/div/div/div/div/div[1]/form/div[1]/div[2]/div[1]/div/input   ${e_mail_agile_peacock}
-    Input Text  //*[@id="password"]  ${password_agile_peacock}
+    Input Text  ${login_email_field}   ${e_mail_agile_peacock}
+    Input Text  ${login_password_field}  ${password_agile_peacock}
     Wait Until Page Contains  Labelf
 Press Login Button
     Click Element  ${LoginButton}
