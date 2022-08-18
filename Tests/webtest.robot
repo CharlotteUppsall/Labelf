@@ -18,11 +18,6 @@ User Can Change Workspace
     [Tags]  Workspace
     Select Team Kattuggla As Workspace
 
-User Can Create Model
-    [Documentation]  Once workspace is changed; being able to create model
-    [Tags]  Model
-    Create A Model
-
 User Can Delete Model
     [Documentation]  Once a model is created; being able to delete a model
     [Tags]  Model
