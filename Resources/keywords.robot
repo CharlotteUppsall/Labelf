@@ -22,18 +22,20 @@ End WebTest
 #    Exit For Loop If  '${status}'=='True'
 #    END
 
+Login
+    Enter Account Information
+    Press Login Button
+    Verify Login
+    #Verify Workspace Is Empty
 Enter Account Information
-    Input Text  //*[@id="app"]/div/main/div/div/div/div/div/div[1]/form/div[1]/div[2]/div[1]/div/input   ${e-mail}
-    Input Text  //*[@id="password"]  ${password}
+    Input Text  //*[@id="app"]/div/main/div/div/div/div/div/div[1]/form/div[1]/div[2]/div[1]/div/input   ${e_mail_agile_peacock}
+    Input Text  //*[@id="password"]  ${password_agile_peacock}
     Wait Until Page Contains  Labelf
 Press Login Button
     Click Element  //*[@id="app"]/div/main/div/div/div/div/div/div[2]/button[2]
 Verify Login
     Wait Until Page Contains  Models | Agile Peacock
-Login
-    Enter Account Information
-    Press Login Button
-    Verify Login
 
-    #Verify Workspace Is Empty
+
+
 
