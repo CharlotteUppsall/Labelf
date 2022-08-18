@@ -16,14 +16,6 @@ ${BROWSER}  chrome
 
 
 *** Test Cases ***
-User Login To Labelf
-    [Documentation]  Testcase for user login to labelf
-    [Tags]  Testcase 1  stagWorkspace
-    Given Go To  ${StagLoginSite}
-          Input User Credential
-          Confirm Cookie
-    When Press Login Button
-    Then Confirm User Logged In
 
 User Navigate To Workspace
     [Documentation]  Testcase for user navigate to Workspace
