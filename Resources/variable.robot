@@ -43,6 +43,11 @@ ${CLICKAWAY}  //*[@id="app"]/div[6]/div[1]/nav/div/div[3]/div/button
 
 
 #KAT_81.robot
+${OVERVIEW}     //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/div[2]/a
+${SETTINGBUTTON}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[1]/div/div/div/div/nav/div/a[1]/div/i
+${INPUTMODELNAME}  //*[@id="app"]/div[4]/div[1]/main/div/div/div[2]/div/div/div/div/div/div/div[1]/form/div[2]/div/div/div[1]/div/div/div[1]/div/input
+${SAVEBUTTON}    //*[@id="app"]/div[4]/div[1]/main/div/div/div[2]/div/div/div/div/div/div/div[1]/form/div[3]/button/div/i
+${MODELSBUTTON}  //*[@id="app"]/div[4]/div[1]/nav/div/a[1]/div/span[1]
 
 
 #NavToWorkspace.robot
