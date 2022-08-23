@@ -2,7 +2,7 @@
 Library  SeleniumLibrary
 
 Suite Setup  Start WebTest
-
+Suite Teardown  Close All Browsers
 *** Keywords ***
 Start WebTest
     ${chrome_options}=  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
@@ -15,12 +15,15 @@ Start WebTest
 
     Create Webdriver    Chrome    chrome_options=${chrome_options}
 
-    Open Browser  about:blank  chrome
+    #Open Browser  about:blank  chrome
     Set Selenium Speed  0.2s
     Set Window Size  1920  1080
+
+
 *** Test Cases ***
 
 Navigate to Zendesk workspace
     [Documentation]  First test
     [Tags]  zendesk
     go to  https://kimchiab.zendesk.com
+    Location should be  https://kimchiab.zendesk.com/access/unauthenticated
