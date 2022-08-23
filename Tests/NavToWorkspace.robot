@@ -30,9 +30,7 @@ User Can Swich Workspace
 
 
 *** Variables ***
-${TKU}  //*[@id="app"]/div[1]/div/div[2]/div[5]
-${MFW1}  //*[@id="app"]/div[1]/div/div[2]/div[4]
-${MFW2}  //*[@id="app"]/div[1]/div/div[2]/div[3]
+
 *** Test Cases ***
 
 User Can Access Website And See Front Page
