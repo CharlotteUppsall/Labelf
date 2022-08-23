@@ -27,3 +27,4 @@ Navigate to Zendesk workspace
     [Tags]  zendesk
     go to  https://kimchiab.zendesk.com
     Location should be  https://kimchiab.zendesk.com/access/unauthenticated
+    ## TODO: make 'kimchiab' part of URLs into variable that can easily be changed.
