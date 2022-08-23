@@ -71,6 +71,13 @@ Log in User
     Wait Until Page Contains  My Models
 
 #Kimchi Create Model
+Create Model
+    User Is Logged In And On An Empty Workspace
+    User Clicks Button "New Model" And To Create A New Model From Scratch
+    Select An Existing Dataset
+    Set A Name And Description For Model
+    Model Is Created On Workspace
+    Model Description Is Presented In Model Overview
 User Clicks Button "New Model" And To Create A New Model From Scratch
      Wait Until Page Contains Element  ${new_model_button}
      Sleep  0.2
@@ -159,14 +166,14 @@ Create A Model
     Sleep  1s
 
 #Agile Peacock Create Model
-Create Model
-    Press Create New Model
-    Press Continue To Model Creation
-    Press Dataset Button
-    Press Continue On Text Classification Page
-    Insert Model Name
-    Press Create Model Button
-    Verify Created Model
+#Create Model
+#    Press Create New Model
+#    Press Continue To Model Creation
+#    Press Dataset Button
+#    Press Continue On Text Classification Page
+#    Insert Model Name
+#    Press Create Model Button
+#    Verify Created Model
 Insert Model Name
     Wait Until Page Contains Element  ${inputnametextfield}
     Press Keys  ${inputnametextfield}  CTRL+a+BACKSPACE
@@ -191,13 +198,21 @@ Press Create New Model
 Verify Created Model
     Wait Until Page Contains  ${modelname}
 
-#Kimchi Delete Model
-#Delete Single Automated Test Model
-    User Is Logged In And On An Workspace Containing One Model
-    User Opens Single Model Options Dropdown List
-    User Clicks Delete Model Option
-    Workspace Is Empty
-#Kattuggla Delete Model
-#Agile Peacock Delete Model
-#Agile Peacock Delete Model
+#Kattuggla See All Labels
+User Is Logged In, Have Changed Workspace And Created A Model
+    Log in User
+    Select Team Kattuggla As Workspace
+    Create Model
+
+Select Team Kattuggla As Workspace
+    Sleep  1s
+    Wait Until Page Contains Element  ${MAINMENU}
+    Click Element  ${MAINMENU}
+    Wait Until Page Contains  Current Workspace:
+    Scroll Element Into View  ${TEAMKATTUGGLAWORKSPACE}
+    Click Element  ${TEAMKATTUGGLAWORKSPACE}
+    Wait Until Location Is  https://stag.labelf.ai/main/68/models/view
+    #Ceck the id in the link if its the right workspace
+    Wait Until Page Contains  My first workspace
+    Click Element  //*[@id="app"]/div[6]/div[1]/nav/div/div[3]/div/button
 
