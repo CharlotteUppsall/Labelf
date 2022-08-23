@@ -205,8 +205,7 @@ User Is Logged In, Have Changed Workspace And Created A Model
     Create Model
     Go To  https://stag.labelf.ai/main/60/models/view
     Sleep  30s
-
-User Can See All Labels
+User Adds Single Choice Labels
     Wait Until Page Contains Element  ${overview_button}
     Click Element  ${overview_button}
     Wait Until Page Contains  It does not look like you have trained the model
@@ -256,6 +255,7 @@ User Can See All Labels
     Sleep  1s
     Click Element  ${label_named_katt}
     Wait Until Page Contains  Only 15 more to go!
+User Can See All Labels
     Wait Until Page Contains Element  ${close_button}
     Sleep  1s
     Click Element  ${close_button}
