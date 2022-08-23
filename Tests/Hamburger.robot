@@ -20,10 +20,6 @@ Show All Workspaces
     Click Element  //*[@id="hamburger-menu-button"]
 
 *** Variables ***
-${TEAMKATTUGGLA}  //*[@id="app"]/div[1]/div/div[2]/div[5]
-${MYFIRSTWORKSPACE2}  //*[@id="app"]/div[1]/div/div[2]/div[4]
-${MYFIRSTWORKSPACE}  //*[@id="app"]/div[1]/div/div[2]/div[3]
-${CREATEWORKSPACE}  //*[@id="app"]/div[1]/div/div[2]/div[2]
 
 *** Test Cases ***
 
