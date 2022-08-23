@@ -21,10 +21,7 @@ Model name field
 
 *** Variables ***
 
-${OVERFIEW}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/div[2]/a
-${OVERFIEWBUTTON}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[1]/div/div/div/div/nav/div/a[3]/div
-${SETTINGS}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[1]/div/div/div/div/nav/div/a[1]/div/i
-${MODELS}  //*[@id="app"]/div[4]/div[1]/nav/div/a[1]/div/span[1]
+
 
 *** Test Cases ***
 
