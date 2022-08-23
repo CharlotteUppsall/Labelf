@@ -53,13 +53,14 @@ Verify Login
     Wait Until Page Contains  Models | Agile Peacock
 
 #Kimchi Login
+Login Kimchi
+    Input User Credential
+    Press Login Button
+    Confirm User Logged In
 Input User Credential
     Wait Until Page Contains  Don't have an account? Sign up
     Input Text    ${login_email_field}  ${email_kimchi}
     Input Text    ${login_password_field}  ${password_kimchi}
-Confirm Cookie
-    Sleep  0.2
-    Click Button  ${diffuse_cookie_button}
 Confirm User Logged In
     Wait Until Page Contains  My Models
 
@@ -200,19 +201,77 @@ Verify Created Model
 
 #Kattuggla See All Labels
 User Is Logged In, Have Changed Workspace And Created A Model
-    Log in User
-    Select Team Kattuggla As Workspace
+    Login Kimchi
     Create Model
 
-Select Team Kattuggla As Workspace
+User Can See All Labels
+    Wait Until Page Contains Element  ${overview_button}
+    Click Element  ${overview_button}
+    Wait Until Page Contains  It does not look like you have trained the model
+    Wait Until Page Contains Element  ${start_training}
+    Click Element  ${start_training}
+    Wait Until Page Contains  You must add at least two labels before Labelf can start learning!
+    Wait Until Page Contains Element  ${ADDLABEL}
+    Click Element  ${ADDLABEL}
+    Wait Until Page Contains  Add a new label
+    Wait Until Page Contains Element  ${NEWLABELNAME}
+    Input Text  ${NEWLABELNAME}  Katt
+    Wait Until Page Contains Element  ${ADDONELABEL}
+    Click Element  ${ADDONELABEL}
+    Wait Until Page Contains Element  ${NAMEONFIRSTLABEL}
+    Element Text Should Be  ${NAMEONFIRSTLABEL}  KATT
+    Wait Until Page Contains Element  ${ADDSEKUNDLABEL}
+    Click Element  ${ADDSEKUNDLABEL}
+    Wait Until Page Contains Element  ${INPUTTEXTLABEL}
+    Input Text  ${INPUTTEXTLABEL2}  Uggla
+    Wait Until Page Contains Element  ${ADDEDSECONDLABELDONE}
+    #detta element är addlabel efter Uggla
+    Click Element  ${ADDEDSECONDLABELDONE}
+    Wait Until Page Contains  Choose model type
     Sleep  1s
-    Wait Until Page Contains Element  ${MAINMENU}
-    Click Element  ${MAINMENU}
-    Wait Until Page Contains  Current Workspace:
-    Scroll Element Into View  ${TEAMKATTUGGLAWORKSPACE}
-    Click Element  ${TEAMKATTUGGLAWORKSPACE}
-    Wait Until Location Is  https://stag.labelf.ai/main/68/models/view
-    #Ceck the id in the link if its the right workspace
-    Wait Until Page Contains  My first workspace
-    Click Element  //*[@id="app"]/div[6]/div[1]/nav/div/div[3]/div/button
+    Wait Until Page Contains Element  ${CHOOSESINGLE}
+    Click Element  ${CHOOSESINGLE}
+    Wait Until Page Contains  Lets start by giving Labelf 20 samples
+    Wait Until Page Contains Element  ${KATTLABEL}
+    Sleep  1s
+    Click Element  ${KATTLABEL}
+    Wait Until Page Contains  Lets start by giving Labelf 19 samples
+    Wait Until Page Contains Element  ${UGGLALABEL}
+    Sleep  1s
+    Click Element  ${UGGLALABEL}
+    Wait Until Page Contains  Lets start by giving Labelf 18 samples
+    Wait Until Page Contains Element  ${KATTLABEL}
+    Sleep  1s
+    Click Element  ${KATTLABEL}
+    Wait Until Page Contains  Lets start by giving Labelf 17 samples
+    Wait Until Page Contains Element  ${UGGLALABEL}
+    Sleep  1s
+    Click Element  ${UGGLALABEL}
+    Wait Until Page Contains  Lets start by giving Labelf 16 samples
+    Wait Until Page Contains Element  ${KATTLABEL}
+    Sleep  1s
+    Click Element  ${KATTLABEL}
+    Wait Until Page Contains  Only 15 more to go!
+    Wait Until Page Contains Element  ${XBUTTON}
+    Sleep  1s
+    Click Element  ${XBUTTON}
+    Sleep  1s
+    Wait Until Page Contains Element  ${MODELBUTTON}
+    Click Element  ${MODELBUTTON}
+    Wait Until Page Contains Element  ${CHOOSEMODEL}
+Select Team Kattuggla As Workspace
+    Go To  https://stag.labelf.ai/main/68/models/view
+    Wait Until Page Contains  Team Kattuggla
+    Click Element  ${models_button}
+    Reload Page
+#    Sleep  1s
+#    Wait Until Page Contains Element  ${MAINMENU}
+#    Click Element  ${MAINMENU}
+#    Wait Until Page Contains  Current Workspace:
+#    Scroll Element Into View  ${TEAMKATTUGGLAWORKSPACE}
+#    Click Element  ${TEAMKATTUGGLAWORKSPACE}
+#    Wait Until Location Is  https://stag.labelf.ai/main/68/models/view
+#    #Ceck the id in the link if its the right workspace
+#    Wait Until Page Contains  My first workspace
+#    Click Element  //*[@id="app"]/div[6]/div[1]/nav/div/div[3]/div/button
 

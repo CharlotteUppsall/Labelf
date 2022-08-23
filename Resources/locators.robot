@@ -6,7 +6,7 @@ ${login_button}  //*[@id="app"]/div/main/div/div/div/div/div/div[2]/button[2]
 ${diffuse_cookie_button}  //*[@id="diffuse-cookie-notice"]/div/div/div/div[2]/button[3]
 ${my_models_text}  //*[@id="app"]/div[6]/div[1]/main/div/div/nav/div/div[1]
 
-#Models Overview Page
+#Models Page
 ${workspace_dropdown_menu}  //*[@class="v-btn v-btn--flat v-btn--large theme--light"]
 ${stag_workspace_model_view}  https://stag.labelf.ai/main/60/models/view
 ${app_workspace_model_view}  https://app.labelf.ai/main/387/models/view
@@ -18,6 +18,24 @@ ${new_model_button}   //*[@id="app"]/div[6]/div[1]/main/div/div/div[1]/nav/div[1
 ${delete_option}  //*[@class="v-icon icon-menu-danger material-icons theme--light"]
 ${model_ID3084_name_button_in_workspace}  //*[contains(@href,'/main/387/models/3084/dashboard/dashboard')]
 ${models_button_in_main_bar}  //*[@id="models-button-navbar"]/div
+
+#Models Overview Page
+
+${start_training}  //*[@id="app"]/div[8]/div[1]/main/div/div/div[2]/div/div[1]/div[2]/div/a/div
+${ADDLABEL}  //*[@id="app"]/div[4]/div/div[1]/div[4]/div/div/span/div/div/div[2]/div/div/button/div
+${NEWLABELNAME}  //*[@id="app"]/div[5]/div/div[1]/div[4]/div/div/span/div/div[2]/form/div[1]/div/div/div[1]/div/div/div[1]/div/input
+${ADDONELABEL}  //*[@id="app"]/div[5]/div/div[1]/div[4]/div/div/span/div/div[2]/form/div[2]/button/div
+${NAMEONFIRSTLABEL}  //*[@id="app"]/div[7]/div/div[1]/div[4]/div/div/span/div/div/div[2]/div/div/button[1]/div
+${ADDSEKUNDLABEL}  //*[@id="app"]/div[7]/div/div[1]/div[4]/div/div/span/div/div/div[2]/div/div/button[2]/div
+${CHOOSESINGLE}  //*[@id="app"]/div[8]/div/div/div[3]/button[1]/div
+${INPUTTEXTLABEL}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div[2]/form/div[1]/div/div/div[1]/div/div/div[1]/div/input
+${INPUTTEXTLABEL2}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div[2]/form/div[1]/div/div/div[1]/div/div/div[1]/div/input
+${ADDEDSECONDLABELDONE}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div[2]/form/div[2]/button/div
+${XBUTTON}  //*[@id="app"]/div[8]/div/div[1]/div[1]/div/div/nav/div/a/div/i
+${MODELBUTTON}  //*[@id="app"]/div[9]/div[1]/nav/div/a[1]/div
+${KATTLABEL}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div[2]/div/div/button[1]/div
+${UGGLALABEL}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div[2]/div/div/button[2]/div
+
 
 #Model Creation Pages (From Kimchi)
 ${continue_create_model_button}  //button[contains(.,'Continue')]
@@ -64,6 +82,7 @@ ${LOGOUT}  //*[@id="app"]/div[5]/div/div[3]/div/a/div[1]/div
 ${WINDOW}  window-size=1920,1080
 ${MYWORKSPACE}  //*[@id="app"]/div[3]/div/div[2]/div[3]/a/div[1]
 ${TEAMKATTUGGLAWORKSPACE}  //*[@id="app"]/div[3]/div/div[2]/div[5]/a/div[1]
+
 
 #Agile Peacock Sprint 1 Variables (Temporary)
 ${newModelButton}  //*[@id="new-model-button"]
