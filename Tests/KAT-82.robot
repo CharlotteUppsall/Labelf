@@ -45,9 +45,6 @@ Ueser Can Change Model Name
 
 *** Variables ***
 
-${MODELSBUTTON}  //*[@id="app"]/div[7]/div[1]/nav/div/a[1]/div
-${TEAMKATTUGGLAU}  //*[@id="app"]/div[1]/div/div[2]/div[5]/a/div[1]
-${CLICKAWAY}  //*[@id="app"]/div[6]/div[1]/nav/div/div[3]/div/button
 
 
 *** Test Cases ***
