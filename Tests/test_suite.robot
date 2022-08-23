@@ -40,18 +40,3 @@ Create a Model
 #    Log in User
 #    Select Team Kattuggla As Workspace
 #    Create A Model
-
-User Can Create Single Labeleing
-    [Documentation]  Once a model is created; user is able to chose single labeling when training
-    [Tags]  Test 4  stagWorkspace  AG-200
-    #User Is Logged In, Have Changed Workspace And Created A Model
-    Login Kimchi
-    Go To  https://stag.labelf.ai/main/60/models/view
-    Sleep  15s
-    User Can See All Labels
-
-User delete model and then logging out
-    [Documentation]  Once a model is created; being able to delete a model and then log out
-    [Tags]  Model
-    Delete Model
-    Log Out User

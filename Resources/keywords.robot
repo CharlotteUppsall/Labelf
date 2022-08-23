@@ -203,6 +203,8 @@ Verify Created Model
 User Is Logged In, Have Changed Workspace And Created A Model
     Login Kimchi
     Create Model
+    Go To  https://stag.labelf.ai/main/60/models/view
+    Sleep  30s
 
 User Can See All Labels
     Wait Until Page Contains Element  ${overview_button}
@@ -218,47 +220,49 @@ User Can See All Labels
     Input Text  ${NEWLABELNAME}  Katt
     Wait Until Page Contains Element  ${ADDONELABEL}
     Click Element  ${ADDONELABEL}
-    Wait Until Page Contains Element  ${NAMEONFIRSTLABEL}
-    Element Text Should Be  ${NAMEONFIRSTLABEL}  KATT
-    Wait Until Page Contains Element  ${ADDSEKUNDLABEL}
-    Click Element  ${ADDSEKUNDLABEL}
-    Wait Until Page Contains Element  ${INPUTTEXTLABEL}
+    #Wait Until Element Is Visible  ${name_on_first_label}
+    #Element Text Should Be  ${name_on_first_label}  KATT
+    Sleep  1s
+    #Wait Until Page Contains Element  ${add_second_label}
+    Click Element  ${add_second_label}
+    #Wait Until Page Contains Element  ${INPUTTEXTLABEL}
+    Sleep  1s
     Input Text  ${INPUTTEXTLABEL2}  Uggla
-    Wait Until Page Contains Element  ${ADDEDSECONDLABELDONE}
+    Wait Until Page Contains Element  ${confirm_add_second_label}
     #detta element är addlabel efter Uggla
-    Click Element  ${ADDEDSECONDLABELDONE}
+    Click Element  ${confirm_add_second_label}
     Wait Until Page Contains  Choose model type
     Sleep  1s
-    Wait Until Page Contains Element  ${CHOOSESINGLE}
-    Click Element  ${CHOOSESINGLE}
+    Wait Until Page Contains Element  ${choose_single_choice}
+    Click Element  ${choose_single_choice}
     Wait Until Page Contains  Lets start by giving Labelf 20 samples
-    Wait Until Page Contains Element  ${KATTLABEL}
+    Wait Until Page Contains Element  ${label_named_katt}
     Sleep  1s
-    Click Element  ${KATTLABEL}
+    Click Element  ${label_named_katt}
     Wait Until Page Contains  Lets start by giving Labelf 19 samples
-    Wait Until Page Contains Element  ${UGGLALABEL}
+    Wait Until Page Contains Element  ${label_named_uggla}
     Sleep  1s
-    Click Element  ${UGGLALABEL}
+    Click Element  ${label_named_uggla}
     Wait Until Page Contains  Lets start by giving Labelf 18 samples
-    Wait Until Page Contains Element  ${KATTLABEL}
+    Wait Until Page Contains Element  ${label_named_katt}
     Sleep  1s
-    Click Element  ${KATTLABEL}
+    Click Element  ${label_named_katt}
     Wait Until Page Contains  Lets start by giving Labelf 17 samples
-    Wait Until Page Contains Element  ${UGGLALABEL}
+    Wait Until Page Contains Element  ${label_named_uggla}
     Sleep  1s
-    Click Element  ${UGGLALABEL}
+    Click Element  ${label_named_uggla}
     Wait Until Page Contains  Lets start by giving Labelf 16 samples
-    Wait Until Page Contains Element  ${KATTLABEL}
+    Wait Until Page Contains Element  ${label_named_katt}
     Sleep  1s
-    Click Element  ${KATTLABEL}
+    Click Element  ${label_named_katt}
     Wait Until Page Contains  Only 15 more to go!
-    Wait Until Page Contains Element  ${XBUTTON}
+    Wait Until Page Contains Element  ${close_button}
     Sleep  1s
-    Click Element  ${XBUTTON}
+    Click Element  ${close_button}
     Sleep  1s
     Wait Until Page Contains Element  ${MODELBUTTON}
     Click Element  ${MODELBUTTON}
-    Wait Until Page Contains Element  ${CHOOSEMODEL}
+    Wait Until Page Contains  Team Kimchi
 Select Team Kattuggla As Workspace
     Go To  https://stag.labelf.ai/main/68/models/view
     Wait Until Page Contains  Team Kattuggla

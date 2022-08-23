@@ -25,16 +25,16 @@ ${start_training}  //*[@id="app"]/div[8]/div[1]/main/div/div/div[2]/div/div[1]/d
 ${ADDLABEL}  //*[@id="app"]/div[4]/div/div[1]/div[4]/div/div/span/div/div/div[2]/div/div/button/div
 ${NEWLABELNAME}  //*[@id="app"]/div[5]/div/div[1]/div[4]/div/div/span/div/div[2]/form/div[1]/div/div/div[1]/div/div/div[1]/div/input
 ${ADDONELABEL}  //*[@id="app"]/div[5]/div/div[1]/div[4]/div/div/span/div/div[2]/form/div[2]/button/div
-${NAMEONFIRSTLABEL}  //*[@id="app"]/div[7]/div/div[1]/div[4]/div/div/span/div/div/div[2]/div/div/button[1]/div
-${ADDSEKUNDLABEL}  //*[@id="app"]/div[7]/div/div[1]/div[4]/div/div/span/div/div/div[2]/div/div/button[2]/div
-${CHOOSESINGLE}  //*[@id="app"]/div[8]/div/div/div[3]/button[1]/div
+${name_on_first_label}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div[2]/div/div[2]/div/div/button[1]/div
+${add_second_label}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div[2]/div/div[2]/div/div/button[2]/div
+${choose_single_choice}  //*[@id="app"]/div[9]/div/div/div[3]/button[1]/div
 ${INPUTTEXTLABEL}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div[2]/form/div[1]/div/div/div[1]/div/div/div[1]/div/input
-${INPUTTEXTLABEL2}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div[2]/form/div[1]/div/div/div[1]/div/div/div[1]/div/input
-${ADDEDSECONDLABELDONE}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div[2]/form/div[2]/button/div
-${XBUTTON}  //*[@id="app"]/div[8]/div/div[1]/div[1]/div/div/nav/div/a/div/i
-${MODELBUTTON}  //*[@id="app"]/div[9]/div[1]/nav/div/a[1]/div
-${KATTLABEL}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div[2]/div/div/button[1]/div
-${UGGLALABEL}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div[2]/div/div/button[2]/div
+${INPUTTEXTLABEL2}  //*[@id="app"]/div[9]/div/div[1]/div[4]/div/div/span/div[2]/div[2]/form/div[1]/div/div/div[1]/div/div/div[1]/div/input
+${confirm_add_second_label}  //*[@id="app"]/div[9]/div/div[1]/div[4]/div/div/span/div[2]/div[2]/form/div[2]/button/div
+${close_button}  //*[@id="close-button"]
+${MODELBUTTON}  //*[@id="models-button-navbar"]
+${label_named_katt}  //*[@id="app"]/div[9]/div/div[1]/div[4]/div/div/span/div[2]/div/div[2]/div/div/button[1]/div
+${label_named_uggla}  //*[@id="app"]/div[9]/div/div[1]/div[4]/div/div/span/div[2]/div/div[2]/div/div/button[2]/div
 
 
 #Model Creation Pages (From Kimchi)
