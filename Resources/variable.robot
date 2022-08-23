@@ -91,6 +91,25 @@ ${MODELBUTTON}  //*[@id="app"]/div[9]/div[1]/nav/div/a[1]/div
 
 
 #SingleLabeling-2.robot
+${BODYMODEL}              //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/nav/div
+${STARTTRAINING}          //*[@id="app"]/div[7]/div[1]/main/div/div/div[1]/div/div/div/div/nav/div/a[6]/div
+${ADDLABEL}               //*[@id="app"]/div[4]/div/div[1]/div[4]/div/div/span/div/div/div[2]/div/div/button/div/span
+${FIRSTNAMELABEL}         //*[@id="app"]/div[5]/div/div[1]/div[4]/div/div/span/div/div[2]/form/div[1]/div/div/div[1]/div/div/div[1]/div/input
+${ADDAFIRSTNAMEDLABEL}    //*[@id="app"]/div[5]/div/div[1]/div[4]/div/div/span/div/div[2]/form/div[2]/button/div
+${ADDASECOUNDLABEL}       //*[@id="app"]/div[7]/div/div[1]/div[4]/div/div/span/div/div/div[2]/div/div/button[2]/div
+${SECOUNDNAMELABEL}       //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div[2]/form/div[1]/div/div/div[1]/div/div/div[1]/div/input
+${ADDASECOUNDNAMEDLABEL}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div[2]/form/div[2]/button/div
+${SINGLECHOISE}           //*[@id="app"]/div[8]/div/div/div[3]/button[1]/div
+${TEST1LABEL}             //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div[2]/div/div/button[1]/div
+${DATAPOINT}              //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div[1]/div[1]/div/span
+${ESCBUTTON}              //*[@id="app"]/div[8]/div/div[1]/div[1]/div/div/nav/div/a/div/i
+${MODELBUTTON}            //*[@id="app"]/div[9]/div[1]/nav/div/a[1]/div/i
+${ADDALABEL}              //*[@id="app"]/div[8]/div/div[1]/div[3]/div/a/div/span
+${NAMEONTHIRDLABEL}       //*[@id="app"]/div[2]/div/div/form/div[2]/div/div/div[1]/div/div/div[1]/div/input
+${ADDLABELBUTTON}         //*[@id="app"]/div[2]/div/div/form/div[3]/button/div
+${LABEL1}                 //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div[2]/div/div/button[1]/div
+${LABEL2}                 //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div[2]/div/div/button[2]/div
+${LABEL3}                 //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div[2]/div/div/button[3]/div
 
 
 #webtest.robot
