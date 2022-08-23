@@ -51,6 +51,9 @@ ${MODELSBUTTON}  //*[@id="app"]/div[4]/div[1]/nav/div/a[1]/div/span[1]
 
 
 #NavToWorkspace.robot
+${TKU}  //*[@id="app"]/div[1]/div/div[2]/div[5]
+${MFW1}  //*[@id="app"]/div[1]/div/div[2]/div[4]
+${MFW2}  //*[@id="app"]/div[1]/div/div[2]/div[3]
 
 
 #SeeAllLabels.robot
