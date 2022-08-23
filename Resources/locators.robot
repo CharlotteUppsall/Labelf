@@ -4,6 +4,7 @@ ${login_email_field}  xpath:/html/body/div[1]/div/div/main/div/div/div/div/div/d
 ${login_password_field}  //*[@id="password"]
 ${login_button}  //*[@id="app"]/div/main/div/div/div/div/div/div[2]/button[2]
 ${diffuse_cookie_button}  //*[@id="diffuse-cookie-notice"]/div/div/div/div[2]/button[3]
+${my_models_text}  //*[@id="app"]/div[6]/div[1]/main/div/div/nav/div/div[1]
 
 #Models Overview Page
 ${workspace_dropdown_menu}  //*[@class="v-btn v-btn--flat v-btn--large theme--light"]
@@ -72,3 +73,9 @@ ${uploadPageContinue}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/d
 ${inputNametextField}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/form/div[1]/div/div/div[1]/div/div/div[1]/div/input
 ${modelName}  TestModel
 ${createModelButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/form/div[2]/button
+
+#Kimchi General Buttons
+${delete_button}  //button[contains(.,'Delete')]
+${continue_button}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/div/div[3]/button
+${submit_button}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[2]/div/div[1]/div/div[3]/div/div[2]/div/div[2]/button[2]
+${continue_general_button}  //*[contains(.,'Continue')]

@@ -2,6 +2,8 @@
 Resource  variables.robot
 Resource  locators.robot
 
+Library  ../Scripts/remove_text.py
+
 *** Keywords ***
 #Setup and Teardown
 Start WebTest
@@ -96,6 +98,12 @@ User Opens Single Model Options Dropdown List
 
 Workspace Is Empty
     Wait Until Page Contains  My Models (0)
+    Verify Model Is Deleted
+Verify Model Is Deleted
+    Wait Until Element Is Visible  ${my_models_text}
+    ${element_text}  Get Text  ${my_models_text}
+    ${actual_amount}  convert into number  ${element_text}
+    Should Be True  ${actual_amount} == 0
 
 User Clicks Delete Model Option
     Wait Until Page Contains Element  ${delete_option}
@@ -183,5 +191,13 @@ Press Create New Model
 Verify Created Model
     Wait Until Page Contains  ${modelname}
 
-
+#Kimchi Delete Model
+#Delete Single Automated Test Model
+    User Is Logged In And On An Workspace Containing One Model
+    User Opens Single Model Options Dropdown List
+    User Clicks Delete Model Option
+    Workspace Is Empty
+#Kattuggla Delete Model
+#Agile Peacock Delete Model
+#Agile Peacock Delete Model
 

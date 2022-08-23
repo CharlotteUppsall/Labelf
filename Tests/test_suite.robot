@@ -17,7 +17,7 @@ User Login To Labelf
 
 Create a Model
     [Documentation]  Test that verifies user creation of model on labelf
-    [Tags]  Test 2  stagWorkspace  AG-119
+    [Tags]  Test 2  stagWorkspace  AG-184
     Given User Is Logged In And On An Empty Workspace
     When User Clicks Button "New Model" And To Create A New Model From Scratch
     And Select An Existing Dataset
@@ -25,12 +25,10 @@ Create a Model
     Then Model Is Created On Workspace
     And Model Description Is Presented In Model Overview
 
-#User Can Create Model
-#    [Documentation]  Once workspace is changed; being able to create model
-#    [Tags]  Model
-#    Create A Model
-
-#User Can Create A Model
-#    [Documentation]   Test that verifies that a model is created.
-#    [Tags]  AG_16
-#    Create Model
+Delete Single Model
+    [Documentation]  Deletes single model, only to be used on workspace with only 1 model.
+    [Tags]  Testcase 4  stagWorkspace  AG-184
+    Given User Is Logged In And On An Workspace Containing One Model
+    When User Opens Single Model Options Dropdown List
+    And User Clicks Delete Model Option
+    Then Workspace Is Empty
