@@ -86,6 +86,7 @@ User Clicks Button "New Model" And To Create A New Model From Scratch
      Wait Until Page Contains  Add a model
      Click Button  ${continue_create_model_button}
      Wait Until Page Contains  Setup
+
 User Is Logged In And On An Empty Workspace
     Go To  ${stag_workspace_model_view}
     Wait Until Page Contains  My Models (0)
@@ -120,18 +121,19 @@ User Clicks Delete Model Option
     Click Button  ${DeleteButton}
 
 Select An Existing Dataset
-     Scroll Element Into View   ${DataSelectCustomerSupportButton}
+     Scroll Element Into View   ${data_select_customer_service-button}
      Sleep  0.2
-     Click Element   ${DataSelectCustomerSupportButton}
+     Click Element   ${data_select_customer_service-button}
      Wait Until Page Contains  Please click on the column
      Wait Until Page Contains Element  ${ContinueWithSelectedDatasetColumnButton}
      Sleep  0.2  # To allow time for page animation
      Click Element  ${ContinueWithSelectedDatasetColumnButton}
 
 Set A Name And Description For Model
-     FOR  ${INT}  IN RANGE  36
-        Press Keys  ${InputNameTextField}  \\8
-     END
+#Greyed out for loop temp for quicker tests
+#     FOR  ${INT}  IN RANGE  36
+#        Press Keys  ${InputNameTextField}  \\8
+#     END
      Press Keys  ${InputNameTextField}  CTRL+A+DELETE
      Input Text  ${InputNameTextField}   ${ModelName}
      Input Text   ${InputDescriptiontextField}  ${ModelDescription}
@@ -203,7 +205,6 @@ Verify Created Model
 User Is Logged In, Have Changed Workspace And Created A Model
     Login Kimchi
     Create Model
-    Go To  https://stag.labelf.ai/main/60/models/view
     Sleep  30s
 User Adds Single Choice Labels
     Wait Until Page Contains Element  ${overview_button}
@@ -263,6 +264,7 @@ User Can See All Labels
     Wait Until Page Contains Element  ${MODELBUTTON}
     Click Element  ${MODELBUTTON}
     Wait Until Page Contains  Team Kimchi
+    Delete Single Automated Test Model
 Select Team Kattuggla As Workspace
     Go To  https://stag.labelf.ai/main/68/models/view
     Wait Until Page Contains  Team Kattuggla
