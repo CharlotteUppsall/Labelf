@@ -17,7 +17,7 @@ Start WebTest
 
     Create Webdriver    Chrome    chrome_options=${chrome_options}
 
-    Open Browser  about:blank  chrome
+    Open Browser  about:blank  headlesschrome
     Set Selenium Speed  0.2s
     Set Window Size  1920  1080
     Go To  ${stag_login_site}
@@ -220,13 +220,11 @@ User Adds Single Choice Labels
     Input Text  ${NEWLABELNAME}  Katt
     Wait Until Page Contains Element  ${ADDONELABEL}
     Click Element  ${ADDONELABEL}
-    #Wait Until Element Is Visible  ${name_on_first_label}
-    #Element Text Should Be  ${name_on_first_label}  KATT
-    Sleep  1s
-    #Wait Until Page Contains Element  ${add_second_label}
+    Wait Until Element Is Visible  ${name_on_first_label}
+    Element Text Should Be  ${name_on_first_label}  KATT
+    Wait Until Page Contains Element  ${add_second_label}
     Click Element  ${add_second_label}
-    #Wait Until Page Contains Element  ${INPUTTEXTLABEL}
-    Sleep  1s
+    Wait Until Page Contains Element  ${INPUTTEXTLABEL2}
     Input Text  ${INPUTTEXTLABEL2}  Uggla
     Wait Until Page Contains Element  ${confirm_add_second_label}
     #detta element är addlabel efter Uggla
