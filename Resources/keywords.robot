@@ -17,7 +17,7 @@ Start WebTest
 
     Create Webdriver    Chrome    chrome_options=${chrome_options}
 
-    Open Browser  about:blank  headlesschrome
+    Open Browser  about:blank  chrome
     Set Selenium Speed  0.2s
     Set Window Size  1920  1080
     Go To  ${stag_login_site}
@@ -70,6 +70,12 @@ Log in User
     Input Text  ${login_password_field}  ${password_kattuggla}
     Click Element   ${login_button}
     Wait Until Page Contains  My Models
+
+#Kimchi Verify radio button
+Multiple Choice Is Provided As Option
+
+    Wait Until Page Contains Element  ${MultipleChoiceButton}
+    Wait Until Page Contains  Multiple Choice
 
 #Kimchi Create Model
 Create Model
@@ -305,3 +311,9 @@ User Adds Multiple Choice Label
     Wait Until Page Contains  Choose model type
     Sleep  1s
 
+Radio Buttons For Created Labels Is Shown
+    Wait Until Page Contains  Katt
+    Wait Until Page Contains  Uggla
+
+Multiple Choice Is Selected
+    Click Element  ${MultipleChoiceButton}
