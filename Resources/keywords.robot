@@ -121,9 +121,9 @@ User Clicks Delete Model Option
     Click Button  ${DeleteButton}
 
 Select An Existing Dataset
-     Scroll Element Into View   ${data_select_customer_service-button}
+     Scroll Element Into View   ${data_select_customer_service_button}
      Sleep  0.2
-     Click Element   ${data_select_customer_service-button}
+     Click Element   ${data_select_customer_service_button}
      Wait Until Page Contains  Please click on the column
      Wait Until Page Contains Element  ${ContinueWithSelectedDatasetColumnButton}
      Sleep  0.2  # To allow time for page animation

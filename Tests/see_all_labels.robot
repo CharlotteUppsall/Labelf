@@ -13,9 +13,3 @@ User Can Create Single Labeleing
     Given User Is Logged In, Have Changed Workspace And Created A Model
     When User Adds Single Choice Labels
     Then User Can See All Labels
-
-#User delete model and then logging out
-#    [Documentation]  Once a model is created; being able to delete a model and then log out
-#    [Tags]  Model
-#    Delete Model
-#    Log Out User

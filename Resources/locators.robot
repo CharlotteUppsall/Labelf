@@ -52,7 +52,7 @@ ${SliceSport}  css:div#plotly > div.plot-container.plotly > div > svg:nth-child(
 #Dataset (From Kimchi)
 ${DataSelectCustomerSupportButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[3]/div/div[2]/div/div/div[2]/button/div
 ${DataSelectCustomerResponseButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[2]/div/div/div/div/div[2]/button/div
-${data_select_customer_service-button}  //*[@id="continue-dataset-card"]
+${data_select_customer_service_button}  //*[@id="continue-dataset-card"]
 ${DataSelectPartlyPreLabledButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[2]/div/div[2]/div/div/div[2]/button
 ${ContinueWithSelectedDatasetColumnButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/div[2]/button
 ${UseLabelsToContinueToTrainTheModelCheckBox}  //*[contains(text(),'Use labels to continue to train the model')]
