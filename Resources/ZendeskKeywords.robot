@@ -11,6 +11,7 @@ Start WebTest
 
     Create Webdriver    Chrome    chrome_options=${chrome_options}
     Set Selenium speed  0.2s
+    Set Selenium Timeout  10s
     Set Window Size  1600  900
 
 User navigates to Zendesk.com
@@ -19,9 +20,9 @@ User navigates to Zendesk.com
 
 User enter account information
 # TODO: Put credentials into variables.
-    Press Keys  None  linus.callheim@gu.se
+    Press Keys  None  ${zendesk_usesr_email}
     Press Keys  None  TAB
-    Press Keys  None  begs5nyt
+    Press Keys  None  ${zendesk_usesr_password}
     Press Keys  None  TAB+RETURN
 
 User should be at his Zendesk workspace
