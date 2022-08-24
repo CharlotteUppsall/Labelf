@@ -279,3 +279,29 @@ Select Team Kattuggla As Workspace
 #    Wait Until Page Contains  My first workspace
 #    Click Element  //*[@id="app"]/div[6]/div[1]/nav/div/div[3]/div/button
 
+User Adds Multiple Choice Label
+    Wait Until Page Contains Element  ${overview_button}
+    Click Element  ${overview_button}
+    Wait Until Page Contains  It does not look like you have trained the model
+    Wait Until Page Contains Element  ${start_training}
+    Click Element  ${start_training}
+    Wait Until Page Contains  You must add at least two labels before Labelf can start learning!
+    Wait Until Page Contains Element  ${ADDLABEL}
+    Click Element  ${ADDLABEL}
+    Wait Until Page Contains  Add a new label
+    Wait Until Page Contains Element  ${NEWLABELNAME}
+    Input Text  ${NEWLABELNAME}  Katt
+    Wait Until Page Contains Element  ${ADDONELABEL}
+    Click Element  ${ADDONELABEL}
+    Wait Until Element Is Visible  ${name_on_first_label}
+    Element Text Should Be  ${name_on_first_label}  KATT
+    Wait Until Page Contains Element  ${add_second_label}
+    Click Element  ${add_second_label}
+    Wait Until Page Contains Element  ${INPUTTEXTLABEL2}
+    Input Text  ${INPUTTEXTLABEL2}  Uggla
+    Wait Until Page Contains Element  ${confirm_add_second_label}
+    #detta element är addlabel efter Uggla
+    Click Element  ${confirm_add_second_label}
+    Wait Until Page Contains  Choose model type
+    Sleep  1s
+
