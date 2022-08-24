@@ -16,6 +16,5 @@ Login to Zendesk workspace
     [Documentation]  TODO
     [Tags]  zendesk
     Given User navigates to Zendesk.com
-  #  when User enter account information
-   # And  User press Login Button
-    #then  User should be at his Zendesk workspace
+     When User enter account information
+     Then User should be at his Zendesk workspace
