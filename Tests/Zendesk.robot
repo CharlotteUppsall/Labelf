@@ -1,6 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
-
+Resource  ../PageObjects/ZendeskVariables.robot
 Suite Setup  Start WebTest
 Suite Teardown  Close All Browsers
 *** Keywords ***
@@ -16,8 +16,8 @@ Start WebTest
     Create Webdriver    Chrome    chrome_options=${chrome_options}
 
     #Open Browser  about:blank  chrome
-    Set Selenium Speed  0.2s
-    Set Window Size  1920  1080
+    #Set Selenium Speed  0.2s
+    Set Window Size  1600  900
 
 
 *** Test Cases ***
@@ -25,6 +25,5 @@ Start WebTest
 Navigate to Zendesk workspace
     [Documentation]  First test
     [Tags]  zendesk
-    go to  https://kimchiab.zendesk.com
-    Location should be  https://kimchiab.zendesk.com/access/unauthenticated
-    ## TODO: make 'kimchiab' part of URLs into variable that can easily be changed.
+    go to  https://${zendesk_domain}.zendesk.com
+    Location should be  https://${zendesk_domain}.zendesk.com/access/unauthenticated
