@@ -78,13 +78,14 @@ Confirm User Logged In
 #    Wait Until Page Contains  Multiple Choice
 
 #Kimchi Create Model
-Create Model
-    User Is Logged In And On An Empty Workspace
-    User Clicks Button "New Model" And To Create A New Model From Scratch
-    Select An Existing Dataset
-    Set A Name And Description For Model
-    Model Is Created On Workspace
-    Model Description Is Presented In Model Overview
+#Create Model
+#    User Is Logged In And On An Empty Workspace
+#    User Clicks Button "New Model" And To Create A New Model From Scratch
+#    Select An Existing Dataset
+#    Set A Name And Description For Model
+#    Model Is Created On Workspace
+#    Model Description Is Presented In Model Overview
+
 User Clicks Button "New Model" And To Create A New Model From Scratch
      Wait Until Page Contains Element  ${new_model_button}
      Sleep  0.2
@@ -338,3 +339,53 @@ Set A Name And Description For Model
 
 #Multiple Choice Is Selected
 #    Click Element  ${MultipleChoiceButton}
+
+# Kimchi 3ModelTrainingStage
+User Has Selected Bring Your Own Labels
+    Go To  ${stag_login_site}
+    Input User Credential
+#   Confirm Cookie - överflödig?
+    Press Login Button
+    Confirm User Logged In
+    Go To  ${StagWorkspaceModelView}
+    User Clicks Button "New Model" And To Create A New Model From Scratch    # se rad-119
+    Click Element  ${DataSelectPartlyPreLabledButton}
+    Wait Until Page Contains  Please click on the column
+    Click Element  ${LabelSwitchButton}
+User Clicks Button "New Model" And To Create A New Model From Scratch
+     Wait Until Page Contains Element  ${new_model_button}
+     Sleep  0.2
+     Click Element   ${new_model_button}
+     Wait Until Page Contains  Add a model
+     Click Button  ${continue_create_model_button}
+     Wait Until Page Contains  Setup
+User Clicks Continue
+     Wait Until Page Contains Element  ${ContinueWithSelectedDatasetColumnButton}
+     Sleep  0.2  # To allow time for page animation
+     Click Element  ${ContinueWithSelectedDatasetColumnButton}
+     Wait Until Page Contains  Please click on the column containing the labels
+The Slider "One Text Can Contain Multiple Labels" Is Presented
+     Wait Until Page Contains Element  ${MultiplLabelsSwitchButton}
+Verify "One Text Can Have Multiple Labels" Is Enabled When Clicked
+     Click Element  ${MultiplLabelsSwitchButton}
+     Element Should Be Enabled  ${MultiplLabelsSwitchButton}
+
+Set A Name And Description For Model
+#Greyed out for loop temp for quicker tests
+#     FOR  ${INT}  IN RANGE  36
+#        Press Keys  ${InputNameTextField}  \\8
+#     END
+     Press Keys  ${InputNameTextField}  CTRL+A+DELETE
+     Input Text  ${InputNameTextField}   ${ModelName}
+     Input Text   ${InputDescriptiontextField}  ${ModelDescription}
+     Click Button  ${CreateModelButton}
+     Wait Until Page Contains  My Models
+User Navigate To Model Overview
+    Go To   ${StagWorkspaceModelView}
+    Click Element  ${OverviewButton}
+    Wait Until Page Contains  Overview
+Verify that all labels from original dataset are shown in Model overview
+     Wait Until Page Contains  Negative
+     Wait Until Page Contains  Positive
+     Wait Until Page Contains  Neutral
+     Wait Until Page Contains  N/A

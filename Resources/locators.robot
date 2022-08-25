@@ -8,7 +8,7 @@ ${my_models_text}  //*[@id="app"]/div[6]/div[1]/main/div/div/nav/div/div[1]
 
 #Models Page
 ${workspace_dropdown_menu}  //*[@class="v-btn v-btn--flat v-btn--large theme--light"]
-${stag_workspace_model_view}  https://stag.labelf.ai/main/60/models/view
+${StagWorkspaceModelView}  https://stag.labelf.ai/main/60/models/view
 ${app_workspace_model_view}  https://app.labelf.ai/main/387/models/view
 ${single_model_options_button}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/nav/div/div[3]/div/button/div/i
 ${overview_button}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/div[2]/a/div

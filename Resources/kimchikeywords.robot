@@ -8,32 +8,33 @@ Input User Credential
     Wait Until Page Contains  Don't have an account? Sign up
     Input Text    ${login_email_field}  ${email_kimchi}
     Input Text    ${login_password_field}  ${password_kimchi}
-Confirm User Logged In
-    Wait Until Page Contains  My Models
 Press Login Button
     Click Element  ${LoginButton}
+Confirm User Logged In
+    Wait Until Page Contains  My Models
+
 #Setup and Teardown
-Start WebTest
-    ${chrome_options}=  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
-    Call Method    ${chrome_options}    add_argument  --disable-dev-shm-usage
-    Call Method    ${chrome_options}    add_argument    test-type
-    Call Method    ${chrome_options}    add_argument    --disable-extensions
-    Call Method    ${chrome_options}    add_argument    --headless  # Comment away to capture video
-    Call Method    ${chrome_options}    add_argument    --disable-gpu
-    Call Method    ${chrome_options}    add_argument    --no-sandbox
+#Start WebTest
+#    ${chrome_options}=  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
+#    Call Method    ${chrome_options}    add_argument  --disable-dev-shm-usage
+#    Call Method    ${chrome_options}    add_argument    test-type
+#    Call Method    ${chrome_options}    add_argument    --disable-extensions
+#    Call Method    ${chrome_options}    add_argument    --headless  # Comment away to capture video
+#    Call Method    ${chrome_options}    add_argument    --disable-gpu
+#    Call Method    ${chrome_options}    add_argument    --no-sandbox
 
-    Create Webdriver    Chrome    chrome_options=${chrome_options}
+#    Create Webdriver    Chrome    chrome_options=${chrome_options}
 
-    Open Browser  about:blank  headlesschrome
-    Set Selenium Speed  0.2s
-    Set Window Size  1920  1080
-    Go To  ${stag_login_site}
-    Wait Until Element Is Visible  ${diffuse_cookie_button}
-    Click Button  ${diffuse_cookie_button}
+#    Open Browser  about:blank  headlesschrome
+ #   Set Selenium Speed  0.2s
+ #   Set Window Size  1920  1080
+ #   Go To  ${stag_login_site}
+ #   Wait Until Element Is Visible  ${diffuse_cookie_button}
+ #   Click Button  ${diffuse_cookie_button}
 
-End WebTest
+#End WebTest
     #Verify Workspace Is Empty
-    Close All Browsers
+#   Close All Browsers
 
 #End Model Creation Test
 #    Delete Single Automated Test Model

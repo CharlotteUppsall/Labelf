@@ -93,11 +93,6 @@
 #That Model Is Trained With Three Labels
 #    Wait until Page Contains  Lets start by giving Labelf 16 samples
 
-User Navigate To Model Overview
-    Go To   ${StagWorkspaceModelView}
-    Click Element  ${OverviewButton}
-    Wait Until Page Contains  Overview
-
 # The Trained Labels Are Shown In Report
 #    Scroll Element Into View  //*[contains(text(),'Connected Datasets')]
 #    Wait Until Page Contains  Sport
@@ -110,16 +105,24 @@ User Navigate To Model Overview
 #    Wait Until Element contains  ${SliceFakeNews}  16.7
 
 User Has Selected Bring Your Own Labels
-    Go To  ${StagLoginSite}
+    Go To  ${stag_login_site}
     Input User Credential
-    Confirm Cookie
+#   Confirm Cookie - överflödig?
     Press Login Button
     Confirm User Logged In
     Go To  ${StagWorkspaceModelView}
-    User Clicks Button "New Model" And To Create A New Model From Scratch
+    User Clicks Button "New Model" And To Create A New Model From Scratch    # se rad-119
     Click Element  ${DataSelectPartlyPreLabledButton}
     Wait Until Page Contains  Please click on the column
     Click Element  ${LabelSwitchButton}
+
+User Clicks Button "New Model" And To Create A New Model From Scratch
+     Wait Until Page Contains Element  ${new_model_button}
+     Sleep  0.2
+     Click Element   ${new_model_button}
+     Wait Until Page Contains  Add a model
+     Click Button  ${continue_create_model_button}
+     Wait Until Page Contains  Setup
 
 User Clicks Continue
      Wait Until Page Contains Element  ${ContinueWithSelectedDatasetColumnButton}
@@ -129,6 +132,11 @@ User Clicks Continue
 
 The Slider "One Text Can Contain Multiple Labels" Is Presented
      Wait Until Page Contains Element  ${MultiplLabelsSwitchButton}
+
+User Navigate To Model Overview
+    Go To   ${StagWorkspaceModelView}
+    Click Element  ${OverviewButton}
+    Wait Until Page Contains  Overview
 
 Verify "One Text Can Have Multiple Labels" Is Enabled When Clicked
      Click Element  ${MultiplLabelsSwitchButton}

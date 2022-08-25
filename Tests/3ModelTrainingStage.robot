@@ -13,7 +13,11 @@ Library  SeleniumLibrary
 
 Suite Setup  Start WebTest
 Suite Teardown  End WebTest
+Resource  ../Resources/variables.robot
+Resource  ../Resources/locators.robot
+Resource  ../Resources/keywords.robot
 
+Library  ../Scripts/remove_text.py
 
 *** Test Cases ***
 
@@ -30,6 +34,6 @@ All Labels From Original Dataset Are Shown In Model Overview
     [Documentation]  When user creates model all labels from original dataset are shown in Model overview
     [Tags]  Testcase 2  stagWorkspace
     Given Click Element  ${ContinueButton}
-          Set A Name And Description For Model
+    And Set A Name And Description For Model
     When User Navigate To Model Overview
     Then Verify that all labels from original dataset are shown in Model overview
