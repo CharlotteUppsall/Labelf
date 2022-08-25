@@ -19,6 +19,7 @@ Start WebTest
 
     Open Browser  about:blank  chrome
     Set Selenium Speed  0.2s
+    Set Selenium Timeout  10s
     Set Window Size  1920  1080
     Go To  ${stag_login_site}
     Wait Until Element Is Visible  ${diffuse_cookie_button}
