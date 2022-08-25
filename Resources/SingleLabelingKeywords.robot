@@ -6,7 +6,6 @@ Library  ../Scripts/remove_text.py
 *** Keywords ***
 user is logged in
     Start WebTest
-#    Go To Stag Login Page
     Log in User
 user creates a new model
     Select Team Kattuggla As Workspace
@@ -22,11 +21,11 @@ Add labels for model
     Sleep  5s
     Wait Until Page Contains Element  ${STARTTRAINING}
     Click Element    ${STARTTRAINING}
-    Sleep  240s
+    Sleep  120s
     Reload Page
-    Sleep  7s
+    Sleep  2s
     Wait Until Page Contains  You must add at least two labels before Labelf can start learning!
-    Wait Until Page Contains Element    ${ADDONELABEL220824}
+    Wait Until Page Contains Element   ${ADDLABEL}
     Click Element  ${ADDLABEL}
     Wait Until Page Contains  Add a new label
     Wait Until Page Contains Element  ${NEWLABELNAME}
