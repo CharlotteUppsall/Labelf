@@ -146,6 +146,8 @@ Model Description Is Presented In Model Overview
 #Kattuggla Create a Model
 Create A Model
     Sleep  1s
+    Reload Page
+    Sleep  5s
     Wait Until Page Contains Element  ${new_model_button}
     Click Element  ${new_model_button}
     Wait Until Page Contains  Create your own model from scratch.
@@ -262,7 +264,7 @@ User Can See All Labels
 Select Team Kattuggla As Workspace
     Go To  https://stag.labelf.ai/main/68/models/view
     Wait Until Page Contains  Team Kattuggla
-    Click Element  ${models_button}
+    #Click Element  ${models_button}
     Reload Page
 #    Sleep  1s
 #    Wait Until Page Contains Element  ${MAINMENU}
@@ -275,3 +277,27 @@ Select Team Kattuggla As Workspace
 #    Wait Until Page Contains  My first workspace
 #    Click Element  //*[@id="app"]/div[6]/div[1]/nav/div/div[3]/div/button
 
+Go To Stag Login Page
+    Go to    https://stag.labelf.ai/login   #${stagLoginPage}
+
+#kattugla delete model
+Delete Model
+    Wait Until Page Contains  My Models
+    Wait Until Page Contains Element  ${MODELMENU}
+    Click Element  ${MODELMENU}
+    Wait Until Page Contains Element  ${DELETE}
+    Click Element   ${DELETE}
+    Sleep  1s
+    Wait Until Page Contains Element  ${SUREDELETE}
+    Click Element  ${SUREDELETE}
+    Sleep  1s
+
+#kattuggla log out user
+Log Out User
+    Sleep  1s
+    Wait Until Page Contains Element  ${USERACCOUNT}
+    Click Element  ${USERACCOUNT}
+    Wait Until Page Contains Element  ${ACCOUNTLIST}
+    Click Element  ${LOGOUT}
+    Wait Until Page Contains  Forgot your password?
+    #Location Should Be    #${stagLoginPage}
