@@ -272,7 +272,7 @@ User Can See All Labels
 Select Team Kattuggla As Workspace
     Go To  https://stag.labelf.ai/main/68/models/view
     Wait Until Page Contains  Team Kattuggla
-    Click Element  ${models_button}
+    #Click Element  ${models_button}  den är redan inne i models view...
     Reload Page
 #    Sleep  1s
 #    Wait Until Page Contains Element  ${MAINMENU}
@@ -338,3 +338,7 @@ Radio Buttons For Created Labels Is Shown
 
 Multiple Choice Is Selected
     Click Element  ${MultipleChoiceButton}
+
+
+#Go To Stag Login Page
+#    Go To
