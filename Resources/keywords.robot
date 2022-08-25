@@ -71,6 +71,12 @@ Log in User
     Click Element   ${login_button}
     Wait Until Page Contains  My Models
 
+#Kimchi Verify radio button
+Multiple Choice Is Provided As Option
+
+    Wait Until Page Contains Element  ${MultipleChoiceButton}
+    Wait Until Page Contains  Multiple Choice
+
 #Kimchi Create Model
 Create Model
     User Is Logged In And On An Empty Workspace
@@ -86,6 +92,7 @@ User Clicks Button "New Model" And To Create A New Model From Scratch
      Wait Until Page Contains  Add a model
      Click Button  ${continue_create_model_button}
      Wait Until Page Contains  Setup
+
 User Is Logged In And On An Empty Workspace
     Go To  ${stag_workspace_model_view}
     Wait Until Page Contains  My Models (0)
@@ -120,18 +127,19 @@ User Clicks Delete Model Option
     Click Button  ${DeleteButton}
 
 Select An Existing Dataset
-     Scroll Element Into View   ${DataSelectCustomerSupportButton}
+     Scroll Element Into View   ${data_select_customer_service_button}
      Sleep  0.2
-     Click Element   ${DataSelectCustomerSupportButton}
+     Click Element   ${data_select_customer_service_button}
      Wait Until Page Contains  Please click on the column
      Wait Until Page Contains Element  ${ContinueWithSelectedDatasetColumnButton}
      Sleep  0.2  # To allow time for page animation
      Click Element  ${ContinueWithSelectedDatasetColumnButton}
 
 Set A Name And Description For Model
-     FOR  ${INT}  IN RANGE  36
-        Press Keys  ${InputNameTextField}  \\8
-     END
+#Greyed out for loop temp for quicker tests
+#     FOR  ${INT}  IN RANGE  36
+#        Press Keys  ${InputNameTextField}  \\8
+#     END
      Press Keys  ${InputNameTextField}  CTRL+A+DELETE
      Input Text  ${InputNameTextField}   ${ModelName}
      Input Text   ${InputDescriptiontextField}  ${ModelDescription}
@@ -203,8 +211,8 @@ Verify Created Model
 User Is Logged In, Have Changed Workspace And Created A Model
     Login Kimchi
     Create Model
-
-User Can See All Labels
+    Sleep  30s
+User Adds Single Choice Labels
     Wait Until Page Contains Element  ${overview_button}
     Click Element  ${overview_button}
     Wait Until Page Contains  It does not look like you have trained the model
@@ -218,51 +226,53 @@ User Can See All Labels
     Input Text  ${NEWLABELNAME}  Katt
     Wait Until Page Contains Element  ${ADDONELABEL}
     Click Element  ${ADDONELABEL}
-    Wait Until Page Contains Element  ${NAMEONFIRSTLABEL}
-    Element Text Should Be  ${NAMEONFIRSTLABEL}  KATT
-    Wait Until Page Contains Element  ${ADDSEKUNDLABEL}
-    Click Element  ${ADDSEKUNDLABEL}
-    Wait Until Page Contains Element  ${INPUTTEXTLABEL}
+    Wait Until Element Is Visible  ${name_on_first_label}
+    Element Text Should Be  ${name_on_first_label}  KATT
+    Wait Until Page Contains Element  ${add_second_label}
+    Click Element  ${add_second_label}
+    Wait Until Page Contains Element  ${INPUTTEXTLABEL2}
     Input Text  ${INPUTTEXTLABEL2}  Uggla
-    Wait Until Page Contains Element  ${ADDEDSECONDLABELDONE}
+    Wait Until Page Contains Element  ${confirm_add_second_label}
     #detta element är addlabel efter Uggla
-    Click Element  ${ADDEDSECONDLABELDONE}
+    Click Element  ${confirm_add_second_label}
     Wait Until Page Contains  Choose model type
     Sleep  1s
-    Wait Until Page Contains Element  ${CHOOSESINGLE}
-    Click Element  ${CHOOSESINGLE}
+    Wait Until Page Contains Element  ${choose_single_choice}
+    Click Element  ${choose_single_choice}
     Wait Until Page Contains  Lets start by giving Labelf 20 samples
-    Wait Until Page Contains Element  ${KATTLABEL}
+    Wait Until Page Contains Element  ${label_named_katt}
     Sleep  1s
-    Click Element  ${KATTLABEL}
+    Click Element  ${label_named_katt}
     Wait Until Page Contains  Lets start by giving Labelf 19 samples
-    Wait Until Page Contains Element  ${UGGLALABEL}
+    Wait Until Page Contains Element  ${label_named_uggla}
     Sleep  1s
-    Click Element  ${UGGLALABEL}
+    Click Element  ${label_named_uggla}
     Wait Until Page Contains  Lets start by giving Labelf 18 samples
-    Wait Until Page Contains Element  ${KATTLABEL}
+    Wait Until Page Contains Element  ${label_named_katt}
     Sleep  1s
-    Click Element  ${KATTLABEL}
+    Click Element  ${label_named_katt}
     Wait Until Page Contains  Lets start by giving Labelf 17 samples
-    Wait Until Page Contains Element  ${UGGLALABEL}
+    Wait Until Page Contains Element  ${label_named_uggla}
     Sleep  1s
-    Click Element  ${UGGLALABEL}
+    Click Element  ${label_named_uggla}
     Wait Until Page Contains  Lets start by giving Labelf 16 samples
-    Wait Until Page Contains Element  ${KATTLABEL}
+    Wait Until Page Contains Element  ${label_named_katt}
     Sleep  1s
-    Click Element  ${KATTLABEL}
+    Click Element  ${label_named_katt}
     Wait Until Page Contains  Only 15 more to go!
-    Wait Until Page Contains Element  ${XBUTTON}
+User Can See All Labels
+    Wait Until Page Contains Element  ${close_button}
     Sleep  1s
-    Click Element  ${XBUTTON}
+    Click Element  ${close_button}
     Sleep  1s
     Wait Until Page Contains Element  ${MODELBUTTON}
     Click Element  ${MODELBUTTON}
-    Wait Until Page Contains Element  ${CHOOSEMODEL}
+    Wait Until Page Contains  Team Kimchi
+    Delete Single Automated Test Model
 Select Team Kattuggla As Workspace
     Go To  https://stag.labelf.ai/main/68/models/view
     Wait Until Page Contains  Team Kattuggla
-    Click Element  ${models_button}
+    #Click Element  ${models_button}  den är redan inne i models view...
     Reload Page
 #    Sleep  1s
 #    Wait Until Page Contains Element  ${MAINMENU}
@@ -275,3 +285,60 @@ Select Team Kattuggla As Workspace
 #    Wait Until Page Contains  My first workspace
 #    Click Element  //*[@id="app"]/div[6]/div[1]/nav/div/div[3]/div/button
 
+User Adds Multiple Choice Label
+    Wait Until Page Contains Element  ${overview_button}
+    Click Element  ${overview_button}
+    Wait Until Page Contains  It does not look like you have trained the model
+    Wait Until Page Contains Element  ${start_training}
+    Click Element  ${start_training}
+    Wait Until Page Contains  You must add at least two labels before Labelf can start learning!
+    Wait Until Page Contains Element  ${ADDLABEL}
+    Click Element  ${ADDLABEL}
+    Wait Until Page Contains  Add a new label
+    Wait Until Page Contains Element  ${NEWLABELNAME}
+    Input Text  ${NEWLABELNAME}  Katt
+    Wait Until Page Contains Element  ${ADDONELABEL}
+    Click Element  ${ADDONELABEL}
+    Wait Until Element Is Visible  ${name_on_first_label}
+    Element Text Should Be  ${name_on_first_label}  KATT
+    Wait Until Page Contains Element  ${add_second_label}
+    Click Element  ${add_second_label}
+    Wait Until Page Contains Element  ${INPUTTEXTLABEL2}
+    Input Text  ${INPUTTEXTLABEL2}  Uggla
+    Wait Until Page Contains Element  ${confirm_add_second_label}
+    #detta element är addlabel efter Uggla
+    Click Element  ${confirm_add_second_label}
+    Wait Until Page Contains  Choose model type
+    Sleep  1s
+
+#kattugla delete model
+Delete Model
+    Wait Until Page Contains  My Models
+    Wait Until Page Contains Element  ${MODELMENU}
+    Click Element  ${MODELMENU}
+    Wait Until Page Contains Element  ${DELETE}
+    Click Element   ${DELETE}
+    Sleep  1s
+    Wait Until Page Contains Element  ${SUREDELETE}
+    Click Element  ${SUREDELETE}
+    Sleep  1s
+
+#kattuggla log out user
+Log Out User
+    Sleep  1s
+    Wait Until Page Contains Element  ${USERACCOUNT}
+    Click Element  ${USERACCOUNT}
+    Wait Until Page Contains Element  ${ACCOUNTLIST}
+    Click Element  ${LOGOUT}
+    Wait Until Page Contains  Forgot your password?
+    #Location Should Be    #${stagLoginPage}
+Radio Buttons For Created Labels Is Shown
+    Wait Until Page Contains  Katt
+    Wait Until Page Contains  Uggla
+
+Multiple Choice Is Selected
+    Click Element  ${MultipleChoiceButton}
+
+
+#Go To Stag Login Page
+#    Go To
