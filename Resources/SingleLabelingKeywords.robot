@@ -1,3 +1,8 @@
+*** Settings ***
+Resource  ../PageObjects/locators.robot
+Resource  ../PageObjects/variables.robot
+Library  ../Scripts/remove_text.py
+
 *** Keywords ***
 user is logged in
     Start WebTest

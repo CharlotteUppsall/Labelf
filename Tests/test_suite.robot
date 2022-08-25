@@ -1,8 +1,7 @@
 *** Settings ***
 Library  SeleniumLibrary
 Resource  ../Resources/keywords.robot
-Resource  ../Resources/locators.robot
-
+Resource  ../PageObjects/locators.robot
 Suite Setup  Start WebTest
 Suite Teardown  End WebTest
 
