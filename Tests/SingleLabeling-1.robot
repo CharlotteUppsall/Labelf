@@ -2,9 +2,9 @@
 #Documentation  Testing labelf
 Library  SeleniumLibrary
 Resource  ../Resources/keywords.robot
-Resource  ../Resources/locators.robot
-Resource  ../Resources/variables.robot
 Resource  ../Resources/SingleLabelingKeywords.robot
+Resource  ../PageObjects/locators.robot
+Resource  ../PageObjects/variables.robot
 #Suite Setup    Begin Web Test
 #Suite Teardown  End Web Test
 
