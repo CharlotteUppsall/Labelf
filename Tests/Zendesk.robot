@@ -4,7 +4,7 @@ Resource  ../PageObjects/ZendeskVariables.robot
 Resource  ../Resources/ZendeskKeywords.robot
 
 Suite Setup  Start WebTest
-Suite Teardown  Close All Browsers
+#Suite Teardown  Close All Browsers
 *** Keywords ***
 
 
@@ -13,7 +13,7 @@ Suite Teardown  Close All Browsers
 
 
 Login to Zendesk workspace
-    [Documentation]  TODO
+    [Documentation]  User login to zendesk workspace
     [Tags]  zendesk
     Given User navigates to Zendesk.com
      When User enter account information
