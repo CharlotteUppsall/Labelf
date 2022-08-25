@@ -1,16 +1,18 @@
 *** Settings ***
 
-Documentation  Testsuite Login
+#Documentation  Testsuite Login
 Resource  ../Resources/modelKeyword.robot
 Resource  ../Resources/kimchikeywords.robot
 Resource  ../Resources/Kimchivariables.robot
 Resource  ../Resources/locators.robot
+Resource  ../Resources/variables.robot
 
+Library  ../Scripts/remove_text.py
 
 Library  SeleniumLibrary
 
-Suite Setup  Begin Web Test
-Suite Teardown  End Model Creation Test
+Suite Setup  Start WebTest
+Suite Teardown  End WebTest
 
 
 *** Test Cases ***

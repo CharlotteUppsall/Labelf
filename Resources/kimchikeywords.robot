@@ -35,9 +35,9 @@ End WebTest
     #Verify Workspace Is Empty
     Close All Browsers
 
-End Model Creation Test
-    Delete Single Automated Test Model
-    Close Browser
+#End Model Creation Test
+#    Delete Single Automated Test Model
+#    Close Browser
 
 #User Navigate/Login To App and Navigates To Workspace 387
 #    Navigate to Workspace 387
