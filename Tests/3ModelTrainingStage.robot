@@ -2,8 +2,9 @@
 
 Documentation  Testsuite Login
 Resource  ../Resources/modelKeyword.robot
-Resource  ../Resources/keywords.robot
-Resource  ../Resources/variables.robot
+Resource  ../Resources/kimchikeywords.robot
+Resource  ../Resources/Kimchivariables.robot
+Resource  ../Resources/locators.robot
 
 
 Library  SeleniumLibrary
