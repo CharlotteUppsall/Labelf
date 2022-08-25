@@ -1,17 +1,17 @@
 *** Keywords ***
 #Kimchi Login
-Login Kimchi
-    Input User Credential
-    Press Login Button
-    Confirm User Logged In
-Input User Credential
-    Wait Until Page Contains  Don't have an account? Sign up
-    Input Text    ${login_email_field}  ${email_kimchi}
-    Input Text    ${login_password_field}  ${password_kimchi}
-Press Login Button
-    Click Element  ${LoginButton}
-Confirm User Logged In
-    Wait Until Page Contains  My Models
+#Login Kimchi
+#    Input User Credential
+#    Press Login Button
+#    Confirm User Logged In
+#Input User Credential
+#    Wait Until Page Contains  Don't have an account? Sign up
+#    Input Text    ${login_email_field}  ${email_kimchi}
+#    Input Text    ${login_password_field}  ${password_kimchi}
+#Press Login Button
+#    Click Element  ${LoginButton}
+#Confirm User Logged In
+#    Wait Until Page Contains  My Models
 
 #Setup and Teardown
 #Start WebTest

@@ -104,7 +104,7 @@
 #    Wait Until Element contains  ${SliceSport}  33.3
 #    Wait Until Element contains  ${SliceFakeNews}  16.7
 
-User Has Selected Bring Your Own Labels
+#User Has Selected Bring Your Own Labels
     Go To  ${stag_login_site}
     Input User Credential
 #   Confirm Cookie - överflödig?
@@ -116,7 +116,7 @@ User Has Selected Bring Your Own Labels
     Wait Until Page Contains  Please click on the column
     Click Element  ${LabelSwitchButton}
 
-User Clicks Button "New Model" And To Create A New Model From Scratch
+#User Clicks Button "New Model" And To Create A New Model From Scratch
      Wait Until Page Contains Element  ${new_model_button}
      Sleep  0.2
      Click Element   ${new_model_button}
@@ -124,25 +124,25 @@ User Clicks Button "New Model" And To Create A New Model From Scratch
      Click Button  ${continue_create_model_button}
      Wait Until Page Contains  Setup
 
-User Clicks Continue
+#User Clicks Continue
      Wait Until Page Contains Element  ${ContinueWithSelectedDatasetColumnButton}
      Sleep  0.2  # To allow time for page animation
      Click Element  ${ContinueWithSelectedDatasetColumnButton}
      Wait Until Page Contains  Please click on the column containing the labels
 
-The Slider "One Text Can Contain Multiple Labels" Is Presented
+#The Slider "One Text Can Contain Multiple Labels" Is Presented
      Wait Until Page Contains Element  ${MultiplLabelsSwitchButton}
 
-User Navigate To Model Overview
+#User Navigate To Model Overview
     Go To   ${StagWorkspaceModelView}
     Click Element  ${OverviewButton}
     Wait Until Page Contains  Overview
 
-Verify "One Text Can Have Multiple Labels" Is Enabled When Clicked
+#Verify "One Text Can Have Multiple Labels" Is Enabled When Clicked
      Click Element  ${MultiplLabelsSwitchButton}
      Element Should Be Enabled  ${MultiplLabelsSwitchButton}
 
-Verify that all labels from original dataset are shown in Model overview
+#Verify that all labels from original dataset are shown in Model overview
      Wait Until Page Contains  Negative
      Wait Until Page Contains  Positive
      Wait Until Page Contains  Neutral
