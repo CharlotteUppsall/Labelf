@@ -1,7 +1,6 @@
 *** Settings ***
-Resource  variables.robot
-Resource  locators.robot
-
+Resource  ../PageObjects/locators.robot
+Resource  ../PageObjects/variables.robot
 Library  ../Scripts/remove_text.py
 
 *** Keywords ***
