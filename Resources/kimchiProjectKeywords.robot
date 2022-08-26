@@ -1,3 +1,9 @@
+*** Settings ***
+Resource  ../PageObjects/locators.robot
+Resource  ../PageObjects/variables.robot
+Resource  ../Resources/keywords.robot
+Library  ../Scripts/remove_text.py
+
 *** Keywords ***
 
 User Navigate/Login To App and Navigates To Workspace 387
