@@ -15,3 +15,7 @@ ${password_kimchi}   Kimchi123
 #Login Information
 ${email_kattuggla}  jakob.nilsson@iths.se
 ${password_kattuggla}  44321jJa
+
+${model_name}  Data Model
+${model_description}  This is A Model
+${modelName}  TestModel

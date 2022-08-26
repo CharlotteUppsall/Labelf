@@ -40,11 +40,9 @@ ${label_named_uggla}  //*[@id="app"]/div[9]/div/div[1]/div[4]/div/div/span/div[2
 #Model Creation Pages (From Kimchi)
 ${continue_create_model_button}  //button[contains(.,'Continue')]
 ${input_name_text_field}  //input[contains(@aria-label,'Name*')]
-${model_name}  Data Model
+
 ${input_description_text_field}  //*[@name="input-7-1"]
-${model_description}  This is A Model
 ${create_model_button}  //button[contains(.,'Create Model')]
-${StartTrainingButton}  //*[contains(text(),' Start training ')]
 ${SliceFakeNews}  css:div#plotly > div.plot-container.plotly > div > svg:nth-child(1) > g.pielayer > g > g:nth-child(3) > g
 ${SliceEconomy}  css:div#plotly > div.plot-container.plotly > div > svg:nth-child(1) > g.pielayer > g > g:nth-child(1) > g
 ${SliceSport}  css:div#plotly > div.plot-container.plotly > div > svg:nth-child(1) > g.pielayer > g > g:nth-child(2) > g
@@ -94,7 +92,6 @@ ${continueButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[1]/div/div/div[2
 ${chooseDataSetButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[3]/div/div[2]/div/div/div[2]/button
 ${uploadPageContinue}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/div[2]/button
 ${inputNametextField}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/form/div[1]/div/div/div[1]/div/div/div[1]/div/input
-${modelName}  TestModel
 ${createModelButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/form/div[2]/button
 
 #Kimchi General Buttons
@@ -104,6 +101,7 @@ ${submit_button}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[2]/div/div[1]/di
 ${continue_general_button}  //*[contains(.,'Continue')]
 
 #Label Training
+${AddAFirstLabelButton}  //*[@id="app"]/div[4]/div/div[1]/div[4]/div/div/span/div[2]/div/div[2]/div/div/button   #Adds new label
 ${AddALabelButton}  //*[@id="app"]/div[4]/div/div[1]/div[4]/div/div/span/div/div/div[2]/div/div/button/div   #Adds new label
 ${AddLabelButton}  //*[@id="app"]/div[5]/div/div[1]/div[4]/div/div/span/div/div[2]/form/div[2]/button  #Adds label when you input label Name
 ${LabelsPieChart}  //*[@id="plotly"]/div[1]/div
