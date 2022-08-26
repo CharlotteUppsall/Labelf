@@ -1,23 +1,13 @@
 *** Settings ***
 
-#Documentation  Testsuite Login
-Resource  ../Resources/modelKeyword.robot
-Resource  ../Resources/kimchikeywords.robot
-Resource  ../Resources/Kimchivariables.robot
-Resource  ../Resources/locators.robot
-Resource  ../Resources/variables.robot
-
-Library  ../Scripts/remove_text.py
-
 Library  SeleniumLibrary
+Resource  ../Resources/keywords.robot
+Resource  ../PageObjects/locators.robot
+Resource  ../PageObjects/variables.robot
+Resource  ../kimchiProjectKeywords.robot
 
 Suite Setup  Start WebTest
 Suite Teardown  End WebTest
-Resource  ../Resources/variables.robot
-Resource  ../Resources/locators.robot
-Resource  ../Resources/keywords.robot
-
-Library  ../Scripts/remove_text.py
 
 *** Test Cases ***
 
@@ -29,11 +19,10 @@ Slider "One Text Can Contain Multiple Labels" Is Presented And Enabled When Clic
     Then The Slider "One Text Can Contain Multiple Labels" Is Presented
     And Verify "One Text Can Have Multiple Labels" Is Enabled When Clicked
 
-
 All Labels From Original Dataset Are Shown In Model Overview
     [Documentation]  When user creates model all labels from original dataset are shown in Model overview
     [Tags]  Testcase 2  stagWorkspace
     Given Click Element  ${ContinueButton}
-    And Set A Name And Description For Model
+          Set A Name And Description For Model
     When User Navigate To Model Overview
     Then Verify that all labels from original dataset are shown in Model overview
