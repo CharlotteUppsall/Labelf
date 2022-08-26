@@ -5,7 +5,7 @@ Resource  ../Resources/keywords.robot
 Resource  ../Resources/SingleLabelingKeywords.robot
 Resource  ../PageObjects/locators.robot
 Resource  ../PageObjects/variables.robot
-#Suite Setup    user is logged in
+#Suite Setup
 #Suite Teardown  End Web Test
 
 
