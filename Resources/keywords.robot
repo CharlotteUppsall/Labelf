@@ -18,7 +18,7 @@ Start WebTest
 
     Open Browser  about:blank  chrome
     Set Selenium Speed  0.2s
-    Set Selenium Timeout  10s
+    Set Selenium Timeout  20s
     Set Window Size  1920  1080
     Go To  ${stag_login_site}
     Wait Until Element Is Visible  ${diffuse_cookie_button}
@@ -27,6 +27,10 @@ Start WebTest
 End WebTest
     #Verify Workspace Is Empty
     Close All Browsers
+
+End Model Creation Test
+    Delete Single Automated Test Model
+    Close Browser
 
 #Verify Workspace Is Empty
 #    FOR  ${i}  IN RANGE  0  5  1
@@ -141,20 +145,21 @@ Set A Name And Description For Model
 #        Press Keys  ${InputNameTextField}  \\8
 #     END
      Press Keys  ${InputNameTextField}  CTRL+A+DELETE
-     Input Text  ${InputNameTextField}   ${ModelName}
-     Input Text   ${InputDescriptiontextField}  ${ModelDescription}
+     Input Text  ${InputNameTextField}   ${model_name}
+     Input Text   ${InputDescriptiontextField}  ${model_description}
      Click Button  ${CreateModelButton}
      Wait Until Page Contains  My Models
 
 Model Is Created On Workspace
-     Page Should Contain   ${ModelName}
+     Page Should Contain   ${model_name}
 Model Description Is Presented In Model Overview
-    Page Should Contain  ${ModelDescription}
+    Page Should Contain  ${model_description}
 
 #Kattuggla Create a Model
 Create A Model
-    Sleep  1s
+#    Sleep  1s
     Wait Until Page Contains Element  ${new_model_button}
+    Sleep  0.2
     Click Element  ${new_model_button}
     Wait Until Page Contains  Create your own model from scratch.
     Wait Until Page Contains Element  ${continue_create_model_button}
@@ -342,3 +347,28 @@ Multiple Choice Is Selected
 
 #Go To Stag Login Page
 #    Go To
+
+
+Select Custumer Service Response as Dataset
+     Scroll Element Into View   ${DataSelectCustomerResponseButton}
+     Sleep  0.2
+     Click Element   ${DataSelectCustomerResponseButton}
+     Wait Until Page Contains  Please click on the column
+
+     Wait Until Page Contains Element  ${ContinueWithSelectedDatasetColumnButton}
+     Sleep  0.2  # To allow time for page animation
+     Click Element  ${ContinueWithSelectedDatasetColumnButton}
+
+User Clicks Button "Overview" And "Start Training" And "Add a label"
+    Wait Until Page Contains Element  ${OverviewButton}
+    Click Element  ${OverviewButton}
+
+    Wait Until Page Contains Element  ${STARTTRAINING}
+    Click Element  ${STARTTRAINING}
+#    Sleep  1200s
+    Sleep  10s
+    Wait Until Page Contains  You must add at least two labels before Labelf can start learning!
+    Sleep  0.2
+    Wait Until Page Contains Element  ${AddALabelButton}
+    Sleep  0.2
+    Click Element  ${AddALabelButton}

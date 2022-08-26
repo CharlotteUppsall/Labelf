@@ -1,8 +1,12 @@
 *** Settings ***
-Library  SeleniumLibrary
 Resource  ../Resources/keywords.robot
 Resource  ../PageObjects/locators.robot
 Resource  ../PageObjects/variables.robot
+
+Library  SeleniumLibrary
+
+Suite Setup  Start WebTest
+Suite Teardown  End WebTest
 
 *** Test Cases ***
 User Login To Labelf
