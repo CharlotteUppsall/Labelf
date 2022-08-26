@@ -14,7 +14,7 @@ Resource  ../PageObjects/variables.robot
 Logged in user can create single labeling for their newly created model
     Given user is logged in
     And user creates a new model
-    When user starts training the model
+    When user starts training the model first time
     Then user can create single labeling  #user is able to select the single labeling as a model type
 
 End Single Labeling Test   #suite teardown for this test, put this in settings

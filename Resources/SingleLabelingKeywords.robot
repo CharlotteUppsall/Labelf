@@ -10,7 +10,7 @@ user is logged in
 user creates a new model
     Select Team Kattuggla As Workspace
     Create A Model
-user starts training the model
+user starts training the model first time
      Add labels for model
 user can create single labeling
     Choose model type to be Single Choice
@@ -21,12 +21,11 @@ Add labels for model
     Sleep  5s
     Wait Until Page Contains Element  ${STARTTRAINING}
     Click Element    ${STARTTRAINING}
-    Sleep  120s
+    Sleep  180s
     Reload Page
-    Sleep  2s
     Wait Until Page Contains  You must add at least two labels before Labelf can start learning!
-    Wait Until Page Contains Element   ${ADDLABEL}
-    Click Element  ${ADDLABEL}
+    Wait Until Page Contains Element   //*[@id="app"]/div[9]/div/div[1]/div[4]/div/div/span/div[2]/div/div[2]/div/div/button/div  #${ADDLABEL}
+    Click Element  //*[@id="app"]/div[9]/div/div[1]/div[4]/div/div/span/div[2]/div/div[2]/div/div/button/div   #${ADDLABEL}
     Wait Until Page Contains  Add a new label
     Wait Until Page Contains Element  ${NEWLABELNAME}
     Input Text  ${NEWLABELNAME}  Katt
