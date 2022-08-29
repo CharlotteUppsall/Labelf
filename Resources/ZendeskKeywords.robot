@@ -15,6 +15,7 @@ Start WebTest
     Set Selenium Timeout  10s
     Set Window Size  1600  900
 
+## Test case 1: Login to Zendesk workspace
 User navigates to Zendesk.com
     go to  https://${zendesk_domain}.zendesk.com
     Location should be  https://${zendesk_domain}.zendesk.com/access/unauthenticated
@@ -28,3 +29,13 @@ User enter account information
 User should be at his Zendesk workspace
     Wait until page contains  Get started
     Location should be  https://${zendesk_domain}.zendesk.com/agent/get-started/your-account/account-overview
+
+## Test case 2: Check Labelf app is installed
+User is logged in on Zendesk workspace
+    Location should be  https://${zendesk_domain}.zendesk.com/agent/get-started/your-account/account-overview
+
+User looks at screen
+    Scroll element into view  //*[@data-app-title="AI Ticket Tagger by Labelf"]
+
+Labelf icon should be visible
+    Page should contain element  //*[@data-app-title="AI Ticket Tagger by Labelf"]

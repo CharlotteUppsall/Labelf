@@ -20,3 +20,11 @@ Login to Zendesk workspace
     Given User navigates to Zendesk.com
      When User enter account information
      Then User should be at his Zendesk workspace
+
+Check Labelf app is installed
+    [Documentation]  Checks that icon for Labelf app is visible on screen when
+    ...     when user is logged in as admin.
+    [Tags]  zendesk
+    Given User is logged in on Zendesk workspace
+    When User looks at screen
+    Then Labelf icon should be visible
