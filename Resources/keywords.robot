@@ -77,7 +77,6 @@ Log in User
 
 #Kimchi Verify radio button
 Multiple Choice Is Provided As Option
-
     Wait Until Page Contains Element  ${MultipleChoiceButton}
     Wait Until Page Contains  Multiple Choice
 
@@ -365,10 +364,40 @@ User Clicks Button "Overview" And "Start Training" And "Add a label"
 
     Wait Until Page Contains Element  ${STARTTRAINING}
     Click Element  ${STARTTRAINING}
-#    Sleep  1200s
-    Sleep  10s
+    Sleep  150s
+    Reload Page
+    Sleep  100s
+    Reload Page
     Wait Until Page Contains  You must add at least two labels before Labelf can start learning!
     Sleep  0.2
     Wait Until Page Contains Element  ${AddALabelButton}
     Sleep  0.2
     Click Element  ${AddALabelButton}
+
+Input Label Name And Click Add label
+    Input Text  ${InputNameTextField}  Sport
+    Click Element  ${AddLabelButton}
+    Wait until page contains  You must add at least two labels before Labelf can start learning!
+
+    Click element  xpath://span[contains(text(),'Add a label')]
+
+    Press Keys  ${InputNameTextField}  CTRL+A+DELETE
+    Input Text  ${InputNameTextField}  Economy
+    Click element  //button[contains(.,'Add label')]
+
+A Third Label Is Added To Model
+    Click element  xpath://span[contains(text(),'Add a label')]
+    Press Keys  //input[contains(@aria-label,'Name*')]  CTRL+A+DELETE
+    Input Text  //input[contains(@aria-label,'Name*')]  Fake News
+    Click element  //button[contains(.,'Add label')]
+
+All Labels Are Possible To Select
+    Wait until Page Contains  Lets start by giving Labelf 17 samples
+    Page should contain Element  //div[contains(text(),'Economy')]
+    Page should contain Element  //div[contains(text(),'Fake News')]
+    Page should contain Element  //div[contains(text(),'Sport')]
+    Click Element  ${FirstRadioButton}
+    Click Element  ${SecondRadioButton}
+    Click Element  ${ThirdRadioButton}
+    Click Element  ${ThirdRadioButton}
+    Click Button  ${AddButton}
