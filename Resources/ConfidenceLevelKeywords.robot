@@ -18,6 +18,9 @@ User Inputs an example from the first dataset to the test the model
       Input Text  ${InputDescriptionTextField}  known to be rude and unwelcoming
       Click Button  ${SubmitButton}
 
+User Inputs New Test Sentence With Multiple Labels into "Test Your Model"
+    Input Text  ${InputDescriptionTextField}  The service is bad, but the food is great
+    Click Button  ${SubmitButton}
 
 Confidence levels matches the label of the original datapoint
     #${ElementCount}=  Get Element count  //div[contains(@class,'v-toolbar__content')]
@@ -92,5 +95,24 @@ Retrive Confidence Level And Verify Confidence Is Higher Than 100% When Sum
 
     IF    ${SUM} < ${ControlValue100}
     Log to console  The precentage is below 100
+    Fail
+    END
+
+Retrive Confidence Level And Verify that Confidence Is Higher Than 50% When Sum
+    ${ElementCount}=  Get Element count  //div[contains(@class,'v-toolbar__title body-2')]
+    FOR  ${i}  IN RANGE  4  ${ElementCount}+1
+      ${confidenceLevel}=  get text  xpath:(//div[contains(@class,'v-toolbar__title body-2')])[${i}]
+      ${OnlyNumber}=    Remove String    ${confidenceLevel}    Confidence:
+      ${OnlyNumber}=    Remove String    ${OnlyNumber}  %
+
+    END
+    Log to Console  .
+    Log to Console  Confidence Level at:
+    Log to Console  ${OnlyNumber}
+
+    ${ControlValue50} =  set variable  50
+
+    IF    ${OnlyNumber} < ${ControlValue50}
+    Log to console  The precentage is below 50
     Fail
     END
