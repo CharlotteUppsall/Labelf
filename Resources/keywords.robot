@@ -6,23 +6,23 @@ Library  ../Scripts/remove_text.py
 *** Keywords ***
 #Setup and Teardown
 Start WebTest
-    ${chrome_options}=  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
-    Call Method    ${chrome_options}    add_argument  --disable-dev-shm-usage
-    Call Method    ${chrome_options}    add_argument    test-type
-    Call Method    ${chrome_options}    add_argument    --disable-extensions
-    Call Method    ${chrome_options}    add_argument    --headless  # Comment away to capture video
-    Call Method    ${chrome_options}    add_argument    --disable-gpu
-    Call Method    ${chrome_options}    add_argument    --no-sandbox
+    ${CHROME_OPTIONS}=  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
+    Call Method    ${CHROME_OPTIONS}    add_argument  --disable-dev-shm-usage
+    Call Method    ${CHROME_OPTIONS}    add_argument    test-type
+    Call Method    ${CHROME_OPTIONS}    add_argument    --disable-extensions
+    Call Method    ${CHROME_OPTIONS}    add_argument    --headless  # Comment away to capture video
+    Call Method    ${CHROME_OPTIONS}    add_argument    --disable-gpu
+    Call Method    ${CHROME_OPTIONS}    add_argument    --no-sandbox
 
-    Create Webdriver    Chrome    chrome_options=${chrome_options}
+    Create Webdriver    Chrome    chrome_options=${CHROME_OPTIONS}
 
     Open Browser  about:blank  chrome
     Set Selenium Speed  0.2s
     Set Selenium Timeout  20s
     Set Window Size  1920  1080
     Go To  ${stag_login_site}
-    Wait Until Element Is Visible  ${diffuse_cookie_button}
-    Click Button  ${diffuse_cookie_button}
+    Wait Until Element Is Visible  ${DIFFUSE_COOKIE_BUTTON}
+    Click Button  ${DIFFUSE_COOKIE_BUTTON}
 
 End WebTest
     #Verify Workspace Is Empty
@@ -34,7 +34,7 @@ End Model Creation Test
 
 #Verify Workspace Is Empty
 #    FOR  ${i}  IN RANGE  0  5  1
-#    ${status}=  Run Keyword And Return Status  Page Should Contain Element  ${my_models}
+#    ${status}=  Run Keyword And Return Status  Page Should Contain Element  ${MY_MODELS}
 #    Run Keyword If  '${status}'=='False'  Go To  https://app.labelf.ai/main/375/models/view
 #    ${status}=  Run Keyword And Return Status  Verify Model Is Deleted
 #    Run Keyword If  '${status}'=='False'  Delete Model
@@ -48,11 +48,11 @@ Login
     Verify Login
     #Verify Workspace Is Empty
 Enter Account Information
-    Input Text  ${login_email_field}   ${e_mail_agile_peacock}
-    Input Text  ${login_password_field}  ${password_agile_peacock}
+    Input Text  ${LOGIN_EMAIL_FIELD}   ${EMAIL_AGILE_PEACOCK}
+    Input Text  ${LOGIN_PASSWORD_FIELD}  ${PASSWORD_AGILE_PEACOCK}
     Wait Until Page Contains  Labelf
 Press Login Button
-    Click Element  ${LoginButton}
+    Click Element  ${LOGIN_BUTTON}
 Verify Login
     Wait Until Page Contains  Models | Agile Peacock
 
@@ -63,21 +63,21 @@ Login Kimchi
     Confirm User Logged In
 Input User Credential
     Wait Until Page Contains  Don't have an account? Sign up
-    Input Text    ${login_email_field}  ${email_kimchi}
-    Input Text    ${login_password_field}  ${password_kimchi}
+    Input Text    ${LOGIN_EMAIL_FIELD}  ${EMAIL_KIMCHI}
+    Input Text    ${LOGIN_PASSWORD_FIELD}  ${PASSWORD_KIMCHI}
 Confirm User Logged In
     Wait Until Page Contains  My Models
 
 #Kattuggla Login
 Log in User
-    Input Text  ${login_email_field}  ${email_kattuggla}
-    Input Text  ${login_password_field}  ${password_kattuggla}
-    Click Element   ${login_button}
+    Input Text  ${LOGIN_EMAIL_FIELD}  ${EMAIL_KATTUGGLA}
+    Input Text  ${LOGIN_PASSWORD_FIELD}  ${PASSWORD_KATTUGGLA}
+    Click Element   ${LOGIN_BUTTON}
     Wait Until Page Contains  My Models
 
 #Kimchi Verify radio button
 Multiple Choice Is Provided As Option
-    Wait Until Page Contains Element  ${MultipleChoiceButton}
+    Wait Until Page Contains Element  ${MULTIPLE_CHOICE_BUTTON}
     Wait Until Page Contains  Multiple Choice
 
 #Kimchi Create Model
@@ -89,15 +89,15 @@ Create Model
     Model Is Created On Workspace
     Model Description Is Presented In Model Overview
 User Clicks Button "New Model" And To Create A New Model From Scratch
-     Wait Until Page Contains Element  ${new_model_button}
+     Wait Until Page Contains Element  ${NEW_MODEL_BUTTON}
      Sleep  0.2
-     Click Element   ${new_model_button}
+     Click Element   ${NEW_MODEL_BUTTON}
      Wait Until Page Contains  Add a model
-     Click Button  ${continue_create_model_button}
+     Click Button  ${CONTINUE_CREATE_MODEL_BUTTON}
      Wait Until Page Contains  Setup
 
 User Is Logged In And On An Empty Workspace
-    Go To  ${stag_workspace_model_view}
+    Go To  ${STAG_WORKSPACE_MODEL_VIEW}
     Wait Until Page Contains  My Models (0)
 
 Delete Single Automated Test Model
@@ -107,45 +107,45 @@ Delete Single Automated Test Model
     Workspace Is Empty
 
 User Is Logged In And On An Workspace Containing One Model
-    Go To  ${stag_workspace_model_view}
+    Go To  ${STAG_WORKSPACE_MODEL_VIEW}
     Wait Until Page Contains  My Models (1)
 
 User Opens Single Model Options Dropdown List
     Wait Until Page Contains Element  ${single_model_options_button}
-    Click Element  ${single_model_options_button}
+    Click Element  ${SINGLE_MODEL_OPTIONS_BUTTON}
 
 Workspace Is Empty
     Wait Until Page Contains  My Models (0)
     Verify Model Is Deleted
 Verify Model Is Deleted
-    Wait Until Element Is Visible  ${my_models_text}
-    ${element_text}  Get Text  ${my_models_text}
+    Wait Until Element Is Visible  ${MY_MODELS_TEXT}
+    ${element_text}  Get Text  ${MY_MODELS_TEXT}
     ${actual_amount}  convert into number  ${element_text}
     Should Be True  ${actual_amount} == 0
 
 User Clicks Delete Model Option
-    Wait Until Page Contains Element  ${delete_option}
-    Click Element  ${delete_option}
-    Wait Until Page Contains Element  ${DeleteButton}
-    Click Button  ${DeleteButton}
+    Wait Until Page Contains Element  ${DELETE_OPTION}
+    Click Element  ${DELETE_OPTION}
+    Wait Until Page Contains Element  ${DELETE_BUTTON}
+    Click Button  ${DELETE_BUTTON}
 
 Select An Existing Dataset
-     Scroll Element Into View   ${data_select_customer_service_button}
+     Scroll Element Into View   ${DATA_SELECT_CUSTOMER_SERVICE_BUTTON}
      Sleep  0.2
-     Click Element   ${data_select_customer_service_button}
+     Click Element   ${DATA_SELECT_CUSTOMER_SERVICE_BUTTON}
      Wait Until Page Contains  Please click on the column
-     Wait Until Page Contains Element  ${ContinueWithSelectedDatasetColumnButton}
+     Wait Until Page Contains Element  ${CONTINUE_WITH_SELECTED_DATASET_COLUMN_BUTTON}
      Sleep  0.2  # To allow time for page animation
-     Click Element  ${ContinueWithSelectedDatasetColumnButton}
+     Click Element  ${CONTINUE_WITH_SELECTED_DATASET_COLUMN_BUTTON}
 
 Set A Name And Description For Model
 #Greyed out for loop temp for quicker tests
 #     FOR  ${INT}  IN RANGE  36
 #        Press Keys  ${InputNameTextField}  \\8
 #     END
-     Press Keys  ${InputNameTextField}  CTRL+A+DELETE
-     Input Text  ${InputNameTextField}   ${model_name}
-     Input Text   ${InputDescriptiontextField}  ${model_description}
+     Press Keys  ${INPUT_NAME_TEXT_FIELD}  CTRL+A+DELETE
+     Input Text  ${INPUT_NAME_TEXT_FIELD}   ${MODEL_NAME}
+     Input Text   ${Input_Description_text_Field}  ${model_description}
      Click Button  ${CreateModelButton}
      Wait Until Page Contains  My Models
 
