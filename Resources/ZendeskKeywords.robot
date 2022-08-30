@@ -39,3 +39,22 @@ User looks at screen
 
 Labelf icon should be visible
     Page should contain element  //*[@data-app-title="AI Ticket Tagger by Labelf"]
+
+
+User clicks on ticket menu
+    Click Element  //*[@data-ember-action="1687"]
+    Wait Until Page Contains  Unassigned tickets
+
+User clicks on All unsolved tickets
+    Click Element  //*[@data-view-id="6420352720669"]
+    Sleep  1
+    Page Should Contain  less than a minute ago
+
+User clicks on ticket
+
+    #Takes the [6]'s numbered element with data-garden-id="tables.cell" which will be the first ticket.
+    ${GetTicketElement}=  get webelement  xpath:(//*[@data-garden-id="tables.cell"])[6]
+    Click Element  ${GetTicketElement}
+
+Verify that ticket has tag
+    Wait Until Page Contains  Delivery

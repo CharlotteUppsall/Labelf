@@ -33,4 +33,8 @@ Check Labelf app is installed
 
 
 Calling function from Python
-    ${value}  PythonScriptUpload
+   ${value}  PythonScriptUpload
+   User clicks on ticket menu
+   User clicks on All unsolved tickets
+   User clicks on ticket
+   Verify that ticket has tag
