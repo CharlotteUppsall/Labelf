@@ -33,7 +33,7 @@ User should be at his Zendesk workspace
 
 ## Test case 2: Check Labelf app is installed
 User is logged in on Zendesk workspace
-    Location should be  https://${zendesk_domain}.zendesk.com/agent/get-started/your-account/account-overview
+    Location should contain  https://${zendesk_domain}.zendesk.com/agent/
 
 User looks at screen
     Scroll element into view  //*[@data-app-title="AI Ticket Tagger by Labelf"]
@@ -46,13 +46,14 @@ Labelf icon should be visible
 User Click on labelf Icon
    click element  //*[@data-app-title="AI Ticket Tagger by Labelf"]
    Wait until page contains  AI Ticket Tagger by Labelf
+   Sleep  2s
+
 User Choose model and ticket field to update
    #Maximize browser window
    #wait until page contains element  //*[@id="modelSelect"]
    #Select from list by value  //*[@id="modelSelect"]  "3590"
-   Sleep  2s
-   Page should contain  You have no active models yet
    ## Line below navigates to list of model choices and chooses model id:3590
+   Page should contain  You have no active models yet
    Press Keys  None  TAB  RETURN  ARROW_DOWN  ARROW_DOWN  RETURN
    Sleep  1s
    ## Line below navigates to list choice of what to update and chooses 'ticket field'
@@ -90,3 +91,13 @@ User clicks on ticket
 
 Verify that ticket has tag
     Wait Until Page Contains  Delivery
+
+
+## Test case 5
+
+User Clicks Deactivate model button
+    Press keys  None  TAB  RETURN
+    Sleep  2s
+
+There is no activated model
+    Page should contain  You have no active models yet

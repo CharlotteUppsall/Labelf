@@ -46,3 +46,9 @@ Calling function from Python
    User clicks on All unsolved tickets
    User clicks on ticket
    Verify that ticket has tag
+
+Deactivate model on Zendesk workspace
+    Given User is logged in on Zendesk workspace
+    When User Click on Labelf Icon
+    And User Clicks Deactivate model button
+    Then There is no activated model
