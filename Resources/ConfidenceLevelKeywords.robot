@@ -72,6 +72,10 @@ User Inputs Test Sentence From Orginal Dataset into "Test Your Model"
     Input Text  ${InputDescriptionTextField}  They always round up tickets for prizes from the "games". I don't think they'd turn a kid away from getting a little something!
     Click Button  ${SubmitButton}
 
+User Inputs confidence levels Sentence matches the label of the original datapoint into "Test Your Model"
+    Input Text  ${InputDescriptionTextField}  Do not greet you
+    Click Button  ${SubmitButton}
+
 Retrive Confidence Level And Verify Confidence Is Higher Than 100% When Sum
     ${ElementCount}=  Get Element count  //div[contains(@class,'v-toolbar__title body-2')]
     #log to console  ${ElementCount}
