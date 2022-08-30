@@ -26,35 +26,35 @@ Confidence levels matches the label of the original datapoint
     #${ElementCount}=  Get Element count  //div[contains(@class,'v-toolbar__content')]
     #log to console  ${ElementCount}
 
-    ${confidenceRank1}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[11]  #Rank1
-    ${confidenceRank1}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[11]  #Two variables share the same xpath position need to run the code twice to Pick the right one!
-    ${confidenceRank2}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[12]  #Rank2
-    ${confidenceRank3}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[13]  #Rank3
-    ${confidenceRank4}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[14]  #Rank4
+    ${confidence_rank_1}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[14]  #Rank1
+    ${confidence_rank_1}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[14]  #Two variables share the same xpath position need to run the code twice to Pick the right one!
+    ${confidence_rank_2}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[15]  #Rank2
+    ${confidence_rank_3}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[16]  #Rank3
+    ${confidence_rank_4}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[17]  #Rank4
 
     Log to console  .
-    Log to console  ${confidenceRank4}
+    Log to console  ${confidence_rank_4}
     Log to console  ---------
-    Log to console  ${confidenceRank3}
+    Log to console  ${confidence_rank_3}
     Log to console  ---------
-    Log to console  ${confidenceRank2}
+    Log to console  ${confidence_rank_2}
     Log to console  ---------
-    Log to console  ${confidenceRank1}
+    Log to console  ${confidence_rank_1}
     Log to console  ---------
 
-    IF  "Negative" in """${confidenceRank1}"""
+    IF  "Negative" in """${confidence_rank_1}"""
         Log to console  Negative is the label with the highest confidence level
         Log to console  ---------
 
-   ELSE IF  "Positive" in """${confidenceRank1}"""
+   ELSE IF  "Positive" in """${confidence_rank_1}"""
         Log to console  Positive is the label with the highest confidence level
         Log to console  ---------
 
-   ELSE IF  "Neutral" in """${confidenceRank1}"""
+   ELSE IF  "Neutral" in """${confidence_rank_1}"""
         Log to console  Neutral is the label with the highest confidence level
         Log to console  ---------
 
-   ELSE IF  "N/A" in """${confidenceRank1}"""
+   ELSE IF  "N/A" in """${confidence_rank_1}"""
         Log to console  N/A is the label with the highest confidence level
         Log to console  ---------
     ELSE

@@ -45,6 +45,6 @@ Verify that the categorization confidence levels matches the label of the origin
 #    [Tags]  TC Confidence level match with 1st dataset
 #    Given Navigate To Workspace 387
 #          User Navigate To Model Overview App 4
-#    When User Inputs an example from the first dataset to the test the model
-#    Then Confidence levels matches the label of the original datapoint
+#     When User Inputs an example from the first dataset to the test the model
+#     Then Confidence levels matches the label of the original datapoint
 
