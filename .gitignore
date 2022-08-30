@@ -1,6 +1,7 @@
 /.idea/
 /Results/
 Scripts/__pycache__/
+Tests/__pycache__/
 *log.html
 *output.xml
 *report.html

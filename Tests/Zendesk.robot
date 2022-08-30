@@ -1,10 +1,11 @@
 *** Settings ***
 Library  SeleniumLibrary
+Library  UploadCSV.py
 Resource  ../PageObjects/ZendeskVariables.robot
 Resource  ../Resources/ZendeskKeywords.robot
 
 Suite Setup  Start WebTest
-#Suite Teardown  Close All Browsers
+Suite Teardown  Close All Browsers
 *** Keywords ***
 
 
@@ -17,7 +18,7 @@ Login to Zendesk workspace
     ...     Zendesk domain and user credentials that can be set in resource
     ...     file /PageObjects/ZendeskVariables.robot
     [Tags]  zendesk
-    Given User navigates to Zendesk.com
+     Given User navigates to Zendesk.com
      When User enter account information
      Then User should be at his Zendesk workspace
 
@@ -37,3 +38,11 @@ Activate aLabelf model in Zendesk
     And User Choose model and ticket field to update
     And User click on Activate Model on this field
     ##  Then There is an activated model  ##Can't find a way to verify this here.
+
+
+Calling function from Python
+   ${value}  PythonScriptUpload
+   User clicks on ticket menu
+   User clicks on All unsolved tickets
+   User clicks on ticket
+   Verify that ticket has tag
