@@ -4,7 +4,7 @@ Resource  ../PageObjects/ZendeskVariables.robot
 Resource  ../Resources/ZendeskKeywords.robot
 
 Suite Setup  Start WebTest
-Suite Teardown  Close All Browsers
+#Suite Teardown  Close All Browsers
 *** Keywords ***
 
 
@@ -28,3 +28,12 @@ Check Labelf app is installed
     Given User is logged in on Zendesk workspace
     When User looks at screen
     Then Labelf icon should be visible
+
+Activate aLabelf model in Zendesk
+   [Documentation]  User Activate labelf model after login to zendeskworkspace.
+    [Tags]  zendesk
+    Given User is logged in on Zendesk workspace
+    When User Click on labelf Icon
+    And User Choose model and ticket field to update
+    And User click on Activate Model on this field
+    ##  Then There is an activated model  ##Can't find a way to verify this here.
