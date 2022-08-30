@@ -97,7 +97,7 @@ ${createModelButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/form/d
 #Kimchi General Buttons
 ${delete_button}  //button[contains(.,'Delete')]
 ${continue_button}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/div/div[3]/button
-${submit_button}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[2]/div/div[1]/div/div[3]/div/div[2]/div/div[2]/button[2]
+${submit_button}  //*[@id="app"]/div[8]/div[1]/main/div/div/div[2]/div/div[1]/div/div[3]/div/div[2]/div/div[2]/button[2]
 ${continue_general_button}  //*[contains(.,'Continue')]
 
 #Label Training
