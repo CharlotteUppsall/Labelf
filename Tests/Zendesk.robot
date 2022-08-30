@@ -1,5 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
+Library  UploadCSV.py
 Resource  ../PageObjects/ZendeskVariables.robot
 Resource  ../Resources/ZendeskKeywords.robot
 
@@ -17,7 +18,7 @@ Login to Zendesk workspace
     ...     Zendesk domain and user credentials that can be set in resource
     ...     file /PageObjects/ZendeskVariables.robot
     [Tags]  zendesk
-    Given User navigates to Zendesk.com
+     Given User navigates to Zendesk.com
      When User enter account information
      Then User should be at his Zendesk workspace
 
@@ -28,3 +29,8 @@ Check Labelf app is installed
     Given User is logged in on Zendesk workspace
     When User looks at screen
     Then Labelf icon should be visible
+
+
+
+Calling function from Python
+    ${value}  PythonScriptUpload

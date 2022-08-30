@@ -18,7 +18,7 @@ Start WebTest
 ## Test case 1: Login to Zendesk workspace
 User navigates to Zendesk.com
     go to  https://${zendesk_domain}.zendesk.com
-    Location should be  https://${zendesk_domain}.zendesk.com/access/unauthenticated
+    Location should contain  https://${zendesk_domain}.zendesk.com/access/unauthenticated
 
 User enter account information
     Press Keys  None  ${zendesk_usesr_email}
