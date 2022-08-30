@@ -22,6 +22,10 @@ User Inputs New Test Sentence With Multiple Labels into "Test Your Model"
     Input Text  ${INPUT_DESCRIPTION_TEXTFIELD}  The service is bad, but the food is great
     Click Button  ${SUBMIT_BUTTON}
 
+User Inputs an example from the newly dataset to the test the model
+      Input Text  ${INPUT_DESCRIPTION_TEXTFIELD}  A safe and varied alternative to the streets and other negative influences in the community.
+      Click Button  ${SUBMIT_BUTTON}
+
 Confidence levels matches the label of the original datapoint
     #${ElementCount}=  Get Element count  //div[contains(@class,'v-toolbar__content')]
     #log to console  ${ElementCount}

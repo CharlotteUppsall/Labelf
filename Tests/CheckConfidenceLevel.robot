@@ -43,8 +43,14 @@ Verify that the categorization confidence levels matches the label of the origin
 Verify the categorization confidence levels matches the labeling with first dataset.
     [Documentation]  This testcase to Verify the categorization confidence levels matches the labeling with first dataset
     [Tags]  TC Confidence level match with 1st dataset
-    Given Navigate To Workspace 387
-         User Navigate To Model Overview App 4
-     When User Inputs an example from the first dataset to the test the model
-     Then Confidence levels matches the label of the original datapoint
+    Given User Navigate To Model Overview App 1
+    When User Inputs an example from the first dataset to the test the model
+    Then Confidence levels matches the label of the original datapoint
+
+Verify the categorization confidence levels matches the labeling with newly added dataset.
+    [Documentation]  This testcase to Verify the categorization confidence levels matches the labeling with first dataset
+    [Tags]  Testcase 6 appWorkspace
+    Given User Navigate To Model Overview App 1
+    When User Inputs an example from the newly dataset to the test the model
+    Then Confidence levels matches the label of the original datapoint
 
