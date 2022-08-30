@@ -9,10 +9,10 @@ ${my_models_text}  //*[@id="app"]/div[6]/div[1]/main/div/div/nav/div/div[1]
 #Models Page
 ${workspace_dropdown_menu}  //*[@class="v-btn v-btn--flat v-btn--large theme--light"]
 ${stag_workspace_model_view}  https://stag.labelf.ai/main/60/models/view
-${app_workspace_model_view}  https://app.labelf.ai/main/387/models/view
+${APP_WORKSPACE_MODEL_VIEW}  https://app.labelf.ai/main/387/models/view
 ${single_model_options_button}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/nav/div/div[3]/div/button/div/i
 ${overview_button}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/div[2]/a/div
-${overview_prelabled_button}  //*[contains(@href,'/main/387/models/3082/dashboard/dashboard')]
+${OVERVIEW_PRELABLED_BUTTON}  //*[contains(@href,'/main/387/models/3082/dashboard/dashboard')]
 ${overview_prelabled_test_button}  //*[contains(@href,'/main/387/models/3049/dashboard/dashboard')]
 ${new_model_button}   //*[@id="app"]/div[6]/div[1]/main/div/div/div[1]/nav/div[1]/a
 ${delete_option}  //*[@class="v-icon icon-menu-danger material-icons theme--light"]
@@ -113,7 +113,7 @@ ${ThirdRadioButton}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/di
 ${LabelSwitchButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/nav/div/div[3]/div[2]/div[1]/div
 ${MultiplLabelsSwitchButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/div/nav/div/div[3]/div/div/div[1]/div
 #ExtendModelVerification
-${ModelID3085NameButtonInWorkspace}  //*[contains(@href,'/main/387/models/3085/dashboard/dashboard')]
+${MODEL_ID_3085_NAME_BUTTON_IN_WORKSPACE}  //*[contains(@href,'/main/387/models/3085/dashboard/dashboard')]
 ${StringNumberAfter}   //*[@id="app"]/div[10]/div[1]/main/div/div/div[3]/div/div[1]/div/div/div/nav/div/span[2]
 ${StringNumberAfterAddDataSet}  //*[@id="app"]/div[10]/div[1]/main/div/div/div[3]/div/div[1]/div/div/div/nav/div/span[3]
 ${CustomerServiceResponseDataSet}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[2]/div/div[1]/div/div[6]/div/div[2]/div/div/div[2]/div/div/div[1]
@@ -135,8 +135,8 @@ ${XBUTTON}  //*[@id="app"]/div[8]/div/div[1]/div[1]/div/div/nav/div/a/div/i
 ${MODELBUTTON}  //*[@id="app"]/div[9]/div[1]/nav/div/a[1]/div
 ${URL}   //https://stag.labelf.ai/login
 
-${SubmitButton}  //*[@id="app"]/div[8]/div[1]/main/div/div/div[2]/div/div[1]/div/div[3]/div/div[2]/div/div[2]/button[2]
-${InputDescriptionTextField}  //*[@name="input-7-1"]
+${SUBMIT_BUTTON}  //*[@id="app"]/div[8]/div[1]/main/div/div/div[2]/div/div[1]/div/div[3]/div/div[2]/div/div[2]/button[2]
+${INPUT_DESCRIPTION_TEXTFIELD}  //*[@name="input-7-1"]
 #${MultipleChoiceButton}  //button[contains(.,'Multiple Choice')]
 ${confidenceRank1}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[11]  #Rank1
 ${confidenceRank1}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[11]  #Two variables share the same xpath position need to run the code twice to Pick the right one!

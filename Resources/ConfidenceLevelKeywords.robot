@@ -11,16 +11,16 @@ Navigate to Workspace 387
 
 user Navigate To Model Overview App 4
     Wait Until Page Contains  Models
-    Click Element  ${ModelID3085NameButtonInWorkspace}
+    Click Element  ${MODEL_ID_3085_NAME_BUTTON_IN_WORKSPACE}
     sleep 20s
 
 User Inputs an example from the first dataset to the test the model
-      Input Text  ${InputDescriptionTextField}  known to be rude and unwelcoming
-      Click Button  ${SubmitButton}
+      Input Text  ${INPUT_DESCRIPTION_TEXTFIELD}  known to be rude and unwelcoming
+      Click Button  ${SUBMIT_BUTTON}
 
 User Inputs New Test Sentence With Multiple Labels into "Test Your Model"
-    Input Text  ${InputDescriptionTextField}  The service is bad, but the food is great
-    Click Button  ${SubmitButton}
+    Input Text  ${INPUT_DESCRIPTION_TEXTFIELD}  The service is bad, but the food is great
+    Click Button  ${SUBMIT_BUTTON}
 
 Confidence levels matches the label of the original datapoint
     #${ElementCount}=  Get Element count  //div[contains(@class,'v-toolbar__content')]
@@ -69,17 +69,17 @@ User Navigate/Login To App and Navigates To Workspace 387
     Wait Until Page Contains  Models | Team Kimchi
 
 User Navigate To Model Overview App 1
-    Go To  ${AppWorkspaceModelView}
-    Click Element  ${OverviewPrelabledButton}
+    Go To  ${APP_WORKSPACE_MODEL_VIEW}
+    Click Element  ${OVERVIEW_PRELABLED_BUTTON}
     Wait Until Page Contains  Overview
 
 User Inputs Test Sentence From Orginal Dataset into "Test Your Model"
-    Input Text  ${InputDescriptionTextField}  They always round up tickets for prizes from the "games". I don't think they'd turn a kid away from getting a little something!
-    Click Button  ${SubmitButton}
+    Input Text  ${INPUT_DESCRIPTION_TEXTFIELD}   They always round up tickets for prizes from the "games". I don't think they'd turn a kid away from getting a little something!
+    Click Button  ${SUBMIT_BUTTON}
 
 User Inputs confidence levels Sentence matches the label of the original datapoint into "Test Your Model"
-    Input Text  ${InputDescriptionTextField}  Do not greet you
-    Click Button  ${SubmitButton}
+    Input Text  ${INPUT_DESCRIPTION_TEXTFIELD}  Do not greet you
+    Click Button  ${SUBMIT_BUTTON}
 
 Retrive Confidence Level And Verify Confidence Is Higher Than 100% When Sum
     ${ElementCount}=  Get Element count  //div[contains(@class,'v-toolbar__title body-2')]
