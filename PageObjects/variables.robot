@@ -19,3 +19,6 @@ ${password_kattuggla}  44321jJa
 ${model_name}  Data Model
 ${model_description}  This is A Model
 ${modelName}  TestModel
+
+#Confidence Level
+${ModelID3085NameButtonInWorkspace}  //*[contains(@href,'/main/387/models/3085/dashboard/dashboard')]

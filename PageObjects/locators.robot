@@ -134,3 +134,12 @@ ${ADDEDSECONDLABELDONE}  //*[@id="app"]/div[14]/div/div[1]/div[4]/div/div/span/d
 ${XBUTTON}  //*[@id="app"]/div[8]/div/div[1]/div[1]/div/div/nav/div/a/div/i
 ${MODELBUTTON}  //*[@id="app"]/div[9]/div[1]/nav/div/a[1]/div
 ${URL}   //https://stag.labelf.ai/login
+
+${SubmitButton}  //*[@id="app"]/div[8]/div[1]/main/div/div/div[2]/div/div[1]/div/div[3]/div/div[2]/div/div[2]/button[2]
+${InputDescriptionTextField}  //*[@name="input-7-1"]
+#${MultipleChoiceButton}  //button[contains(.,'Multiple Choice')]
+${confidenceRank1}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[11]  #Rank1
+${confidenceRank1}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[11]  #Two variables share the same xpath position need to run the code twice to Pick the right one!
+${confidenceRank2}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[12]  #Rank2
+${confidenceRank3}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[13]  #Rank3
+${confidenceRank4}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[14]  #Rank4
