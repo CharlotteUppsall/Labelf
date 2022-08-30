@@ -105,7 +105,7 @@ ${AddAFirstLabelButton}  //*[@id="app"]/div[4]/div/div[1]/div[4]/div/div/span/di
 ${AddALabelButton}  //*[@id="app"]/div[4]/div/div[1]/div[4]/div/div/span/div/div/div[2]/div/div/button/div   #Adds new label
 ${AddLabelButton}  //*[@id="app"]/div[5]/div/div[1]/div[4]/div/div/span/div/div[2]/form/div[2]/button  #Adds label when you input label Name
 ${LabelsPieChart}  //*[@id="plotly"]/div[1]/div
-${MultipleChoiceButton} //*[@id="app"]/div[14]/div/div/div[3]/button[2]
+${MultipleChoiceButton}  //*[@id="app"]/div[14]/div/div/div[3]/button[2]
 ${AddButton}  //button[contains(.,' Add ')]
 ${FirstRadioButton}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[1]
 ${SecondRadioButton}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[2]
