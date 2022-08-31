@@ -20,7 +20,7 @@ Start WebTest
     Set Selenium Speed  0.2s
     Set Selenium Timeout  20s
     Set Window Size  1920  1080
-    Go To  ${stag_login_site}
+    Go To  ${STAG_LOGIN_SITE}
     Wait Until Element Is Visible  ${DIFFUSE_COOKIE_BUTTON}
     Click Button  ${DIFFUSE_COOKIE_BUTTON}
 
@@ -111,7 +111,7 @@ User Is Logged In And On An Workspace Containing One Model
     Wait Until Page Contains  My Models (1)
 
 User Opens Single Model Options Dropdown List
-    Wait Until Page Contains Element  ${single_model_options_button}
+    Wait Until Page Contains Element  ${SINGLE_MODEL_OPTIONS_BUTTON}
     Click Element  ${SINGLE_MODEL_OPTIONS_BUTTON}
 
 Workspace Is Empty
@@ -145,36 +145,36 @@ Set A Name And Description For Model
 #     END
      Press Keys  ${INPUT_NAME_TEXT_FIELD}  CTRL+A+DELETE
      Input Text  ${INPUT_NAME_TEXT_FIELD}   ${MODEL_NAME}
-     Input Text   ${Input_Description_text_Field}  ${model_description}
-     Click Button  ${CreateModelButton}
+     Input Text   ${INPUT_DESCRIPTION_TEXT_FIELD}  ${MODEL_DESCRIPTION}
+     Click Button  ${CREATE_MODEL_BUTTON}
      Wait Until Page Contains  My Models
 
 Model Is Created On Workspace
-     Page Should Contain   ${model_name}
+     Page Should Contain   ${MODEL_NAME}
 Model Description Is Presented In Model Overview
-    Page Should Contain  ${model_description}
+    Page Should Contain  ${MODEL_DESCRIPTION}
 
 #Kattuggla Create a Model
 Create A Model
 #    Sleep  1s
-    Wait Until Page Contains Element  ${new_model_button}
+    Wait Until Page Contains Element  ${NEW_MODEL_BUTTON}
     Sleep  0.2
-    Click Element  ${new_model_button}
+    Click Element  ${NEW_MODEL_BUTTON}
     Wait Until Page Contains  Create your own model from scratch.
-    Wait Until Page Contains Element  ${continue_create_model_button}
-    Click Element  ${continue_create_model_button}
+    Wait Until Page Contains Element  ${CONTINUE_CREATE_MODEL_BUTTON}
+    Click Element  ${CONTINUE_CREATE_MODEL_BUTTON}
     Wait Until Page Contains  Select an existing dataset or upload a new one
     Wait Until Page Contains  Synthetic generic support ticket example data that has half the dataset labeled
-    Click Element  ${DATASETCONTINUE}
+    Click Element  ${DATASET_CONTINUE}
     Wait Until Page Contains  Please click on the column containing the text
-    Wait Until Element Is Visible  ${COLUMNCONTINUE}
+    Wait Until Element Is Visible  ${COLUMN_CONTINUE}
     Sleep  1s
-    Click Element  ${COLUMNCONTINUE}
+    Click Element  ${COLUMN_CONTINUE}
     Wait Until Page Contains  Name your model
-    Input Text  ${input_name_text_field}  ${model_name}
+    Input Text  ${INPUT_NAME_TEXT_FIELD}  ${MODEL_NAME}
     Sleep  1s
     Input Text  ${DESCRIPTION}  This is a Discription of created model
-    Click Element  ${CONTINUESCRATCH}
+    Click Element  ${CONTINUE_SCRATCH}
     Wait Until Page Contains  Please click on the column containing the text
     Sleep  1s
 
@@ -188,28 +188,28 @@ Create A Model
 #    Press Create Model Button
 #    Verify Created Model
 Insert Model Name
-    Wait Until Page Contains Element  ${inputnametextfield}
-    Press Keys  ${inputnametextfield}  CTRL+a+BACKSPACE
-    Input Text  ${inputnametextfield}  ${modelname}
+    Wait Until Page Contains Element  ${INPUT_NAME_TEXT_FIELD}
+    Press Keys  ${INPUT_NAME_TEXT_FIELD}  CTRL+a+BACKSPACE
+    Input Text  ${INPUT_NAME_TEXT_FIELD}  ${MODEL_NAME}
 Press Create Model Button
-    Scroll Element Into View  ${createmodelbutton}
+    Scroll Element Into View  ${CREATE_MODEL_BUTTON}
     Sleep  3s
-    Click Element  ${createmodelbutton}
+    Click Element  ${CREATE_MODEL_BUTTON}
 Press Continue On Text Classification Page
-    Wait Until Element Is Visible  ${uploadpagecontinue}
-    Click Element  ${uploadpagecontinue}
+    Wait Until Element Is Visible  ${UPLOAD_PAGE_CONTINUE}
+    Click Element  ${UPLOAD_PAGE_CONTINUE}
 Press Dataset Button
-    Wait Until Element Is Visible  ${choosedatasetbutton}
-    Scroll Element Into View  ${choosedatasetbutton}
-    Click Element  ${choosedatasetbutton}
+    Wait Until Element Is Visible  ${CHOOSE_DATASET_BUTTON}
+    Scroll Element Into View  ${CHOOSE_DATASET_BUTTON}
+    Click Element  ${CHOOSE_DATASET_BUTTON}
 Press Continue To Model Creation
-    Wait Until Page Contains Element  ${continueButton}
-    Click Element  ${continueButton}
+    Wait Until Page Contains Element  ${CONTINUE_BUTTON}
+    Click Element  ${CONTINUE_BUTTON}
 Press Create New Model
-    Wait Until Page Contains Element  ${newmodelbutton}
-    Click Element  ${newmodelbutton}
+    Wait Until Page Contains Element  ${NEW_MODEL_BUTTON}
+    Click Element  ${NEW_MODEL_BUTTON}
 Verify Created Model
-    Wait Until Page Contains  ${modelname}
+    Wait Until Page Contains  ${MODEL_NAME}
 
 #Kattuggla See All Labels
 User Is Logged In, Have Changed Workspace And Created A Model
@@ -217,172 +217,159 @@ User Is Logged In, Have Changed Workspace And Created A Model
     Create Model
     Sleep  30s
 User Adds Single Choice Labels
-    Wait Until Page Contains Element  ${overview_button}
-    Click Element  ${overview_button}
+    Wait Until Page Contains Element  ${OVERVIEW_BUTTON}
+    Click Element  ${OVERVIEW_BUTTON}
     Wait Until Page Contains  It does not look like you have trained the model
-    Wait Until Page Contains Element  ${start_training}
-    Click Element  ${start_training}
+    Wait Until Page Contains Element  ${START_TRAINING}
+    Click Element  ${START_TRAINING}
     Wait Until Page Contains  You must add at least two labels before Labelf can start learning!
-    Wait Until Page Contains Element  ${ADDLABEL}
-    Click Element  ${ADDLABEL}
+    Wait Until Page Contains Element  ${ADD_LABEL}
+    Click Element  ${ADD_LABEL}
     Wait Until Page Contains  Add a new label
-    Wait Until Page Contains Element  ${NEWLABELNAME}
-    Input Text  ${NEWLABELNAME}  Katt
-    Wait Until Page Contains Element  ${ADDONELABEL}
-    Click Element  ${ADDONELABEL}
-    Wait Until Element Is Visible  ${name_on_first_label}
-    Element Text Should Be  ${name_on_first_label}  KATT
-    Wait Until Page Contains Element  ${add_second_label}
-    Click Element  ${add_second_label}
-    Wait Until Page Contains Element  ${INPUTTEXTLABEL2}
-    Input Text  ${INPUTTEXTLABEL2}  Uggla
-    Wait Until Page Contains Element  ${confirm_add_second_label}
+    Wait Until Page Contains Element  ${NEW_LABEL_NAME}
+    Input Text  ${NEW_LABEL_NAME}  Katt
+    Wait Until Page Contains Element  ${ADD_ONE_LABEL}
+    Click Element  ${ADD_ONE_LABEL}
+    Wait Until Element Is Visible  ${NAME_ON_FIRST_LABEL}
+    Element Text Should Be  ${NAME_ON_FIRST_LABEL}  KATT
+    Wait Until Page Contains Element  ${ADD_SECOND_LABEL}
+    Click Element  ${ADD_SECOND_LABEL}
+    Wait Until Page Contains Element  ${INPUT_TEXT_LABEL2}
+    Input Text  ${INPUT_TEXT_LABEL2}  Uggla
+    Wait Until Page Contains Element  ${CONFIRM_ADD_SECOND_LABEL}
     #detta element är addlabel efter Uggla
-    Click Element  ${confirm_add_second_label}
+    Click Element  ${CONFIRM_ADD_SECOND_LABEL}
     Wait Until Page Contains  Choose model type
     Sleep  1s
-    Wait Until Page Contains Element  ${choose_single_choice}
-    Click Element  ${choose_single_choice}
+    Wait Until Page Contains Element  ${CHOOSE_SINGLE_CHOICE}
+    Click Element  ${CHOOSE_SINGLE_CHOICE}
     Wait Until Page Contains  Lets start by giving Labelf 20 samples
-    Wait Until Page Contains Element  ${label_named_katt}
+    Wait Until Page Contains Element  ${LABEL_NAMED_KATT}
     Sleep  1s
-    Click Element  ${label_named_katt}
+    Click Element  ${LABEL_NAMED_KATT}
     Wait Until Page Contains  Lets start by giving Labelf 19 samples
-    Wait Until Page Contains Element  ${label_named_uggla}
+    Wait Until Page Contains Element  ${LABEL_NAMED_UGGLA}
     Sleep  1s
-    Click Element  ${label_named_uggla}
+    Click Element  ${LABEL_NAMED_UGGLA}
     Wait Until Page Contains  Lets start by giving Labelf 18 samples
-    Wait Until Page Contains Element  ${label_named_katt}
+    Wait Until Page Contains Element  ${LABEL_NAMED_KATT}
     Sleep  1s
-    Click Element  ${label_named_katt}
+    Click Element  ${LABEL_NAMED_KATT}
     Wait Until Page Contains  Lets start by giving Labelf 17 samples
-    Wait Until Page Contains Element  ${label_named_uggla}
+    Wait Until Page Contains Element  ${LABEL_NAMED_UGGLA}
     Sleep  1s
-    Click Element  ${label_named_uggla}
+    Click Element  ${LABEL_NAMED_UGGLA}
     Wait Until Page Contains  Lets start by giving Labelf 16 samples
-    Wait Until Page Contains Element  ${label_named_katt}
+    Wait Until Page Contains Element  ${LABEL_NAMED_KATT}
     Sleep  1s
-    Click Element  ${label_named_katt}
+    Click Element  ${LABEL_NAMED_KATT}
     Wait Until Page Contains  Only 15 more to go!
 User Can See All Labels
-    Wait Until Page Contains Element  ${close_button}
+    Wait Until Page Contains Element  ${CLOSE_BUTTON}
     Sleep  1s
-    Click Element  ${close_button}
+    Click Element  ${CLOSE_BUTTON}
     Sleep  1s
-    Wait Until Page Contains Element  ${MODELBUTTON}
-    Click Element  ${MODELBUTTON}
+    Wait Until Page Contains Element  ${MODEL_BUTTON}
+    Click Element  ${MODEL_BUTTON}
     Wait Until Page Contains  Team Kimchi
     Delete Single Automated Test Model
 Select Team Kattuggla As Workspace
     Go To  https://stag.labelf.ai/main/68/models/view
     Wait Until Page Contains  Team Kattuggla
-    #Click Element  ${models_button}  den är redan inne i models view...
     Reload Page
-#    Sleep  1s
-#    Wait Until Page Contains Element  ${MAINMENU}
-#    Click Element  ${MAINMENU}
-#    Wait Until Page Contains  Current Workspace:
-#    Scroll Element Into View  ${TEAMKATTUGGLAWORKSPACE}
-#    Click Element  ${TEAMKATTUGGLAWORKSPACE}
-#    Wait Until Location Is  https://stag.labelf.ai/main/68/models/view
-#    #Ceck the id in the link if its the right workspace
-#    Wait Until Page Contains  My first workspace
-#    Click Element  //*[@id="app"]/div[6]/div[1]/nav/div/div[3]/div/button
+
 
 User Adds Multiple Choice Label
-    Wait Until Page Contains Element  ${overview_button}
-    Click Element  ${overview_button}
+    Wait Until Page Contains Element  ${OVERVIEW_BUTTON}
+    Click Element  ${OVERVIEW_BUTTON}
     Wait Until Page Contains  It does not look like you have trained the model
-    Wait Until Page Contains Element  ${start_training}
-    Click Element  ${start_training}
+    Wait Until Page Contains Element  ${START_TRAINING}
+    Click Element  ${START_TRAINING}
     Wait Until Page Contains  You must add at least two labels before Labelf can start learning!
-    Wait Until Page Contains Element  ${ADDLABEL}
-    Click Element  ${ADDLABEL}
+    Wait Until Page Contains Element  ${ADD_LABEL}
+    Click Element  ${ADD_LABEL}
     Wait Until Page Contains  Add a new label
-    Wait Until Page Contains Element  ${NEWLABELNAME}
-    Input Text  ${NEWLABELNAME}  Katt
-    Wait Until Page Contains Element  ${ADDONELABEL}
-    Click Element  ${ADDONELABEL}
-    Wait Until Element Is Visible  ${name_on_first_label}
-    Element Text Should Be  ${name_on_first_label}  KATT
-    Wait Until Page Contains Element  ${add_second_label}
-    Click Element  ${add_second_label}
-    Wait Until Page Contains Element  ${INPUTTEXTLABEL2}
-    Input Text  ${INPUTTEXTLABEL2}  Uggla
-    Wait Until Page Contains Element  ${confirm_add_second_label}
+    Wait Until Page Contains Element  ${NEW_LABEL_NAME}
+    Input Text  ${NEW_LABEL_NAME}  Katt
+    Wait Until Page Contains Element  ${ADD_ONE_LABEL}
+    Click Element  ${ADD_ONE_LABEL}
+    Wait Until Element Is Visible  ${NAME_ON_FIRST_LABEL}
+    Element Text Should Be  ${NAME_ON_FIRST_LABEL}  KATT
+    Wait Until Page Contains Element  ${ADD_SECOND_LABELl}
+    Click Element  ${ADD_SECOND_LABELl}
+    Wait Until Page Contains Element  ${INPUT_TEXT_LABEL2}
+    Input Text  ${INPUT_TEXT_LABEL2}  Uggla
+    Wait Until Page Contains Element  ${CONFIRM_ADD_SECOND_LABEL}
     #detta element är addlabel efter Uggla
-    Click Element  ${confirm_add_second_label}
+    Click Element  ${CONFIRM_ADD_SECOND_LABEL}
     Wait Until Page Contains  Choose model type
     Sleep  1s
 
 #kattugla delete model
 Delete Model
     Wait Until Page Contains  My Models
-    Wait Until Page Contains Element  ${MODELMENU}
-    Click Element  ${MODELMENU}
+    Wait Until Page Contains Element  ${MODEL_MENU}
+    Click Element  ${MODEL_MENU}
     Wait Until Page Contains Element  ${DELETE}
     Click Element   ${DELETE}
     Sleep  1s
-    Wait Until Page Contains Element  ${SUREDELETE}
-    Click Element  ${SUREDELETE}
+    Wait Until Page Contains Element  ${SURE_DELETE}
+    Click Element  ${SURE_DELETE}
     Sleep  1s
 
 #kattuggla log out user
 Log Out User
     Sleep  1s
-    Wait Until Page Contains Element  ${USERACCOUNT}
-    Click Element  ${USERACCOUNT}
-    Wait Until Page Contains Element  ${ACCOUNTLIST}
+    Wait Until Page Contains Element  ${USER_ACCOUNT}
+    Click Element  ${USER_ACCOUNT}
+    Wait Until Page Contains Element  ${ACCOUNT_LIST}
     Click Element  ${LOGOUT}
     Wait Until Page Contains  Forgot your password?
-    #Location Should Be    #${stagLoginPage}
+    #Location Should Be    #${STAG_LOGIN_PAGE}
 Radio Buttons For Created Labels Is Shown
     Wait Until Page Contains  Katt
     Wait Until Page Contains  Uggla
 
 Multiple Choice Is Selected
-    Click Element  ${MultipleChoiceButton}
+    Click Element  ${MULTIPLE_CHOICE_BUTTON}
 
-
-#Go To Stag Login Page
-#    Go To
 
 
 Select Custumer Service Response as Dataset
-     Scroll Element Into View   ${DataSelectCustomerResponseButton}
+     Scroll Element Into View   ${DATA_SELECT_CUSTOMER_RESPONSE_BUTTON}
      Sleep  0.2
-     Click Element   ${DataSelectCustomerResponseButton}
+     Click Element   ${DATA_SELECT_CUSTOMER_RESPONSE_BUTTON}
      Wait Until Page Contains  Please click on the column
 
-     Wait Until Page Contains Element  ${ContinueWithSelectedDatasetColumnButton}
+     Wait Until Page Contains Element  ${CONTINUE_WITH_SELECTED_DATASET_COLUMN_BUTTON}
      Sleep  0.2  # To allow time for page animation
-     Click Element  ${ContinueWithSelectedDatasetColumnButton}
+     Click Element  ${CONTINUE_WITH_SELECTED_DATASET_COLUMN_BUTTON}
 
 User Clicks Button "Overview" And "Start Training" And "Add a label"
-    Wait Until Page Contains Element  ${OverviewButton}
-    Click Element  ${OverviewButton}
+    Wait Until Page Contains Element  ${OVERVIEW_BUTTON}
+    Click Element  ${OVERVIEW_BUTTON}
 
-    Wait Until Page Contains Element  ${STARTTRAINING}
-    Click Element  ${STARTTRAINING}
+    Wait Until Page Contains Element  ${START_TRAINING}
+    Click Element  ${START_TRAINING}
     Sleep  150s
     Reload Page
     Sleep  100s
     Reload Page
     Wait Until Page Contains  You must add at least two labels before Labelf can start learning!
     Sleep  0.2
-    Wait Until Page Contains Element  ${AddALabelButton}
+    Wait Until Page Contains Element  ${ADD_A_LABEL_BUTTON}
     Sleep  0.2
-    Click Element  ${AddALabelButton}
+    Click Element  ${ADD_A_LABEL_BUTTON}
 
 Input Label Name And Click Add label
-    Input Text  ${InputNameTextField}  Sport
-    Click Element  ${AddLabelButton}
+    Input Text  ${INPUT_NAME_TEXT_FIELD}  Sport
+    Click Element  ${ADD_LABEL_BUTTON}
     Wait until page contains  You must add at least two labels before Labelf can start learning!
 
     Click element  xpath://span[contains(text(),'Add a label')]
 
-    Press Keys  ${InputNameTextField}  CTRL+A+DELETE
-    Input Text  ${InputNameTextField}  Economy
+    Press Keys  ${INPUT_NAME_TEXT_FIELD}  CTRL+A+DELETE
+    Input Text  ${INPUT_NAME_TEXT_FIELD}  Economy
     Click element  //button[contains(.,'Add label')]
 
 A Third Label Is Added To Model
@@ -396,8 +383,8 @@ All Labels Are Possible To Select
     Page should contain Element  //div[contains(text(),'Economy')]
     Page should contain Element  //div[contains(text(),'Fake News')]
     Page should contain Element  //div[contains(text(),'Sport')]
-    Click Element  ${FirstRadioButton}
-    Click Element  ${SecondRadioButton}
-    Click Element  ${ThirdRadioButton}
-    Click Element  ${ThirdRadioButton}
-    Click Button  ${AddButton}
+    Click Element  ${FIRST_RADIO_BUTTON}
+    Click Element  ${SECOND_RADIO_BUTTON}
+    Click Element  ${THIRD_RADIO_BUTTON}
+    Click Element  ${THIRD_RADIO_BUTTON}
+    Click Button  ${ADD_BUTTON}
