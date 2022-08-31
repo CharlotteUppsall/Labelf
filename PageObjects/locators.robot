@@ -7,19 +7,6 @@ ${DIFFUSE_COOKIE_BUTTON}  //*[@id="diffuse-cookie-notice"]/div/div/div/div[2]/bu
 ${MY_MODELS_TEXT}  //*[@id="app"]/div[6]/div[1]/main/div/div/nav/div/div[1]
 
 #Models Page
-<<<<<<< HEAD
-${workspace_dropdown_menu}  //*[@class="v-btn v-btn--flat v-btn--large theme--light"]
-${StagWorkspaceModelView}  https://stag.labelf.ai/main/60/models/view
-${app_workspace_model_view}  https://app.labelf.ai/main/387/models/view
-${single_model_options_button}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/nav/div/div[3]/div/button/div/i
-${overview_button}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/div[2]/a/div
-${overview_prelabled_button}  //*[contains(@href,'/main/387/models/3082/dashboard/dashboard')]
-${overview_prelabled_test_button}  //*[contains(@href,'/main/387/models/3049/dashboard/dashboard')]
-${new_model_button}   //*[@id="app"]/div[6]/div[1]/main/div/div/div[1]/nav/div[1]/a
-${delete_option}  //*[@class="v-icon icon-menu-danger material-icons theme--light"]
-${model_ID3084_name_button_in_workspace}  //*[contains(@href,'/main/387/models/3084/dashboard/dashboard')]
-${models_button_in_main_bar}  //*[@id="models-button-navbar"]/div
-=======
 ${WORKSPACE_DROPDOWN_MENU}  //*[@class="v-btn v-btn--flat v-btn--large theme--light"]
 ${STAG_WORKSPACE_MODEL_VIEW}  https://stag.labelf.ai/main/60/models/view
 ${APP_WORKSPACE_MODEL_VIEW}  https://app.labelf.ai/main/387/models/view
@@ -31,7 +18,7 @@ ${NEW_MODEL_BUTTON}   //*[@id="app"]/div[6]/div[1]/main/div/div/div[1]/nav/div[1
 ${DELETE_OPTIONS}  //*[@class="v-icon icon-menu-danger material-icons theme--light"]
 ${MODEL_ID3084_NAME_BUTTON_IN_WORKSPACE}  //*[contains(@href,'/main/387/models/3084/dashboard/dashboard')]
 ${MODELS_BUTTON_IN_MAIN_BAR}  //*[@id="models-button-navbar"]/div
->>>>>>> origin/Charlie-fork
+
 
 #Models Overview Page
 
