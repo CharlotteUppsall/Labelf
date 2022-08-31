@@ -16,6 +16,9 @@ ${PASSWORD_KIMCHI}   Kimchi123
 ${EMAIL_KATTUGGLA}  jakob.nilsson@iths.se
 ${PASSWORD_KATTUGGLA}  44321jJa
 
+
+#Confidence Level
+${MODEL_ID_3085_NAME_BUTTON_IN_WORKSPACE}  //*[contains(@href,'/main/387/models/3085/dashboard/dashboard')]
 ${MODEL_NAME}  Data Model
 ${MODEL_DESCRIPTION}  This is A Model
 ${MODEL_NAME}  TestModel

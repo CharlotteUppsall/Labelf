@@ -67,7 +67,12 @@ Input User Credential
     Input Text    ${LOGIN_PASSWORD_FIELD}  ${PASSWORD_KIMCHI}
 Confirm User Logged In
     Wait Until Page Contains  My Models
-
+Input User Credential App
+    Wait Until Element Is Visible  ${diffuse_cookie_button}
+    Click Button  ${diffuse_cookie_button}
+    Wait Until Page Contains  Don't have an account? Sign up
+    Input Text    ${login_email_field}  ${email_kimchi}
+    Input Text    ${login_password_field}  ${password_kimchi}
 #Kattuggla Login
 Log in User
     Input Text  ${LOGIN_EMAIL_FIELD}  ${EMAIL_KATTUGGLA}
