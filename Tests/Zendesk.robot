@@ -44,10 +44,13 @@ Calling function from Python
    ${value}  PythonScriptUpload
    User clicks on ticket menu
    User clicks on All unsolved tickets
-   User clicks on ticket
+   User clicks on ticket-
    Verify that ticket has tag
 
 Deactivate model on Zendesk workspace
+    [Documentation]  Last test case in suite to make Zendesk workspace clean
+    ...     from activated models.
+    [Tags]  zendesk
     Given User is logged in on Zendesk workspace
     When User Click on Labelf Icon
     And User Clicks Deactivate model button
