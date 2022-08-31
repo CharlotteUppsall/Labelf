@@ -31,7 +31,7 @@ Check Labelf app is installed
     Then Labelf icon should be visible
 
 Activate aLabelf model in Zendesk
-   [Documentation]  User Activate labelf model after login to zendeskworkspace.
+    [Documentation]  User Activate labelf model after login to zendeskworkspace.
     [Tags]  zendesk
     Given User is logged in on Zendesk workspace
     When User Click on labelf Icon
@@ -41,11 +41,20 @@ Activate aLabelf model in Zendesk
 
 
 Calling function from Python
-   ${value}  PythonScriptUpload
-   User clicks on ticket menu
-   User clicks on All unsolved tickets
-   User clicks on ticket-
-   Verify that ticket has tag
+    [Documentation]  Run script to upload new tickets without tags,
+    ...  then look at new ticket and verify a tag has been added.
+    [Tags]  zendesk
+    # Script needs to have pandas and requests installed.
+    # Use "pip install pandas" and "pip install requests" in terminal to install modules.
+
+    # ${value}  PythonScriptUpload
+    # For some reason you can't just run script, need to have it set into a variable. Script returns nothing.
+    # However it seems if you use Given it will run script. Probably because Given expects something from keyword.
+    Given PythonScriptUpload
+    When User clicks on ticket menu
+    And User clicks on All unsolved tickets
+    And User clicks on ticket
+    Then Verify that ticket has tag
 
 Deactivate model on Zendesk workspace
     [Documentation]  Last test case in suite to make Zendesk workspace clean
