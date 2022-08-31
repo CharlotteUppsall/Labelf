@@ -68,11 +68,11 @@ Input User Credential
 Confirm User Logged In
     Wait Until Page Contains  My Models
 Input User Credential App
-    Wait Until Element Is Visible  ${diffuse_cookie_button}
-    Click Button  ${diffuse_cookie_button}
+    Wait Until Element Is Visible  ${DIFFUSE_COOKIE_BUTTON}
+    Click Button  ${DIFFUSE_COOKIE_BUTTON}
     Wait Until Page Contains  Don't have an account? Sign up
-    Input Text    ${login_email_field}  ${email_kimchi}
-    Input Text    ${login_password_field}  ${password_kimchi}
+    Input Text    ${LOGIN_EMAIL_FIELD}  ${EMAIL_KIMCHI}
+    Input Text    ${LOGIN_PASSWORD_FIELD}  ${PASSWORD_KIMCHI}
 #Kattuggla Login
 Log in User
     Input Text  ${LOGIN_EMAIL_FIELD}  ${EMAIL_KATTUGGLA}
@@ -146,7 +146,7 @@ Select An Existing Dataset
 Set A Name And Description For Model
 #Greyed out for loop temp for quicker tests
 #     FOR  ${INT}  IN RANGE  36
-#        Press Keys  ${InputNameTextField}  \\8
+#        Press Keys  ${INPUT_NAME_TEXT_FIELD}  \\8
 #     END
      Press Keys  ${INPUT_NAME_TEXT_FIELD}  CTRL+A+DELETE
      Input Text  ${INPUT_NAME_TEXT_FIELD}   ${MODEL_NAME}
