@@ -1,4 +1,4 @@
 *** Variables ***
-${zendesk_domain}  kimchiab
-${zendesk_usesr_email}  linus.callheim@gu.se
-${zendesk_usesr_password}  begs5nyt
+${ZENDESK_DOMAIN}  kimchiab
+${ZENDESK_USER_EMAIL}  linus.callheim@gu.se
+${ZENDESK_USER_PASSWORD}  begs5nyt
