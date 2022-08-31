@@ -46,32 +46,27 @@ Labelf icon should be visible
 User Click on labelf Icon
    click element  //*[@data-app-title="AI Ticket Tagger by Labelf"]
    Wait until page contains  AI Ticket Tagger by Labelf
-   Sleep  2s
 
 User Choose model and ticket field to update
-   #Maximize browser window
-   #wait until page contains element  //*[@id="modelSelect"]
-   #Select from list by value  //*[@id="modelSelect"]  "3590"
    ## Line below navigates to list of model choices and chooses model id:3590
-   Page should contain  You have no active models yet
-   Press Keys  None  TAB  RETURN  ARROW_DOWN  ARROW_DOWN  RETURN
-   Sleep  1s
-   ## Line below navigates to list choice of what to update and chooses 'ticket field'
-   Press Keys  None  TAB  TAB  RETURN  ARROW_DOWN  RETURN
-   Sleep  1s
-   ## Line below navigates to list of ticket field choices and chooses 'Support category'
-   Press Keys  None  TAB  RETURN  ARROW_DOWN  ARROW_DOWN  RETURN
-   Sleep  1s
+    Page should contain  You have no active models yet
+    Select Frame  xpath=//iframe
+    Select From List By Index  //*[@id="modelSelect"]  2
+    Select From List By Index  //*[@id="tagsorfieldsSelect"]  1
+    Wait Until Page Contains Element  //*[@id="fieldSelect"]
+    Select From List By Index  //*[@id="fieldSelect"]  2
 
 User click on Activate Model on this field
    ## Navigates to 'Activate model'-button and presses it.
-   Press Keys  None  TAB  TAB  TAB  TAB  RETURN
-   sleep  2s
-   #Page should contain element  //*input[@value="Deactivate Model"]
+    Page Should Contain Element  //*[@id="clickMe"]
+    Click Element  //*[@id="clickMe"]
 
 There is an activated model
-    Sleep  3s
-    Page should not contain  You have no active models yet
+    Wait Until Page Contains Element  //*[@id="triggers"]/div/span
+    Wait Until Page Contains Element  //*[@id="clickMe"]
+    Unselect Frame
+
+
 
 ## Test case 4
 User clicks on ticket menu
@@ -92,10 +87,11 @@ Verify that ticket has tag
 
 
 ## Test case 5
-
 User Clicks Deactivate model button
-    Press keys  None  TAB  RETURN
-    Sleep  2s
+    Select Frame  xpath=//iframe
+    Wait Until Page Contains Element  //*[@id="clickMe"]
+    Click Element  //*[@id="clickMe"]
 
 There is no activated model
-    Page should contain  You have no active models yet
+    Wait Until Page Contains  You have no active models yet
+    Unselect Frame

@@ -37,8 +37,7 @@ Activate aLabelf model in Zendesk
     When User Click on labelf Icon
     And User Choose model and ticket field to update
     And User click on Activate Model on this field
-    ##  Then There is an activated model  ##Can't find a way to verify this here.
-
+    Then There is an activated model
 
 Calling function from Python
     [Documentation]  Run script to upload new tickets without tags,
@@ -64,3 +63,4 @@ Deactivate model on Zendesk workspace
     When User Click on Labelf Icon
     And User Clicks Deactivate model button
     Then There is no activated model
+
