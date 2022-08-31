@@ -51,7 +51,7 @@ ${SLICE_SPORT}  css:div#plotly > div.plot-container.plotly > div > svg:nth-child
 ${DATA_SELECT_CUSTOMER_SUPPORT_BUTTON}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[3]/div/div[2]/div/div/div[2]/button/div
 ${DATA_SELECT_CUSTOMER_RESPONCE_BUTTON}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[2]/div/div/div/div/div[2]/button/div
 ${DATA_SELECT_CUSTOMER_SERVICE_BUTTON}  //*[@id="continue-dataset-card"]
-${DATA_SELECT_PARTLY_Pre_LABLED_BUTTON}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[2]/div/div[2]/div/div/div[2]/button
+${DATA_SELECT_PARTLY_PRE_LABLED_BUTTON}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[2]/div/div[2]/div/div/div[2]/button
 ${CONTINUE_WITH_SELECTED_DATASET_COLUMN_BUTTON}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/div[2]/button
 ${USE_LABELS_TO_CONTINUE_TO_TRAIN_THE_MODEL_CHECKBOX}  //*[contains(text(),'Use labels to continue to train the model')]
 ${CONTINUE_BUTTON_WHEN_ADD_NEW_DATASET}  //*[@id="app"]/div[4]/div/div/div/div[5]/div/div/div[3]/button
@@ -73,7 +73,6 @@ ${COLUMN_CONTINUE}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/div[
 ${MODEL_MENU}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/nav/div/div[3]/div/button/div/i
 ${CONTINUE_SCRATCH}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/form/div[2]/button/div
 ${DELETE}  //*[@id="delete-button"]/div[1]/div
-#delete #//*[@id="app"]/div[3]/div/div/div[2]/a/div[1]/div
 ${SURE_DELETE}  //*[@id="app"]/div[6]/div/div/div[3]/button/div
 ${ATTRIBUT_STRING_TEAM_KATTUGGLA}  //*[@id="app"]/div[6]/div[1]/nav/div/div[3]/div/button/div/span
 ${USER_ACCOUNT}  //*[@id="app"]/div[6]/div[1]/nav/div/div[4]/div/button/div/div/span
@@ -112,7 +111,7 @@ ${THIRD_RADIO_BUTTON}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/
 ${LABEL_SWITCH_BUTTON}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/nav/div/div[3]/div[2]/div[1]/div
 ${MULTIPLE_LABELS_SWITCHh_BUTTON}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/div/nav/div/div[3]/div/div/div[1]/div
 #ExtendModelVerification
-${MODEL_ID3085_NAME_BUTTON_IN_Workspace}  //*[contains(@href,'/main/387/models/3085/dashboard/dashboard')]
+${MODEL_ID3085_NAME_BUTTON_IN_WORKSPACE}  //*[contains(@href,'/main/387/models/3085/dashboard/dashboard')]
 ${STRING_NUMBER_AFTER}   //*[@id="app"]/div[10]/div[1]/main/div/div/div[3]/div/div[1]/div/div/div/nav/div/span[2]
 ${STRING_NUMBER_AFTER_ADD_DATASET}  //*[@id="app"]/div[10]/div[1]/main/div/div/div[3]/div/div[1]/div/div/div/nav/div/span[3]
 ${CUSTOMER_SERVICE_RESPONCE_DATASET}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[2]/div/div[1]/div/div[6]/div/div[2]/div/div/div[2]/div/div/div[1]
@@ -135,10 +134,10 @@ ${MODEL_BUTTON}  //*[@id="app"]/div[9]/div[1]/nav/div/a[1]/div
 ${URL}   //https://stag.labelf.ai/login
 
 ${SUBMIT_BUTTON}  //*[@id="app"]/div[8]/div[1]/main/div/div/div[2]/div/div[1]/div/div[3]/div/div[2]/div/div[2]/button[2]
-${INPUT_DESCRIPTION_TEXTFIELD}  //*[@name="input-7-1"]
-#${MultipleChoiceButton}  //button[contains(.,'Multiple Choice')]
-${confidenceRank1}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[11]  #Rank1
-${confidenceRank1}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[11]  #Two variables share the same xpath position need to run the code twice to Pick the right one!
-${confidenceRank2}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[12]  #Rank2
-${confidenceRank3}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[13]  #Rank3
-${confidenceRank4}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[14]  #Rank4
+${INPUT_DESCRIPTION_TEXT_FIELD}  //*[@name="input-7-1"]
+#${MULTI_CHOICE_BUTTON}  //button[contains(.,'Multiple Choice')]
+${CONFIDENCE_RANK1}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[11]  #Rank1
+${CONFIDENCE_RANK1}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[11]  #Two variables share the same xpath position need to run the code twice to Pick the right one!
+${CONFIDENCE_RANK2}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[12]  #Rank2
+${CONFIDENCE_RANK3}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[13]  #Rank3
+${CONFIDENCE_RANK4}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[14]  #Rank4
