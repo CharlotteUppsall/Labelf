@@ -79,7 +79,7 @@ ${ATTRIBUT_STRING_TEAM_KATTUGGLA}  //*[@id="app"]/div[6]/div[1]/nav/div/div[3]/d
 ${USER_ACCOUNT}  //*[@id="app"]/div[6]/div[1]/nav/div/div[4]/div/button/div/div/span
 ${ACCOUNT_LIST}  //*[@id="app"]/div[5]/div
 ${LOGOUT}  //*[@id="app"]/div[5]/div/div[3]/div/a/div[1]/div
-${sTAG_LOGIN_PAGE}  //https://stag.labelf.ai/login
+${STAG_LOGIN_PAGE}  //https://stag.labelf.ai/login
 ${WINDOW}  window-size=1920,1080
 ${MY_WORKSPACE}  //*[@id="app"]/div[3]/div/div[2]/div[3]/a/div[1]
 ${TEAM_KATTUGGLA_WORKSPACE}  //*[@id="app"]/div[3]/div/div[2]/div[5]/a/div[1]
