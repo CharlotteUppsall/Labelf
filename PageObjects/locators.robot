@@ -21,7 +21,7 @@ ${MODELS_BUTTON_IN_MAIN_BAR}  //*[@id="models-button-navbar"]/div
 
 #Models Overview Page
 
-${START_training}  //*[@id="app"]/div[8]/div[1]/main/div/div/div[2]/div/div[1]/div[2]/div/a/div
+${START_TRAINING}  //*[@id="app"]/div[8]/div[1]/main/div/div/div[2]/div/div[1]/div[2]/div/a/div
 ${ADD_LABEL}  //*[@id="app"]/div[4]/div/div[1]/div[4]/div/div/span/div/div/div[2]/div/div/button/div
 ${NEW_LABEL_NAME}  //*[@id="app"]/div[5]/div/div[1]/div[4]/div/div/span/div/div[2]/form/div[1]/div/div/div[1]/div/div/div[1]/div/input
 ${ADD_ONE_LABEL}  //*[@id="app"]/div[5]/div/div[1]/div[4]/div/div/span/div/div[2]/form/div[2]/button/div
