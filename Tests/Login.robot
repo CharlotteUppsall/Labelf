@@ -12,7 +12,7 @@ Suite Teardown  End WebTest
 User Login To Labelf
     [Documentation]  Test for user login to labelf
     [Tags]  Test 1  stagWorkspace  AG-119
-    Given Go To  ${stag_login_site}
+    Given Go To  ${STAG_LOGIN_SITE}
           Input User Credential
     When Press Login Button
     Then Confirm User Logged In
