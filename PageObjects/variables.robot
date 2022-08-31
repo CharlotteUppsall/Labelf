@@ -1,24 +1,24 @@
 *** Variables ***
 
 # URL:s Menu
-${stag_login_site}  https://stag.labelf.ai/login
-${app_login_site}  https://app.labelf.ai/login
+${STAG_LOGIN_SITE}  https://stag.labelf.ai/login
+${APP_LOGIN_SITE}  https://app.labelf.ai/login
 
 #Agile Peacock Login Information
-${email_agile_peacock}  joakim.sorkka@iths.se
-${password_agile_peacock}  123456789
+${EMAIL_AGILE_PEACOCK}  joakim.sorkka@iths.se
+${PASSWORD_AGILE_PEACOCK}  123456789
 
 #Kimchi Login Information
-${email_kimchi}  kimchitest@hotmail.com
-${password_kimchi}   Kimchi123
+${EMAIL_KIMCHI}  kimchitest@hotmail.com
+${PASSWORD_KIMCHI}   Kimchi123
 
 #Login Information
-${email_kattuggla}  jakob.nilsson@iths.se
-${password_kattuggla}  44321jJa
+${EMAIL_KATTUGGLA}  jakob.nilsson@iths.se
+${PASSWORD_KATTUGGLA}  44321jJa
 
-${model_name}  Data Model
-${model_description}  This is A Model
-${modelName}  TestModel
 
 #Confidence Level
-${ModelID3085NameButtonInWorkspace}  //*[contains(@href,'/main/387/models/3085/dashboard/dashboard')]
+${MODEL_ID_3085_NAME_BUTTON_IN_WORKSPACE}  //*[contains(@href,'/main/387/models/3085/dashboard/dashboard')]
+${MODEL_NAME}  Data Model
+${MODEL_DESCRIPTION}  This is A Model
+${MODEL_NAME}  TestModel
