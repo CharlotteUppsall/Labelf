@@ -20,7 +20,7 @@ ${BROWSER}  chrome
 User Login To Labelf
     [Documentation]  Testcase for user login to labelf
     [Tags]  Testcase 1
-    Given Go To  ${StagLoginSite}
+    Given Go To  ${STAG_LOGIN_SITE}
           Input User Credential
           #Confirm Cookie
     When Press Login Button
