@@ -6,13 +6,6 @@ Suite Setup  Start WebTest
 Suite Teardown  End WebTest
 
 *** Test Cases ***
-#User Login To Labelf
-#    [Documentation]  Test for user login to labelf
-#    [Tags]  Test 1  stagWorkspace  AG-119
-#    Given Go To  ${stag_login_site}
-#          Input User Credential
-#    When Press Login Button
-#    Then Confirm User Logged In
 
 Create a Model
     [Documentation]  Test that verifies user creation of model on labelf
@@ -31,11 +24,3 @@ Delete Single Model
     When User Opens Single Model Options Dropdown List
     And User Clicks Delete Model Option
     Then Workspace Is Empty
-
-#User is logged in; have changed workspace and created a model; ready to train a model.
-#    [Documentation]  Once logged in; being able to change workspace
-#    [Tags]  StartUp
-#    Go To Web Page
-#    Log in User
-#    Select Team Kattuggla As Workspace
-#    Create A Model

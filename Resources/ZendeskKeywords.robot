@@ -1,29 +1,29 @@
 *** Keywords ***
 
 Start WebTest
-    ${chrome_options}=  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
-    Call Method    ${chrome_options}    add_argument  --disable-dev-shm-usage
-    Call Method    ${chrome_options}    add_argument    test-type
-    Call Method    ${chrome_options}    add_argument    --disable-extensions
+    ${CHROME_OPTIONS}=  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
+    Call Method    ${CHROME_OPTIONS}    add_argument  --disable-dev-shm-usage
+    Call Method    ${CHROME_OPTIONS}    add_argument    test-type
+    Call Method    ${CHROME_OPTIONS}    add_argument    --disable-extensions
     # Comment away to capture video
-    #Call Method    ${chrome_options}    add_argument    --headless
-    Call Method    ${chrome_options}    add_argument    --disable-gpu
-    Call Method    ${chrome_options}    add_argument    --no-sandbox
+    #Call Method    ${CHROME_OPTIONS}    add_argument    --headless
+    Call Method    ${CHROME_OPTIONS}    add_argument    --disable-gpu
+    Call Method    ${CHROME_OPTIONS}    add_argument    --no-sandbox
 
-    Create Webdriver    Chrome    chrome_options=${chrome_options}
+    Create Webdriver    Chrome    chrome_options=${CHROME_OPTIONS}
     Set Selenium speed  0.2s
     Set Selenium Timeout  10s
     Set Window Size  1600  900
 
 ## Test case 1: Login to Zendesk workspace
 User navigates to Zendesk.com
-    Go To  https://${zendesk_domain}.zendesk.com
-    Location should contain  https://${zendesk_domain}.zendesk.com/access/unauthenticated
+    go to  https://${ZENDESK_DOMAIN}.zendesk.com
+    Location should contain  https://${ZENDESK_DOMAIN}.zendesk.com/access/unauthenticated
 
 User enter account information
     Select frame  xpath=//iframe
-    Input text  //*[@id="user_email"]  ${zendesk_usesr_email}
-    Input Password  //*[@id="user_password"]  ${zendesk_usesr_password}
+    Input text  //*[@id="user_email"]  ${ZENDESK_USER_EMAIL}
+    Input Password  //*[@id="user_password"]  ${ZENDESK_USER_PASSWORD}
     Click button  //*[@id="sign-in-submit-button"]
     #Press Keys  None  ${zendesk_usesr_email}
     #Press Keys  None  TAB
@@ -32,12 +32,12 @@ User enter account information
 
 User should be at his Zendesk workspace
     Wait until page contains  Dashboard
-    Location should be  https://${zendesk_domain}.zendesk.com/agent/get-started/your-account/account-overview
+    Location should be  https://${ZENDESK_DOMAIN}.zendesk.com/agent/get-started/your-account/account-overview
 
 
 ## Test case 2: Check that Labelf app is installed
 User is logged in on Zendesk workspace
-    Location should contain  https://${zendesk_domain}.zendesk.com/agent/
+    Location should contain  https://${ZENDESK_DOMAIN}.zendesk.com/agent/
 
 User looks at screen
     Scroll element into view  //*[@data-app-title="AI Ticket Tagger by Labelf"]

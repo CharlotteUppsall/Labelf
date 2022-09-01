@@ -8,10 +8,12 @@ Resource  ../PageObjects/variables.robot
 #Suite Setup    Begin Web Test
 #Suite Teardown  End Web Test
 
-#To test Single Labeling Feature On Labels
+
 
 *** Test Cases ***
 Logged in user can create single labeling for their newly created model
+    [Documentation]  To test Single Labeling Feature On Labels
+    [Tags]  Training
     Given user is logged in
     And user creates a new model
     When user starts training the model first time
