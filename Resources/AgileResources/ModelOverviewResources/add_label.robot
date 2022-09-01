@@ -1,36 +1,36 @@
 
 *** Variables ***
-@{add_to_workspace_button}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[2]/div/div/div/div[2]/button
-${first_leave_training_page}  //*[@id="close-button"]
-${second_leave_training_page}  //*[@id="app"]/div[5]/div/div[1]/div[1]/div/div/nav/div/a/div
-${third_leave_training_page}  //*[@id="app"]/div[15]/div/div[1]/div[1]/div/div/nav/div/a/div
-${fourth_leave_training_page}  //*[@id="app"]/div[6]/div/div[1]/div[1]/div/div/nav/div/a/div
-${model_id}  //*[@id="app"]/div[8]/div[1]/main/div/div/div[2]/div/div[1]/div/div[2]/div/div/p[1]
-${start_training_button}  //*[@id="app"]/div[8]/div[1]/main/div/div/div[1]/div/div/div/div/nav/div/a[6]
-${first_add_label_button}  //*[@id="add-label"]
-${second_add_label_button}  //*[@id="app"]/div[15]/div/div[1]/div[3]/div/a
-${third_add_label_button}  //*[@id="app"]/div[5]/div/div[1]/div[3]/div/a
-${fourth_add_label_button}  //*[@id="app"]/div[16]/div/div[1]/div[3]/div/a
-${new_label_name_text_field}  //*[@id="app"]/div[3]/div/div/form/div[2]/div/div/div[1]/div/div/div[1]/div/input
-${new_label_example_text_field}  //*[@id="app"]/div[3]/div/div/form/div[2]/div/div/div[3]/div[3]/div/div/div[1]/div[1]/textarea
-${submit_add_new_label}  //*[@id="app"]/div[3]/div/div/form/div[3]/button
-${total_items_text}  //*[@id="app"]/div[8]/div[1]/main/div/div/div[2]/div/div[1]/div/div[2]/div/div/p[3]
-@{total_labeled_items_text}  //*[@id="app"]/div[8]/div[1]/main/div/div/div[2]/div/div[1]/div/div[2]/div/div/p[4]
+@{ADD_TO_WORKSPACE_BUTTON}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[2]/div/div/div/div[2]/button
+${FIRST_LEAVE_TRAINING_PAGE}  //*[@id="close-button"]
+${SECOND_LEAVE_TRAINING_PAGE}  //*[@id="app"]/div[5]/div/div[1]/div[1]/div/div/nav/div/a/div
+${THIRD_LEAVE_TRAINING_PAGE}  //*[@id="app"]/div[15]/div/div[1]/div[1]/div/div/nav/div/a/div
+${FOURTH_LEAVE_TRAINING_PAGE}  //*[@id="app"]/div[6]/div/div[1]/div[1]/div/div/nav/div/a/div
+${MODEL_ID}  //*[@id="app"]/div[8]/div[1]/main/div/div/div[2]/div/div[1]/div/div[2]/div/div/p[1]
+${START_TRAINING_BUTTON}  //*[@id="app"]/div[8]/div[1]/main/div/div/div[1]/div/div/div/div/nav/div/a[6]
+${FIRST_ADD_LABEL_BUTTON}  //*[@id="add-label"]
+${SECOND_ADD_LABEL_BUTTON}  //*[@id="app"]/div[15]/div/div[1]/div[3]/div/a
+${THIRD_ADD_LABEL_BUTTON}  //*[@id="app"]/div[5]/div/div[1]/div[3]/div/a
+${FOURTH_ADD_LABEL_BUTTON}  //*[@id="app"]/div[16]/div/div[1]/div[3]/div/a
+${NEW_LABEL_NAME_TEXT_FIELD}  //*[@id="app"]/div[3]/div/div/form/div[2]/div/div/div[1]/div/div/div[1]/div/input
+${NEW_LABEL_EXAMPLE_TEXT_FIELD}  //*[@id="app"]/div[3]/div/div/form/div[2]/div/div/div[3]/div[3]/div/div/div[1]/div[1]/textarea
+${SUBMIT_ADD_NEW_LABEL}  //*[@id="app"]/div[3]/div/div/form/div[3]/button
+${TOTAL_ITEMS_TEXT}  //*[@id="app"]/div[8]/div[1]/main/div/div/div[2]/div/div[1]/div/div[2]/div/div/p[3]
+@{TOTAL_LABELED_ITEMS_TEXT}  //*[@id="app"]/div[8]/div[1]/main/div/div/div[2]/div/div[1]/div/div[2]/div/div/p[4]
 *** Keywords ***
 Loop Thru Add Label Elements
     Reload Page
     FOR  ${i}  IN RANGE  0  5  1
-    ${status}=  Run Keyword And Return Status  Page Should Contain Element  ${first_add_label_button}
-    Run Keyword If  '${status}'=='True'  Wait Until Keyword Succeeds  20s  1s  Click Element  ${first_add_label_button}
+    ${status}=  Run Keyword And Return Status  Page Should Contain Element  ${FIRST_ADD_LABEL_BUTTON}
+    Run Keyword If  '${status}'=='True'  Wait Until Keyword Succeeds  20s  1s  Click Element  ${FIRST_ADD_LABEL_BUTTON}
     Exit For Loop If  '${status}'=='True'
-    ${status}=  Run Keyword And Return Status  Page Should Contain Element  ${second_add_label_button}
-    Run Keyword If  '${status}'=='True'  Wait Until Keyword Succeeds  20s  1s  Click Element  ${second_add_label_button}
+    ${status}=  Run Keyword And Return Status  Page Should Contain Element  ${SECOND_ADD_LABEL_BUTTON}
+    Run Keyword If  '${status}'=='True'  Wait Until Keyword Succeeds  20s  1s  Click Element  ${SECOND_ADD_LABEL_BUTTON}
     Exit For Loop If  '${status}'=='True'
-    ${status}=  Run Keyword And Return Status  Page Should Contain Element  ${third_add_label_button}
-    Run Keyword If  '${status}'=='True'  Wait Until Keyword Succeeds  20s  1s  Click Element  ${third_add_label_button}
+    ${status}=  Run Keyword And Return Status  Page Should Contain Element  ${THIRD_ADD_LABEL_BUTTON}
+    Run Keyword If  '${status}'=='True'  Wait Until Keyword Succeeds  20s  1s  Click Element  ${THIRD_ADD_LABEL_BUTTON}
     Exit For Loop If  '${status}'=='True'
-    ${status}=  Run Keyword And Return Status  Page Should Contain Element  ${fourth_add_label_button}
-    Run Keyword If  '${status}'=='True'  Wait Until Keyword Succeeds  20s  1s  Click Element  ${fourth_add_label_button}
+    ${status}=  Run Keyword And Return Status  Page Should Contain Element  ${FOURTH_ADD_LABEL_BUTTON}
+    Run Keyword If  '${status}'=='True'  Wait Until Keyword Succeeds  20s  1s  Click Element  ${FOURTH_ADD_LABEL_BUTTON}
     Exit For Loop If  '${status}'=='True'
     Reload Page
     END
@@ -39,56 +39,56 @@ Leave Training Page
     Sleep  2s
     Wait Until Page Contains  Labeled:
     FOR  ${i}  IN RANGE  0  5  1
-    ${status}=  Run Keyword And Return Status  Page Should Contain Element  ${first_leave_training_page}
-    Run Keyword If  '${status}'=='True'  Wait Until Keyword Succeeds  20s  1s  Click Element  ${first_leave_training_page}
+    ${status}=  Run Keyword And Return Status  Page Should Contain Element  ${FIRST_LEAVE_TRAINING_PAGE}
+    Run Keyword If  '${status}'=='True'  Wait Until Keyword Succeeds  20s  1s  Click Element  ${FIRST_LEAVE_TRAINING_PAGE}
     Exit For Loop If  '${status}'=='True'
-    ${status}=  Run Keyword And Return Status  Page Should Contain Element  ${second_leave_training_page}
-    Run Keyword If  '${status}'=='True'  Wait Until Keyword Succeeds  20s  1s  Click Element  ${second_leave_training_page}
+    ${status}=  Run Keyword And Return Status  Page Should Contain Element  ${SECOND_LEAVE_TRAINING_PAGE}
+    Run Keyword If  '${status}'=='True'  Wait Until Keyword Succeeds  20s  1s  Click Element  ${SECOND_LEAVE_TRAINING_PAGE}
     Exit For Loop If  '${status}'=='True'
-    ${status}=  Run Keyword And Return Status  Page Should Contain Element  ${third_leave_training_page}
-    Run Keyword If  '${status}'=='True'  Wait Until Keyword Succeeds  20s  1s  Click Element  ${third_leave_training_page}
+    ${status}=  Run Keyword And Return Status  Page Should Contain Element  ${THIRD_LEAVE_TRAINING_PAGE}
+    Run Keyword If  '${status}'=='True'  Wait Until Keyword Succeeds  20s  1s  Click Element  ${THIRD_LEAVE_TRAINING_PAGE}
     Exit For Loop If  '${status}'=='True'
-    ${status}=  Run Keyword And Return Status  Page Should Contain Element  ${fourth_leave_training_page}
-    Run Keyword If  '${status}'=='True'  Wait Until Keyword Succeeds  20s  1s  Click Element  ${fourth_leave_training_page}
+    ${status}=  Run Keyword And Return Status  Page Should Contain Element  ${FOURTH_LEAVE_TRAINING_PAGE}
+    Run Keyword If  '${status}'=='True'  Wait Until Keyword Succeeds  20s  1s  Click Element  ${FOURTH_LEAVE_TRAINING_PAGE}
     Exit For Loop If  '${status}'=='True'
     Reload Page
     END
     Run Keyword If  '${status}'=='False'  Go To  https://app.labelf.ai/main/375/models/${model_id_as_int}/dashboard/dashboard
 
 Submit New Label
-    Wait Until Element Is Visible  ${submit_add_new_label}
-    Click Element  ${submit_add_new_label}
+    Wait Until Element Is Visible  ${SUBMIT_ADD_NEW_LABEL}
+    Click Element  ${SUBMIT_ADD_NEW_LABEL}
     Wait Until Page Contains  Label successfully created  timeout=15
 Input New Label Example
     [Arguments]  ${example}
-    Input Text  ${new_label_example_text_field}  ${example}
+    Input Text  ${NEW_LABEL_EXAMPLE_TEXT_FIELD}  ${example}
 Input New Label Name
     [Arguments]  ${name}
     Sleep  1s
-    Input Text  ${new_label_name_text_field}  ${name}
+    Input Text  ${NEW_LABEL_NAME_TEXT_FIELD}  ${name}
 Test Failsafe Skip
     Go To  https://stag.labelf.ai/main/62/models/${model_id_as_int}/dashboard/dashboard
     Skip
 
 Get Model Id
-    Wait Until Element Is Visible  ${model_id}
-    ${model_id_as_string}  Get Text  ${model_id}
+    Wait Until Element Is Visible  ${MODEL_ID}
+    ${model_id_as_string}  Get Text  ${MODEL_ID}
     ${model_id_as_int}  remove_text  ${model_id_as_string}
     Set Global Variable  ${model_id_as_int}
 
 Verify Add New Label Is Pressed
-    Wait Until Element Is Visible  ${new_label_name_text_field}
-    Wait Until Element Is Visible  ${new_label_example_text_field}
+    Wait Until Element Is Visible  ${NEW_LABEL_NAME_TEXT_FIELD}
+    Wait Until Element Is Visible  ${NEW_LABEL_EXAMPLE_TEXT_FIELD}
 
 Verify Total Number Of Items Before Adding Label
-    Wait Until Element Is Visible  ${total_items_text}
-    ${total_items_as_string}  Get Text  ${total_items_text}
+    Wait Until Element Is Visible  ${TOTAL_ITEMS_TEXT}
+    ${total_items_as_string}  Get Text  ${TOTAL_ITEMS_TEXT}
     ${total_items_as_int_before_increase}  remove_text  ${total_items_as_string}
     Set Global Variable  ${total_items_as_int_before_increase}
 
 Verify Total Number Of Items After Adding Label
-    Wait Until Element Is Visible  ${total_items_text}
-    ${total_items_as_string}  Get Text  ${total_items_text}
+    Wait Until Element Is Visible  ${TOTAL_ITEMS_TEXT}
+    ${total_items_as_string}  Get Text  ${TOTAL_ITEMS_TEXT}
     ${total_items_as_int}  remove_text  ${total_items_as_string}
     Set Global Variable  ${total_items_as_int}
     Should Be True  ${total_items_as_int_before_increase} < ${total_items_as_int}
@@ -97,8 +97,8 @@ Go To Model Overview
     ${status}=  Run Keyword And Return Status  Wait Until Page Contains Element  //*[@id="model-card-title"]/a
     Run Keyword If  '${status}'=='True'  Click Element   //*[@id="model-card-title"]/a
 Press Start Training Button
-    Wait Until Element Is Visible  ${start_training_button}
-    Click Element  ${start_training_button}
+    Wait Until Element Is Visible  ${START_TRAINING_BUTTON}
+    Click Element  ${START_TRAINING_BUTTON}
     Wait Until Page Contains  Labeled:
 
 Go To Start Training Page
@@ -206,7 +206,7 @@ The Model Should Increase "Total Items" And "Labeled Items"
 
 Create Demo Model
     Press Create New Model
-    Click Element  @{add_to_workspace_button}
+    Click Element  @{ADD_TO_WORKSPACE_BUTTON}
 Verify Demo Model Is Created
     Wait Until Page Contains  test (1)  timeout=25
 
