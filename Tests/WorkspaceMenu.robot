@@ -25,7 +25,6 @@ Verify that each of the workspace settings are clickable
     [Documentation]  Logged in user can select workspace settings
     [Tags]  Workspace
     Given user clicks on the workspace menu
-    #And workspace settings are shown
     When user clicks on each of the workspace settings
     Then user is navigated to the correlating page
 
