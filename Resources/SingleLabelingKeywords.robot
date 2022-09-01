@@ -4,12 +4,7 @@ Resource  ../PageObjects/variables.robot
 Library  ../Scripts/remove_text.py
 
 *** Keywords ***
-user is logged in
-    Start WebTest
-    Log in User
-user creates a new model
-    Select Team Kattuggla As Workspace
-    Create A Model
+
 user starts training the model first time
      Add labels for model
 user can create single labeling

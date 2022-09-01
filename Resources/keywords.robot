@@ -73,10 +73,18 @@ Input User Credential App
     Wait Until Page Contains  Don't have an account? Sign up
     Input Text    ${LOGIN_EMAIL_FIELD}  ${EMAIL_KIMCHI}
     Input Text    ${LOGIN_PASSWORD_FIELD}  ${PASSWORD_KIMCHI}
+
+#COMMON KEYWORDS
+user is logged in
+    Start WebTest
+    Log in User
+user creates a new model
+    Select "My first Workspace" As Workspace
+    Create A Model
 #Kattuggla Login
 Log in User
-    Input Text  ${LOGIN_EMAIL_FIELD}  ${EMAIL_KATTUGGLA}
-    Input Text  ${LOGIN_PASSWORD_FIELD}  ${PASSWORD_KATTUGGLA}
+    Input Text  ${LOGIN_EMAIL_FIELD}  ${EMAIL_TEST_ACCOUNT}
+    Input Text  ${LOGIN_PASSWORD_FIELD}  ${PASSWORD_TEST_ACCOUNT}
     Click Element   ${LOGIN_BUTTON}
     Wait Until Page Contains  My Models
 
@@ -278,9 +286,9 @@ User Can See All Labels
     Click Element  ${MODEL_BUTTON}
     Wait Until Page Contains  Team Kimchi
     Delete Single Automated Test Model
-Select Team Kattuggla As Workspace
-    Go To  https://stag.labelf.ai/main/68/models/view
-    Wait Until Page Contains  Team Kattuggla
+Select "My first Workspace" As Workspace
+    Go To  https://stag.labelf.ai/main/84/models/view
+    Wait Until Page Contains  Models | My first workspace
     Reload Page
 
 

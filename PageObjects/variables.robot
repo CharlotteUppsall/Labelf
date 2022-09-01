@@ -22,3 +22,7 @@ ${MODEL_ID_3085_NAME_BUTTON_IN_WORKSPACE}  //*[contains(@href,'/main/387/models/
 ${MODEL_NAME}  Data Model
 ${MODEL_DESCRIPTION}  This is A Model
 ${MODEL_NAME}  TestModel
+
+#Final Login Information
+${EMAIL_TEST_ACCOUNT}  tester@labelf.ai
+${PASSWORD_TEST_ACCOUNT}  ehy@EGZ1tub0bct*chj
