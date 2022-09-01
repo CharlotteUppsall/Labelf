@@ -17,7 +17,7 @@ Start WebTest
 
 ## Test case 1: Login to Zendesk workspace
 User navigates to Zendesk.com
-    go to  https://${zendesk_domain}.zendesk.com
+    Go To  https://${zendesk_domain}.zendesk.com
     Location should contain  https://${zendesk_domain}.zendesk.com/access/unauthenticated
 
 User enter account information
@@ -31,7 +31,7 @@ User should be at his Zendesk workspace
     Location should be  https://${zendesk_domain}.zendesk.com/agent/get-started/your-account/account-overview
 
 
-## Test case 2: Check Labelf app is installed
+## Test case 2: Check that Labelf app is installed
 User is logged in on Zendesk workspace
     Location should contain  https://${zendesk_domain}.zendesk.com/agent/
 
@@ -42,33 +42,31 @@ Labelf icon should be visible
     Page should contain element  //*[@data-app-title="AI Ticket Tagger by Labelf"]
 
 
-## Test case 3: Activate aLabelf model in Zendesk
+## Test case 3: Activate a Labelf model in Zendesk
 User Click on labelf Icon
-   click element  //*[@data-app-title="AI Ticket Tagger by Labelf"]
+   Click element  //*[@data-app-title="AI Ticket Tagger by Labelf"]
    Wait until page contains  AI Ticket Tagger by Labelf
 
 User Choose model and ticket field to update
-   ## Line below navigates to list of model choices and chooses model id:3590
     Page should contain  You have no active models yet
     Select Frame  xpath=//iframe
-    Select From List By Index  //*[@id="modelSelect"]  2
-    Select From List By Index  //*[@id="tagsorfieldsSelect"]  1
+    Select From List By Index  //*[@id="modelSelect"]  2            #Selects working model "Customer Support Categories model id:3590"
+    Select From List By Index  //*[@id="tagsorfieldsSelect"]  1     #Selects "Update a ticket field"
     Wait Until Page Contains Element  //*[@id="fieldSelect"]
-    Select From List By Index  //*[@id="fieldSelect"]  2
+    Select From List By Index  //*[@id="fieldSelect"]  2            #Selects "Support Category", which is a predefined ticket field.
 
 User click on Activate Model on this field
-   ## Navigates to 'Activate model'-button and presses it.
     Page Should Contain Element  //*[@id="clickMe"]
-    Click Element  //*[@id="clickMe"]
+    Click Element  //*[@id="clickMe"]                               #Click the only button in IFrame
 
 There is an activated model
     Wait Until Page Contains Element  //*[@id="triggers"]/div/span
-    Wait Until Page Contains Element  //*[@id="clickMe"]
-    Unselect Frame
+    Wait Until Page Contains Element  //*[@id="clickMe"]            #New button, old is removed after clicking.
+    Unselect Frame                                                  #Need to unselect frame to go back to starting point for next test.
 
 
 
-## Test case 4
+## Test case 4: User navigates to All unsolved tickets and click the newest ticket.
 User clicks on ticket menu
     Click Element  //*[@data-ember-action="1687"]
     Wait Until Page Contains  Unassigned tickets
@@ -86,7 +84,7 @@ Verify that ticket has tag
     Wait Until Page Contains  Delivery
 
 
-## Test case 5
+## Test case 5: User clicks deactivate on an already activated model
 User Clicks Deactivate model button
     Select Frame  xpath=//iframe
     Wait Until Page Contains Element  //*[@id="clickMe"]

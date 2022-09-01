@@ -8,7 +8,7 @@ except Exception:
     ROBOT = False
 
 
-@keyword("PythonScriptUpload")
+@keyword("New tickets are added")
 def uploadTicketsToZendesk():
     import pandas as pd
     import requests

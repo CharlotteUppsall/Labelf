@@ -30,7 +30,7 @@ Check Labelf app is installed
     When User looks at screen
     Then Labelf icon should be visible
 
-Activate aLabelf model in Zendesk
+Activate a Labelf model in Zendesk
     [Documentation]  User Activate labelf model after login to zendeskworkspace.
     [Tags]  zendesk
     Given User is logged in on Zendesk workspace
@@ -49,7 +49,7 @@ Calling function from Python
     # ${value}  PythonScriptUpload
     # For some reason you can't just run script, need to have it set into a variable. Script returns nothing.
     # However it seems if you use Given it will run script. Probably because Given expects something from keyword.
-    Given PythonScriptUpload
+    Given New tickets are added     #This runs the script, uploading tickets from the Synthetic_tickets.csv file
     When User clicks on ticket menu
     And User clicks on All unsolved tickets
     And User clicks on ticket
