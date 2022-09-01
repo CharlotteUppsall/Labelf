@@ -12,9 +12,13 @@ ${PASSWORD_AGILE_PEACOCK}  123456789
 ${EMAIL_KIMCHI}  kimchitest@hotmail.com
 ${PASSWORD_KIMCHI}   Kimchi123
 
-#Login Information
+#Kattuggla Login Information
 ${EMAIL_KATTUGGLA}  jakob.nilsson@iths.se
 ${PASSWORD_KATTUGGLA}  44321jJa
+
+#Kattuggla Login Information 2
+${EMAIL_KATTUGGLA2}  marcus.davidsson@iths.se
+${PASSWORD_KATTUGGLA}  vitoKurre2022
 
 
 #Confidence Level
