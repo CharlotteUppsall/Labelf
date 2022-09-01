@@ -89,6 +89,35 @@ ${WINDOW}  window-size=1920,1080
 ${MY_WORKSPACE}  //*[@id="app"]/div[3]/div/div[2]/div[3]/a/div[1]
 ${TEAM_KATTUGGLA_WORKSPACE}  //*[@id="app"]/div[3]/div/div[2]/div[5]/a/div[1]
 
+#Kattuggla Dataset Variables
+${MODELSMENU}  //*[@id="models-button-navbar"]/div/span[1]
+${DATASETMENU}  //*[@id="app"]/div[6]/div[1]/nav/div/a[2]
+${MYMODELS}  //*[@id="app"]/div[7]/div[1]/main/div/div/nav/div/div[1]
+${SAVEDTEXTMYMODELS}
+${SAVEDTEXTMYDATASET}
+${INTEGRATIONMENU}  //*[@id="app"]/div[6]/div[1]/nav/div/a[3]/div/span[1]
+${MYDATASET}  //*[@id="app"]/div[6]/div[1]/main/div/div/nav[1]/div/div[1]
+${SMALLARROWBUTTONINTEGRATION}  //*[@id="app"]/div[5]/div[1]/main/div/div/ul/li[1]/div[1]/nav/div/i
+${HAMBURGERMENU}  //*[@id="hamburger-menu-button"]/div/i
+${HAMBURGERMENUMODELS}  //*[@id="app"]/div[2]/div/div[1]/div[3]/a/div[1]/div
+${MIXEDLANGUGETEXTELEMENT}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/div[1]/p[1]
+${SAVEDTEXTMIXEDLANGUGETEXT}
+${USERACCOUNTMENU}  //*[@id="app"]/div[7]/div[1]/nav/div/div[4]/div/button/div/div/span
+${LOGOUTBUTTON}  //*[@id="logout-button"]/div[1]/div
+${DONTHAVEANACCOUNT?}  //*[@id="app"]/div/main/div/div/div/div/div/div[2]/button[1]/div
+${SAVEDTEXTDONTHAVEANACCOUNT?}
+${ADDADATASET+}  //*[@id="app"]/div[5]/div[1]/main/div/div/div[1]/nav/div[1]/a/div/i
+${SELECT-CSV}  //*[@id="app"]/div[1]/div/div/div[2]/div/div/div[1]/div/div[2]/button/div
+${DROPZONE}  //*[@id="dropzone"]
+${DRAGNDROP}  //*[@id="fileUpload"]
+${ADDANAMEFIELD}  //*[@id="app"]/div[1]/div/div/form/div/form/div[1]/div/div/div[1]/div/div/div[1]
+${NAMEDATASET}  //*[@id="app"]/div[1]/div/div/form/div/form/div[1]/div/div/div[1]/div/div/div[1]/div/input
+${UPLOADBUTTON}  //*[@id="app"]/div[1]/div/div/form/div/div[2]/button
+${TREEDOTS}  //*[@id="app"]/div[6]/div[1]/main/div/div/div[3]/div/div/div/div/div/nav/div/div[3]/div/button
+${DELETEDATASET}  //*[@id="delete-button"]
+${CONFIRMDELETE}  //*[@id="app"]/div[2]/div/div/div[3]/button
+${UPLOADFILE}  //*[@id="fileUpload"]
+
 
 #Agile Peacock Sprint 1 Variables (Temporary)
 ${NEW_MODEL_BUTTON}  //*[@id="new-model-button"]
