@@ -3,8 +3,6 @@
 Library  SeleniumLibrary
 Resource  ../Resources/keywords.robot
 Resource  ../PageObjects/locators.robot
-Resource  ../PageObjects/variables.robot
-Resource  ../kimchiProjectKeywords.robot
 
 Suite Setup  Start WebTest
 Suite Teardown  End WebTest
