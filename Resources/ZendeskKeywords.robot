@@ -21,13 +21,17 @@ User navigates to Zendesk.com
     Location should contain  https://${zendesk_domain}.zendesk.com/access/unauthenticated
 
 User enter account information
-    Press Keys  None  ${zendesk_usesr_email}
-    Press Keys  None  TAB
-    Press Keys  None  ${zendesk_usesr_password}
-    Press Keys  None  TAB+RETURN
+    Select frame  xpath=//iframe
+    Input text  //*[@id="user_email"]  ${zendesk_usesr_email}
+    Input Password  //*[@id="user_password"]  ${zendesk_usesr_password}
+    Click button  //*[@id="sign-in-submit-button"]
+    #Press Keys  None  ${zendesk_usesr_email}
+    #Press Keys  None  TAB
+    #Press Keys  None  ${zendesk_usesr_password}
+    #Press Keys  None  TAB+RETURN
 
 User should be at his Zendesk workspace
-    Wait until page contains  Get started
+    Wait until page contains  Dashboard
     Location should be  https://${zendesk_domain}.zendesk.com/agent/get-started/your-account/account-overview
 
 
