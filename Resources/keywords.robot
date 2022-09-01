@@ -425,29 +425,41 @@ The Edit Model Name Field Is Shown
 
 #Kimchi 3ModelTrainingStage
 User Has Selected Bring Your Own Labels
-       Go To  ${StagLoginSite}
-       Input User Credential
-       Confirm Cookie
-       Press Login Button
-       Confirm User Logged In
-       Go To  ${StagWorkspaceModelView}
+       Log in User
        User Clicks Button "New Model" And To Create A New Model From Scratch
-       Click Element  ${DataSelectPartlyPreLabledButton}
+       Click Element  ${DATA_SELECT_PARTLY_PRE_LABLED_BUTTON}
        Wait Until Page Contains  Please click on the column
-       Click Element  ${LabelSwitchButton}
+       Click Element  ${LABEL_SWITCH_BUTTON}
 User Clicks Continue
-      Wait Until Page Contains Element  ${ContinueWithSelectedDatasetColumnButton}
+      Wait Until Page Contains Element   ${CONTINUE_WITH_SELECTED_DATASET_COLUMN_BUTTON}
       Sleep  0.2  # To allow time for page animation
-      Click Element  ${ContinueWithSelectedDatasetColumnButton}
+      Click Element  ${CONTINUE_WITH_SELECTED_DATASET_COLUMN_BUTTON}
       Wait Until Page Contains  Please click on the column containing the labels
 The Slider "One Text Can Contain Multiple Labels" Is Presented
-      Wait Until Page Contains Element  ${MultiplLabelsSwitchButton}
+      Wait Until Page Contains Element  ${MULTIPLE_LABELS_SWITCHh_BUTTON}
 Verify "One Text Can Have Multiple Labels" Is Enabled When Clicked
-      Click Element  ${MultiplLabelsSwitchButton}
-      Element Should Be Enabled  ${MultiplLabelsSwitchButton}
+      Click Element  ${MULTIPLE_LABELS_SWITCHh_BUTTON}
+      Element Should Be Enabled   ${MULTIPLE_LABELS_SWITCHh_BUTTON}
+      Scroll Element Into View  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/div/div[3]/button/div
+      Sleep  3s
+      Click Element  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/div/div[3]/button/div
+
+Add Name And Description For Model
+     Insert Model Name
+     Press Create Model Button
+     Sleep  1s
+     Reload Page
+
+User Navigate To Model Overview
+    Go To   ${STAG_WORKSPACE_MODEL_VIEW}
+    Click Element  ${OVERVIEW_BUTTON}
+    Wait Until Page Contains  Overview
 
 Verify that all labels from original dataset are shown in Model overview
      Wait Until Page Contains  Negative
      Wait Until Page Contains  Positive
      Wait Until Page Contains  Neutral
      Wait Until Page Contains  N/A
+     Reload Page
+     Delete Model
+     Wait Until Page Contains   My Models (0)

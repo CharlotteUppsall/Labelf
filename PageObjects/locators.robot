@@ -109,7 +109,7 @@ ${ADD_A_FIRST_LABEL_BUTTON}  //*[@id="app"]/div[4]/div/div[1]/div[4]/div/div/spa
 ${ADD_A_LABEL_BUTTON}  //*[@id="app"]/div[4]/div/div[1]/div[4]/div/div/span/div/div/div[2]/div/div/button/div   #Adds new label
 ${ADD_LABEL_BUTTON}  //*[@id="app"]/div[5]/div/div[1]/div[4]/div/div/span/div/div[2]/form/div[2]/button  #Adds label when you input label Name
 ${LABELS_PIECHART}  //*[@id="plotly"]/div[1]/div
-${MULTIPLE_CHOICE_BUTTON} //*[@id="app"]/div[14]/div/div/div[3]/button[2]
+${MULTIPLE_CHOICE_BUTTON}  //*[@id="app"]/div[14]/div/div/div[3]/button[2]
 ${ADD_BUTTON}  //button[contains(.,' Add ')]
 ${FIRST_RADIO_BUTTON}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[1]
 ${SECOND_RADIO_BUTTON}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[2]
