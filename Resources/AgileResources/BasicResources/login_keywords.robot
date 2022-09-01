@@ -12,8 +12,8 @@ End WebTest
     Verify Workspace Is Empty
     Close All Browsers
 Enter Account Information
-    Input Text  //*[@id="app"]/div/main/div/div/div/div/div/div[1]/form/div[1]/div[2]/div[1]/div/input   ${e-mail}
-    Input Text  //*[@id="password"]  ${password}
+    Input Text  //*[@id="app"]/div/main/div/div/div/div/div/div[1]/form/div[1]/div[2]/div[1]/div/input   ${EMAIL}
+    Input Text  //*[@id="password"]  ${PASSWORD}
     Wait Until Page Contains  Labelf
 Press Login Button
     Click Element  //*[@id="app"]/div/main/div/div/div/div/div/div[2]/button[2]
