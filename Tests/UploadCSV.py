@@ -19,7 +19,6 @@ def uploadTicketsToZendesk():
     user = "tobias.bjorlin@iths.se/token"
     # get below token from https://<your-domain>.zendesk.com/admin/apps-integrations/apis/zendesk-api/settings
     bearer = "0jYeLmp9wVCsKrlAQb6EUQZKjqXJO1PDBP7y5CNq"
-    ticket_field_id_to_update = "6420777647645"
     url = f"https://{domain}.zendesk.com/api/v2/tickets"
 
     df = pd.read_csv(path)

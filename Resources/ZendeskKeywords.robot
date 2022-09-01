@@ -54,10 +54,10 @@ User Click on labelf Icon
 User Choose model and ticket field to update
     Page should contain  You have no active models yet
     Select Frame  xpath=//iframe
-    Select From List By Index  //*[@id="modelSelect"]  2            #Selects working model "Customer Support Categories model id:3590"
-    Select From List By Index  //*[@id="tagsorfieldsSelect"]  1     #Selects "Update a ticket field"
+    Select From List By Value  //*[@id="modelSelect"]  ${model_name}            #Selects working model "Customer Support Categories model id:3590"
+    Select From List By Value  //*[@id="tagsorfieldsSelect"]  ${ticket_option}  #Selects "Update a ticket field"
     Wait Until Page Contains Element  //*[@id="fieldSelect"]
-    Select From List By Index  //*[@id="fieldSelect"]  2            #Selects "Support Category", which is a predefined ticket field.
+    Select From List By Value  //*[@id="fieldSelect"]  ${ticket_field_id}        #Selects "Support Category", which is a predefined ticket field.
 
 User click on Activate Model on this field
     Page Should Contain Element  //*[@id="clickMe"]
