@@ -1,3 +1,3 @@
 *** Variables ***
-${e-mail}  USERNAME
-${password}  PASSWORD
+${EMAIL}  USERNAME
+${PASSWORD}  PASSWORD
