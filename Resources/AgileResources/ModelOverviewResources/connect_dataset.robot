@@ -37,7 +37,7 @@ Connect Additional Dataset
     Sleep  2s
 
 Connect Cultural Centers Survey Dataset
-    Click Element  ${cultural_centers_survey_continue}
+    Click Element  ${CULTURAL_CENTERS_SURVEY_CONTINUE}
     Wait Until Page Contains  Please click on the column containing the text you want to classify
     Wait Until Element Is Visible  ${CONNECT_DATASETS}
     Scroll Element Into View  ${CONNECT_DATASETS}
@@ -49,8 +49,8 @@ Return To Models Page
     Go Back
     Wait Until Page Contains  Agile Peacock
 Verify Number of Datapoints Second Dataset - Customer Support
-    Wait Until Element Is Visible  ${datapoints_customer_support}
-    ${datapoint_as_string_second_dataset}  Get Text  ${datapoints_customer_support}
+    Wait Until Element Is Visible  ${DATAPOINTS_CUSTOMER_SUPPORT}
+    ${datapoint_as_string_second_dataset}  Get Text  ${DATAPOINTS_CUSTOMER_SUPPORT}
     ${datapoint_second_dataset}  remove_text  ${datapoint_as_string_second_dataset}
     Set Global Variable  ${datapoint_second_dataset}
     Should Be True  ${datapoint_second_dataset} == 301
