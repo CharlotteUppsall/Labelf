@@ -5,8 +5,6 @@ Library  ../Scripts/remove_text.py
 
 *** Keywords ***
 
-
-#Select A Workspace
 user navigates to another random page
     Go To  https://stag.labelf.ai/main/84/datasets/view
 user clicks on the workspace menu
@@ -19,14 +17,6 @@ user can select which workspace to navigate to
     Wait Until Page Contains  Models | My first workspace
     Wait Until Location Is  https://stag.labelf.ai/main/84/models/view
 
-
-#workspace settings are shown
-#    Wait Until Page Contains   Workspace Settings
-#    Wait Until Page Contains   Shared
-#    Wait Until Page Contains   Users
-#    Wait Until Page Contains   API
-#    Wait Until Page Contains   Billing
-#    Wait Until Page Contains   Integration
 
 user clicks on each of the workspace settings
     Scroll Element Into View   //*[@id="app"]/div[1]/div/div[1]/div[6]/a/div[1]/div  #shared
