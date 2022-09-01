@@ -19,6 +19,7 @@ ${DELETE_OPTIONS}  //*[@class="v-icon icon-menu-danger material-icons theme--lig
 ${MODEL_ID3084_NAME_BUTTON_IN_WORKSPACE}  //*[contains(@href,'/main/387/models/3084/dashboard/dashboard')]
 ${MODELS_BUTTON_IN_MAIN_BAR}  //*[@id="models-button-navbar"]/div
 
+
 #Models Overview Page
 
 ${START_TRAINING}  //*[@id="app"]/div[8]/div[1]/main/div/div/div[2]/div/div[1]/div[2]/div/a/div
@@ -36,6 +37,11 @@ ${MODEL_BUTTON}  //*[@id="models-button-navbar"]
 ${LABEL_NAMED_KATT}  //*[@id="app"]/div[9]/div/div[1]/div[4]/div/div/span/div[2]/div/div[2]/div/div/button[1]/div
 ${LABEL_NAMED_UGGLA}  //*[@id="app"]/div[9]/div/div[1]/div[4]/div/div/span/div[2]/div/div[2]/div/div/button[2]/div
 
+${OVERFIEW}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/div[2]/a
+${OVERFIEWBUTTON}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[1]/div/div/div/div/nav/div/a[3]/div
+#${SETTINGS}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[1]/div/div/div/div/nav/div/a[1]/div/i
+${SETTINGS}  //*[@id="app"]/div[8]/div[1]/main/div/div/div[1]/div/div/div/div/nav/div/a[1]/div/i
+${MODELS}  //*[@id="app"]/div[4]/div[1]/nav/div/a[1]/div/span[1]
 
 #Model Creation Pages (From Kimchi)
 ${CONTINUE_CREATE_MODEL_BUTTON}  //button[contains(.,'Continue')]

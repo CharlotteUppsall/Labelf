@@ -401,3 +401,52 @@ All Labels Are Possible To Select
     Click Element  ${THIRD_RADIO_BUTTON}
     Click Element  ${THIRD_RADIO_BUTTON}
     Click Button  ${ADD_BUTTON}
+
+#Kattuggla EditModelName
+User Is Logged In On Labelf And Have Created An Untained Model
+    Log in User
+    Create A Model
+    Sleep  10s
+User Clicks Settings Button In Model Overview
+    Sleep  1s
+    Click Element  ${OVERFIEW}
+#    Wait Until Page Contains Element  ${OVERFIEWBUTTON}
+#    Click Element  ${OVERFIEWBUTTON}
+    Wait Until Page Contains  It does not look like you have trained the model
+    Click Element  ${SETTINGS}
+The Edit Model Name Field Is Shown
+    Wait Until Page Contains  Edit model name and description
+    Click Element  ${MODELS}
+    Wait Until Page Contains  Models | My first workspace
+    Reload Page
+    Delete Model
+    Wait Until Page Contains   My Models (0)
+
+#Kimchi 3ModelTrainingStage
+User Has Selected Bring Your Own Labels
+       Go To  ${StagLoginSite}
+       Input User Credential
+       Confirm Cookie
+       Press Login Button
+       Confirm User Logged In
+       Go To  ${StagWorkspaceModelView}
+       User Clicks Button "New Model" And To Create A New Model From Scratch
+       Click Element  ${DataSelectPartlyPreLabledButton}
+       Wait Until Page Contains  Please click on the column
+       Click Element  ${LabelSwitchButton}
+User Clicks Continue
+      Wait Until Page Contains Element  ${ContinueWithSelectedDatasetColumnButton}
+      Sleep  0.2  # To allow time for page animation
+      Click Element  ${ContinueWithSelectedDatasetColumnButton}
+      Wait Until Page Contains  Please click on the column containing the labels
+The Slider "One Text Can Contain Multiple Labels" Is Presented
+      Wait Until Page Contains Element  ${MultiplLabelsSwitchButton}
+Verify "One Text Can Have Multiple Labels" Is Enabled When Clicked
+      Click Element  ${MultiplLabelsSwitchButton}
+      Element Should Be Enabled  ${MultiplLabelsSwitchButton}
+
+Verify that all labels from original dataset are shown in Model overview
+     Wait Until Page Contains  Negative
+     Wait Until Page Contains  Positive
+     Wait Until Page Contains  Neutral
+     Wait Until Page Contains  N/A
