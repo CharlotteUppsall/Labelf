@@ -1,47 +1,47 @@
 *** Variables ***
-${datapoints_after}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/nav/div/span[3]
-${datapoints}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/nav/div/span[2]
-${demo_model_button}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[2]/div/div/div/div[2]/button
-${connect_additional_datasets_button}  //*[@id="app"]/div[8]/div[1]/main/div/div/div[2]/div/div[1]/div/div[5]/div/div[3]/nav/div/span/button
-${customer_support_continue}  //*[@id="continue-dataset-card"]
-${connect_datasets}  //*[@id="connect-button"]
-${datapoints_customer_support}  //*[@id="app"]/div[5]/div/div/div/div[3]/div/div/div[1]/div/div/div/nav/div/span
-${datapoints_cultural_centers_survey}  //*[@id="app"]/div[5]/div/div/div/div[3]/div/div/div[2]/div/div/div/nav/div/span
-${cultural_centers_survey_continue}  //*[@id="continue-dataset-card"]
+${DATAPOINTS_AFTER}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/nav/div/span[3]
+${DATAPOINTS}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/nav/div/span[2]
+${DEMO_MODEL_BUTTON}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[2]/div/div/div/div[2]/button
+${CONNECT_ADDITIONAL_DATASETS_BUTTON}  //*[@id="app"]/div[8]/div[1]/main/div/div/div[2]/div/div[1]/div/div[5]/div/div[3]/nav/div/span/button
+${CUSTOMER_SUPPORT_CONTINUE}  //*[@id="continue-dataset-card"]
+${CONNECT_DATASETS}  //*[@id="connect-button"]
+${DATAPOINTS_CUSTOMER_SUPPORT}  //*[@id="app"]/div[5]/div/div/div/div[3]/div/div/div[1]/div/div/div/nav/div/span
+${DATAPOINTS_CULTURAL_CENTERS_SURVEY}  //*[@id="app"]/div[5]/div/div/div/div[3]/div/div/div[2]/div/div/div/nav/div/span
+${CULTURAL_CENTERS_SURVEY_CONTINUE}  //*[@id="continue-dataset-card"]
 *** Keywords ***
 Select Demo Model
-    Scroll Element Into View  ${demo_model_button}
-    Wait Until Element Is Visible  ${demo_model_button}
-    Click Element  ${demo_model_button}
-    Wait Until Page Contains Element  ${header_element}
+    Scroll Element Into View  ${DEMO_MODEL_BUTTON}
+    Wait Until Element Is Visible  ${DEMO_MODEL_BUTTON}
+    Click Element  ${DEMO_MODEL_BUTTON}
+    Wait Until Page Contains Element  ${HEADER_ELEMENT}
     Wait Until Page Contains  Agile Peacock
 Verify Current Number Of Datapoints
     Sleep  5s
-    Wait Until Element Is Visible  ${datapoints}
-    ${datapoint_as_string}  Get Text  ${datapoints}
+    Wait Until Element Is Visible  ${DATAPOINTS}
+    ${datapoint_as_string}  Get Text  ${DATAPOINTS}
     ${datapoint_one_dataset}  remove_text  ${datapoint_as_string}
     Set Global Variable  ${datapoint_one_dataset}
     Should Be True  ${datapoint_one_dataset} == 1499
 Go To Connect Additional Datasets
-    Click Element  ${overview_button}
+    Click Element  ${OVERVIEW_BUTTON}
     Wait Until Page Contains  Model is online
-    Scroll Element Into View  ${connect_additional_datasets_button}
-    Click Element  ${connect_additional_datasets_button}
+    Scroll Element Into View  ${CONNECT_ADDITIONAL_DATASETS_BUTTON}
+    Click Element  ${CONNECT_ADDITIONAL_DATASETS_BUTTON}
     Wait Until Page Contains  Pick a dataset to connect
 Connect Additional Dataset
-    Click Element  ${customer_support_continue}
+    Click Element  ${CUSTOMER_SUPPORT_CONTINUE}
     Wait Until Page Contains  Please click on the column containing the text you want to classify
-    Wait Until Element Is Visible  ${connect_datasets}  
-    Scroll Element Into View  ${connect_datasets}
-    Click Element  ${connect_datasets}
+    Wait Until Element Is Visible  ${CONNECT_DATASETS}  
+    Scroll Element Into View  ${CONNECT_DATASETS}
+    Click Element  ${CONNECT_DATASETS}
     Sleep  2s
 
 Connect Cultural Centers Survey Dataset
     Click Element  ${cultural_centers_survey_continue}
     Wait Until Page Contains  Please click on the column containing the text you want to classify
-    Wait Until Element Is Visible  ${connect_datasets}  
-    Scroll Element Into View  ${connect_datasets}
-    Click Element  ${connect_datasets}
+    Wait Until Element Is Visible  ${CONNECT_DATASETS}
+    Scroll Element Into View  ${CONNECT_DATASETS}
+    Click Element  ${CONNECT_DATASETS}
     Sleep  2s
 Return To Models Page
     Wait Until Page Contains  test (1)
@@ -57,15 +57,15 @@ Verify Number of Datapoints Second Dataset - Customer Support
 
 
 Verify Number of Datapoints Second Dataset - Cultural Centers Survey
-    Wait Until Element Is Visible  ${datapoints_cultural_centers_survey}
-    ${datapoint_as_string_third_dataset}  Get Text  ${datapoints_cultural_centers_survey}
+    Wait Until Element Is Visible  ${DATAPOINTS_CULTURAL_CENTERS_SURVEY} 
+    ${datapoint_as_string_third_dataset}  Get Text  ${DATAPOINTS_CULTURAL_CENTERS_SURVEY} 
     ${datapoint_third_dataset}  remove_text  ${datapoint_as_string_third_dataset}
     Set Global Variable  ${datapoint_third_dataset}
     Should Be True  ${datapoint_third_dataset} == 1419
 
 Verify Number Of Datapoints Increased
-    Wait Until Element Is Visible  ${datapoints_after}
-    ${datapoint_as_string_two_datasets}  Get Text  ${datapoints_after}
+    Wait Until Element Is Visible  ${DATAPOINTS_AFTER}
+    ${datapoint_as_string_two_datasets}  Get Text  ${DATAPOINTS_AFTER}
     ${datapoint_two_dataset}  remove_text  ${datapoint_as_string_two_datasets}
     ${status}=  Run Keyword And Return Status  Should Be True  ${datapoint_two_dataset} <= ${datapoint_one_dataset}+${datapoint_second_dataset}
     ${status}=  Run Keyword And Return Status  Should Be True  ${datapoint_two_dataset} > ${datapoint_one_dataset}
@@ -73,8 +73,8 @@ Verify Number Of Datapoints Increased
     Run Keyword If  '${status}'=='False'  Delete And Skip
 
 Verify Number Of Datapoints Increased - Cultural Centers Survey
-    Wait Until Element Is Visible  ${datapoints_after}
-    ${datapoint_as_string_two_datasets}  Get Text  ${datapoints_after}
+    Wait Until Element Is Visible  ${DATAPOINTS_AFTER}
+    ${datapoint_as_string_two_datasets}  Get Text  ${DATAPOINTS_AFTER}
     ${datapoint_two_dataset}  remove_text  ${datapoint_as_string_two_datasets}
     ${status}=  Run Keyword And Return Status  Should Be True  ${datapoint_two_dataset} <= ${datapoint_one_dataset}+${datapoint_third_dataset}
     ${status}=  Run Keyword And Return Status  Should Be True  ${datapoint_two_dataset} > ${datapoint_one_dataset}
