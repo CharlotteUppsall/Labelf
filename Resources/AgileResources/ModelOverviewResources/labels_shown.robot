@@ -1,16 +1,16 @@
 *** Variables ***
-${chooseCustomerSupportDatasetButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[2]/div/div[1]/div/div/div[2]/button
-${text_checkbox}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/div[1]/div/table/thead/tr[1]/th[1]/i
-${checked_checkbox}  check_box
-${labelf_demo_dataset}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[3]/h2
-${train_directly_on_labels_fram_an_existing_column}   //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/nav/div/div[3]/div[2]/div[1]/div
-${continue_to_setup3}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/div[2]/button
-${continue_to_setup4}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/div/div[3]/button
-${final_create_model_button}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/form/div[2]/button
-${overview_button}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/nav/div/div[1]/a
-${dismiss_training_model_button}  //*[@id="app"]/div[3]/div/div/button
-${labels_bar_chart}   //*[@id="plotly"]/div[1]/div
-${labels_pie_chart}  //*[@id="plotly"]/div[1]/div
+${CHOOSE_CUSTOMER_SUPPORT_DATASET_BUTTON}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[2]/div/div[1]/div/div/div[2]/button
+${TEXT_CHECKBOX}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/div[1]/div/table/thead/tr[1]/th[1]/i
+${CHECKED_CHECKBOX}  check_box
+${LABELF_DEMO_DATASET}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[3]/h2
+${TRAIN_DIRECTLY_ON_LABELS_FROM_AN_EXISTING_COLUMN}   //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/nav/div/div[3]/div[2]/div[1]/div
+${CONTINUE_TO_SETUP3}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/div[2]/button
+${CONTINUE_TO_SETUP4}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/div/div[3]/button
+${FINAL_CREATE_MODEL_BUTTON}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/form/div[2]/button
+${OVERVIEW_BUTTON}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/nav/div/div[1]/a
+${DISMISS_TRAINING_MODEL_BUTTON}  //*[@id="app"]/div[3]/div/div/button
+${LABELS_BAR_CHART}   //*[@id="plotly"]/div[1]/div
+${LABELS_PIE_CHART}  //*[@id="plotly"]/div[1]/div
 
 *** Keywords ***
 The User Has Created A Model With Existing Labels
@@ -29,26 +29,26 @@ All Of The Labels From The Dataset Should Be Displayed
     Go Back
 
 Press Dataset With Existing Labels Button
-    Scroll Element Into View  ${labelf_demo_dataset}
+    Scroll Element Into View  ${LABELF_DEMO_DATASET}
     #ovan: skrolla ner till andra rubriken för att en popup ruta annars skymmer knappen continue
-    Wait Until Element Is Visible  ${chooseCustomerSupportDatasetButton}
-    Click Element  ${chooseCustomerSupportDatasetButton}
+    Wait Until Element Is Visible  ${CHOOSE_CUSTOMER_SUPPORT_DATASET_BUTTON}
+    Click Element  ${CHOOSE_CUSTOMER_SUPPORT_DATASET_BUTTON}
     Wait Until Page Contains  Please click on the column containing the text you want to classify
 
 Verify Text Button Is Checked
-    Wait Until Element Is Visible  ${text_checkbox}
-    ${variable_for_comparison}  Get Text  ${text_checkbox}
-    Should Be Equal As Strings  ${variable_for_comparison}  ${checked_checkbox}
+    Wait Until Element Is Visible  ${TEXT_CHECKBOX}
+    ${variable_for_comparison}  Get Text  ${TEXT_CHECKBOX}
+    Should Be Equal As Strings  ${variable_for_comparison}  ${CHECKED_CHECKBOX}
 
 Select Train Directly On Labels
-    Wait Until Element Is Visible  ${train_directly_on_labels_fram_an_existing_column}
-    Click Element At Coordinates  ${train_directly_on_labels_fram_an_existing_column}  5  0
-    Scroll Element Into View  ${continue_to_setup3}
-    Click Element  ${continue_to_setup3}
-    Scroll Element Into View  ${continue_to_setup4}
-    Click Element  ${continue_to_setup4}
-    Wait Until Element Is Visible  ${final_create_model_button}
-    Click Element  ${final_create_model_button}
+    Wait Until Element Is Visible  ${TRAIN_DIRECTLY_ON_LABELS_FROM_AN_EXISTING_COLUMN}
+    Click Element At Coordinates  ${TRAIN_DIRECTLY_ON_LABELS_FROM_AN_EXISTING_COLUMN}  5  0
+    Scroll Element Into View  ${CONTINUE_TO_SETUP3}
+    Click Element  ${CONTINUE_TO_SETUP3}
+    Scroll Element Into View  ${CONTINUE_TO_SETUP4}
+    Click Element  ${CONTINUE_TO_SETUP4}
+    Wait Until Element Is Visible  ${FINAL_CREATE_MODEL_BUTTON}
+    Click Element  ${FINAL_CREATE_MODEL_BUTTON}
 
 Confirm Labels In Model View
 #kortvyn över modellen som precis skapats, i kortet listas de egna labels
@@ -66,10 +66,10 @@ Confirm Labels In Model View
 
 Navigate To Model Overview
     Wait Until Page Contains  Models | My first workspace
-    Click Element  ${overview_button}
+    Click Element  ${OVERVIEW_BUTTON}
     Wait Until Page Contains  300 Rows model
 Confirm Labels In Bar Chart
-    Scroll Element Into View  ${labels_bar_chart}
+    Scroll Element Into View  ${LABELS_BAR_CHART}
     Wait Until Page Contains  PAYMENT
     Wait Until Page Contains  ACCOUNT
     Wait Until Page Contains  CONTACT
@@ -86,7 +86,7 @@ Scroll Down To Pie Chart
     Execute Javascript  window.scrollTo(0,1700)
 
 Confirm Labels In Pie Chart
-    Wait Until Element Is Visible  ${labels_pie_chart}
+    Wait Until Element Is Visible  ${LABELS_PIE_CHART}
     Wait Until Page Contains  PAYMENT
     Wait Until Page Contains  ACCOUNT
     Wait Until Page Contains  CONTACT
