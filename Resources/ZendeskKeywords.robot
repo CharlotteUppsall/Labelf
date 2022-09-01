@@ -60,8 +60,8 @@ User Choose model and ticket field to update
     Select From List By Value  //*[@id="fieldSelect"]  ${ticket_field_id}        #Selects "Support Category", which is a predefined ticket field.
 
 User click on Activate Model on this field
-    Page Should Contain Element  //*[@id="clickMe"]
-    Click Element  //*[@id="clickMe"]                               #Click the only button in IFrame
+    Page Should Contain Element  //*[@value="Activate Model on this Field"]
+    Click Element  //*[@value="Activate Model on this Field"]                              #Click the only button in IFrame
 
 There is an activated model
     Wait Until Page Contains Element  //*[@id="triggers"]/div/span

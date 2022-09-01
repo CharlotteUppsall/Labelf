@@ -1,6 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
-Library  UploadCSV.py
+Library  ../Scripts/UploadCSV.py
 Resource  ../PageObjects/ZendeskVariables.robot
 Resource  ../Resources/ZendeskKeywords.robot
 
