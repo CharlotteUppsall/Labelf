@@ -1,3 +1,4 @@
+
 *** Settings ***
 Resource  ../PageObjects/locators.robot
 Resource  ../PageObjects/variables.robot
